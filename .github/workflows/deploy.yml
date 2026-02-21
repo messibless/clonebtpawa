@@ -2,11 +2,11 @@ name: Deploy Vue App to Server
 
 on:
   push:
-    branches: [ main ] # Au branch yako kuu
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 👈 Hii inatosha! Hamna haja ya self-hosted
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18'  # 👈 Badilisha iwe 20 au 22 unavyotaka
           cache: 'npm'
 
       - name: Install Dependencies
@@ -22,14 +22,13 @@ jobs:
 
       - name: Build App
         run: npm run build
-        # Hii inatengeneza folder ya 'dist'
 
       - name: Deploy to Server via Rsync
         uses: burnett01/rsync-deployments@5.2
         with:
           switches: -avzr --delete
-          path: dist/ # Folder ya build
-          remote_path: /var/www/my-vue-app/ # Path uliopangilia kwenye server
+          path: dist/
+          remote_path: /var/www/betpawa/
           remote_host: ${{ secrets.SERVER_HOST }}
           remote_user: ${{ secrets.SERVER_USER }}
-          remote_key: ${{ secrets.SERVER_SSH_KEY }}
+          remote_key: ${{ secrets.SERVER_SSH_KEY }}  # 👈 Hii ndiyo inayowezesha deployment
