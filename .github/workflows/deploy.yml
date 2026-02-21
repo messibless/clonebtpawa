@@ -6,15 +6,15 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest  # 👈 Hii inatosha! Hamna haja ya self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # 👈 Imebadilishwa kuwa v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4  # 👈 Imebadilishwa kuwa v4
         with:
-          node-version: '18'  # 👈 Badilisha iwe 20 au 22 unavyotaka
+          node-version: '22'  # 👈 Imebadilishwa kutoka 18 hadi 22
           cache: 'npm'
 
       - name: Install Dependencies
@@ -31,4 +31,4 @@ jobs:
           remote_path: /var/www/betpawa/
           remote_host: ${{ secrets.SERVER_HOST }}
           remote_user: ${{ secrets.SERVER_USER }}
-          remote_key: ${{ secrets.SERVER_SSH_KEY }}  # 👈 Hii ndiyo inayowezesha deployment
+          remote_key: ${{ secrets.SERVER_SSH_KEY }}
