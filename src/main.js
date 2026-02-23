@@ -83,7 +83,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/project2/'),  // 👈 TUONGEZE HII! Base path imeongezwa
+  history: createWebHistory(),  
   routes,
 })
 
