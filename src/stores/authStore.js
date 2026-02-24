@@ -10,7 +10,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   // Valid user data
   const validUserData = {
-    phoneNumber: '712345678',
+    phoneNumber: '750843433',
     password: 'testpass456',
     id: 2,
     name: 'Test User',

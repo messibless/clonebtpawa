@@ -1,152 +1,209 @@
-
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, nextTick } from 'vue';
 import { useRouter } from 'vue-router'
 import settledBetsData from './assets/settledBetsData';
-
-import Loader from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
+import LoaderImg from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
 
 const router = useRouter();
-const settledBets = ref([]);
+const allSettledBets = ref([]);
 const isLoading = ref(true);
+const isLoadingMore = ref(false);
+const displayLimit = ref(11);
+
+// Hii itatumika kushika element ya mwisho wa list
+const loadMoreTrigger = ref(null);
+
+const displayedBets = computed(() => {
+    return allSettledBets.value.slice(0, displayLimit.value);
+});
+
+// Logic ya ku-load data zaidi
+const loadMore = () => {
+    if (isLoadingMore.value || displayLimit.value >= allSettledBets.value.length) return;
+
+    isLoadingMore.value = true;
+    
+    // Simulizi ya ku-load (Sekunde 1)
+    setTimeout(() => {
+        displayLimit.value += 5;
+        isLoadingMore.value = false;
+    }, 1000);
+};
 
 onMounted(() => {
-    // set time out
-
-    setTimeout(()=>{
-        settledBets.value = settledBetsData;
-         // DEBUG: Angalia data structure
-    console.log('Settled bets loaded:', settledBets.value);
-    console.log('First bet:', settledBets.value[0]);
-    console.log('First bet ID type:', typeof settledBets.value[0]?.id);
-    
-    // Store in localStorage
-    localStorage.setItem('settledBets', JSON.stringify(settledBets.value));
+    // 1. Pakua data ya awali
+    setTimeout(() => {
+        allSettledBets.value = settledBetsData;
+        localStorage.setItem('settledBets', JSON.stringify(allSettledBets.value));
         isLoading.value = false;
 
-    },1500)
-  
-    
-   
+        // 2. Anzisha observer baada ya data kuwa rendered
+        setupObserver();
+    }, 1500);
 });
 
-const goToBetDetails = (bet) => {
-    console.log('Navigating to bet:', bet.id, 'Type:', typeof bet.id);
-    
-    router.push({
-        path: `/bets/regular/${bet.id}`,
-        state: {
-            allBets: settledBets.value,
-            currentBet: bet
+const setupObserver = () => {
+    // IntersectionObserver inaangalia kama element iko "visible"
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMore();
+        }
+    }, {
+        rootMargin: '100px', // Anza ku-load kabla haijafika mwisho kabisa (100px kabla)
+    });
+
+    // Subiri kidogo DOM iwe tayari
+    nextTick(() => {
+        if (loadMoreTrigger.value) {
+            observer.observe(loadMoreTrigger.value);
         }
     });
+};
+
+const goToBetDetails = (bet) => {
+    router.push({
+        path: `/bets/regular/${bet.id}`,
+        state: { allBets: allSettledBets.value, currentBet: bet }
+    });
 }
-    // compute propertise for statistics
-
-    const wonCount = computed(() => {
-  return settledBets.value.filter(bet => bet.result === 'WON').length;
-});
-
-const lostCount = computed(() => {
-  return settledBets.value.filter(bet => bet.result === 'LOST').length;
-});
-
-const voidCount = computed(() => {
-  return settledBets.value.filter(bet => bet.result === 'VOID').length;
-});
-
 </script>
 
 <template>
- <div data-v-beccd7ea="" class="bets-list-container">
-
-                    <!-- LOADER SECTION -->
-                    <div v-if="isLoading" class="loading-container">
-                        <img :src="Loader" alt="Loading..." />
-                    </div>
-
-            <div v-else>
-                <section data-v-beccd7ea="" aria-hidden="false" class="tab-section">
-                    <div data-v-beccd7ea="" class="hide-lose-container">
-                        <span data-v-beccd7ea="" class="text-small">HideLost</span>
-                            
-                        <div data-v-f36b6f6d="" data-v-beccd7ea="" class="toggle-container"
-                            data-test-id="settled-filter-toggle">
-                            <div data-v-f36b6f6d="" data-test-id="toggle-container" class="toggle"><button data-v-f36b6f6d=""
-                                    data-test-id="select-button" class="active no-padding"></button><button data-v-f36b6f6d=""
-                                    data-test-id="select-button" class="no-padding"></button></div>
-                        </div>
-                    </div>
-
-                    <div >
-                        <div  v-if="settledBets.length === 0"  data-v-34417751="" class="bet" data-test-id="bet-settled-9336337628" data-test-class="bet-settled">
-
-                            <div class="empty-state">
-                                No settled bets found
-                            </div>
-
-                        </div>
-
-                        <div v-else>
-
-                        
-                            <div 
-                            v-for="bet in settledBets" 
-                            :key="bet.id"
-                            @click="goToBetDetails(bet)"
-                            
-                            data-v-34417751="" class="bet" data-test-id="bet-settled-9336337628" data-test-class="bet-settled">
+    <div data-v-beccd7ea="" class="bets-list-container">
+   
+                       <!-- LOADER SECTION -->
+                       <div v-if="isLoading" class="loading-container">
+                           <img :src="LoaderImg" alt="Loading..." />
+                       </div>
+   
+               <div v-else>
+                   <section data-v-beccd7ea="" aria-hidden="false" class="tab-section">
+                       <div data-v-beccd7ea="" class="hide-lose-container">
+                           <span data-v-beccd7ea="" class="text-small">HideLost</span>
+                               
+                           <div data-v-f36b6f6d="" data-v-beccd7ea="" class="toggle-container"
+                               data-test-id="settled-filter-toggle">
+                               <div data-v-f36b6f6d="" data-test-id="toggle-container" class="toggle"><button data-v-f36b6f6d=""
+                                       data-test-id="select-button" class="active no-padding"></button><button data-v-f36b6f6d=""
+                                       data-test-id="select-button" class="no-padding"></button></div>
+                           </div>
+                       </div>
+   
+                       <div >
+                           <div  v-if="allSettledBets.length === 0"  data-v-34417751="" class="bet" data-test-id="bet-settled-9336337628" data-test-class="bet-settled">
+   
+                               <div class="empty-state">
+                                   No settled bets found
+                               </div>
+   
+                           </div>
+   
+                           <div v-else>
+   
                            
+                               <div 
+                               v-for="bet in displayedBets" 
+                               :key="bet.id"
+                               @click="goToBetDetails(bet)"
 
-                                    <div data-v-34417751="" class="bet-line bet-header">
-                                        <div data-v-34417751="" class="header-container">
-                                            <div data-v-34417751="" class="header-title"><span data-v-34417751="" class="time">
-                                                    {{ bet.time }},&nbsp; </span> <span data-v-34417751="" class="date">{{ bet.date }}</span> <span
-                                                    data-v-34417751="" class="bet-live-now"></span></div>
-                                            <div data-v-34417751="" class="id" data-test-id="bet-id">ID: #{{ bet.id }} <!----></div>
-                                        </div>
-                                    </div>
-                                    <div data-v-34417751="" class="bet-line bet-status">
-                                        <div data-v-34417751="" class="result-container"><span data-v-34417751=""
-                                                class="result-text result-text-grey">Result:
-                                            </span> <span data-v-34417751="" class="positive status-text">WON <span data-v-891f4695=""
-                                                    data-v-34417751="" class="badge type-win mode-medium badge-result"><!---->
-                                                    </span></span></div>
-                                    </div>
-                                    <div data-v-34417751="" class="bet-status-line"></div>
-                                    <div data-v-34417751="" class="bet-line bet-body">
-                                        <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">STAKE</span>
-                                            <div data-v-34417751="" class="currency-container">
-                                                <div data-v-34417751="" class="currency value"> <span class="amount">{{ bet.stake }}</span>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                        <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">ODDS</span> <span
-                                                data-v-34417751="" class="value">{{ bet.odds }}</span> <!----></div>
-                                        <div data-v-34417751="" class="bet-detail end"><span data-v-34417751="" class="label">PAYOUT</span>
-                                            <div data-v-34417751="" class="currency-container bold-symbol">
-                                                <div data-v-34417751="" class="currency value"> <span class="symbol contrast">TSh</span>
-                                                    <span class="amount">{{ bet.payout }}</span> <!----></div>
-                                            </div> 
-                                        </div>
-                                    </div>
-
+                              
+                               
+                               data-v-34417751="" class="bet" data-test-id="bet-settled-9336337628" data-test-class="bet-settled">
+                              
+   
+                                       <div data-v-34417751="" class="bet-line bet-header">
+                                           <div data-v-34417751="" class="header-container">
+                                               <div data-v-34417751="" class="header-title"><span data-v-34417751="" class="time">
+                                                       {{ bet.time }},&nbsp; </span> <span data-v-34417751="" class="date">{{ bet.date }}</span> <span
+                                                       data-v-34417751="" class="bet-live-now"></span></div>
+                                               <div data-v-34417751="" class="id" data-test-id="bet-id">ID: #{{ bet.id }} <!----></div>
+                                           </div>
+                                       </div>
+                                       <div data-v-34417751="" class="bet-line bet-status">
+                                           <div data-v-34417751="" class="result-container"><span data-v-34417751=""
+                                                   class="result-text result-text-grey">Result:
+                                               </span> <span data-v-34417751="" class="positive status-text">WON <span data-v-891f4695=""
+                                                       data-v-34417751="" class="badge type-win mode-medium badge-result"><!---->
+                                                       </span></span></div>
+                                       </div>
+                                       <div data-v-34417751="" class="bet-status-line"></div>
+                                       <div data-v-34417751="" class="bet-line bet-body">
+                                           <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">STAKE</span>
+                                               <div data-v-34417751="" class="currency-container">
+                                                   <div data-v-34417751="" class="currency value"> <span class="amount">{{ bet.stake }}</span>
+                                                       </div>
+                                               </div>
+                                           </div>
+                                           <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">ODDS</span> <span
+                                                   data-v-34417751="" class="value">{{ bet.odds }}</span> <!----></div>
+                                           <div data-v-34417751="" class="bet-detail end"><span data-v-34417751="" class="label">PAYOUT</span>
+                                               <div data-v-34417751="" class="currency-container bold-symbol">
+                                                   <div data-v-34417751="" class="currency value"> <span class="symbol contrast">TSh</span>
+                                                       <span class="amount">{{ bet.payout }}</span> <!----></div>
+                                               </div> 
+                                           </div>
+                                       </div>
+   
+                           </div>
+                           <div ref="loadMoreTrigger" class="load-more-trigger">
+                            <div v-if="isLoadingMore" class="load-more-loader">
+                                <img :src="LoaderImg" alt="Loading more..." />
+                            </div>
                         </div>
+
+                        <div v-if="displayLimit >= allSettledBets.length && allSettledBets.length > 0" class="no-more-data">
+                            No more games to load
                         </div>
-
-                </div>
-            
-
-                </section>
-
-            </div>
-            </div>
-</template>
-
+                           </div>
+   
+                   </div>
+               
+   
+                   </section>
+   
+               </div>
 
 
+               </div>
+   </template>
 <style lang="scss" scoped>
+// CSS zako za awali...
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; 
+}
 
+// CSS MPYA
+.load-more-trigger {
+    height: 50px; /* Inatakiwa iwe na urefu kidogo ili observer iione */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load-more-loader img {
+    height: 24px;
+    width: 24px;
+}
+
+.no-more-data {
+    text-align: center;
+    padding: 15px;
+    color: #8e9398;
+    font-size: 12px;
+}
+.load-more-loader {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    
+    img {
+        height: 24px;
+        width: 24px;
+    }
+}
 .loading-container{
     display: flex;
     justify-content: center;
@@ -425,8 +482,5 @@ section {
     font-size: 12px;
     margin-right: 2px;
 }
-
-
-
 
 </style>

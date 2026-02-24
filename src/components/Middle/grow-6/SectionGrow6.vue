@@ -71,7 +71,7 @@ onMounted(() => {
 
                     <!-- League Shortcut - Container yenye width control -->
                     <div class="league-shortcut-container">
-                                    <leagueShortcut />
+                                    <!-- <leagueShortcut /> -->
                                 </div>
 
        
@@ -119,7 +119,7 @@ onMounted(() => {
     width: 32px;
 }
 .league-shortcut-container {
-    width: 650px; // Hii itachukua width ya parent
+    // width: 650px; 
     max-width: inherit;
 }
 .router-view {

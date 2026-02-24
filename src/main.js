@@ -21,6 +21,16 @@ const routes = [
     component: SectionGrow6,
   },
   {
+    path: '/withdraw',
+    name: 'withdraw',
+    component: () => import('./components/Middle/money/Withdraw.vue'),
+  },
+  {
+    path: '/deposit',
+    name: 'deposit',
+    component: () => import('./components/Middle/money/Deposite.vue'),
+  },
+  {
     path: '/bets',
     name: 'bets',
     component: () => import('./components/Middle/ViewBets/Bets.vue'),

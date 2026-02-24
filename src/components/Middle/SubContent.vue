@@ -84,6 +84,7 @@ onUnmounted(() => {
 
 .section.grow-6 {
     flex-grow: 3;
+    // width: 556px;
     flex-shrink: 3;
     min-height: 0; /* Important for flex children */
 }

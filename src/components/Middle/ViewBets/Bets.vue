@@ -139,6 +139,8 @@ const hasData = computed(() => {
     <style lang="scss" scoped>
     .my-bets-page{
       margin: 0;
+      width: inherit;
+      max-width: inherit;
     }
     .bets-header[data-v-3f1b2324] {
       width: 100%;

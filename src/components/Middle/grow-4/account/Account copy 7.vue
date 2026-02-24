@@ -317,7 +317,15 @@ const handleClose = () => {
  
 
 
-
+// Compute sidebar style dynamically
+const sidebarStyle = computed(() => {
+  return {
+    width: '384px',
+    position: 'absolute',
+    zIndex: '10003', // duu zaidi kuliko betslip
+    right: '0' // Right ita-set na CSS ya parent
+  }
+})
  </script>
  
  <style lang="scss" scoped>
@@ -325,6 +333,10 @@ const handleClose = () => {
      transition: transform .35s ease-in;
  }
 
+//  .side-bar.overlap.full-screen[data-v-c057a854] {
+//      height: 100vh;
+//      top: 0;
+//  }
 
 
 /* Badilisha fixed kuwa absolute kwa kuwa parent ina position relative */
@@ -332,7 +344,8 @@ const handleClose = () => {
     height: 100vh !important;
     top: 0 !important;
     position: absolute !important; /* Badilisha kuwa absolute */
-  
+    // width: 384px !important;
+    // background-color: red;
 }
 
 /* Style nyingine zibaki ziko sawa */
@@ -349,7 +362,7 @@ const handleClose = () => {
     top: 0 !important;
     position: fixed !important; /* Badilisha kutoka absolute kuwa fixed */
     z-index: 10002 !important; /* Ongeza z-index kuwa juu zaidi */
-    width: 384px !important; /* Hakikisha upana ni sawa */
+    width: 448px !important; /* Hakikisha upana ni sawa */
 }
  @media (min-width: 768px) {
      .side-bar.overlap.open[data-v-c057a854] {
@@ -797,7 +810,7 @@ const handleClose = () => {
  }
  .tabs.square .tabs-selector[data-v-d3915418] {
      background: #f4f5f0;
-    //  border: 1px solid #e6e7e2;
+     border: 1px solid #e6e7e2;
      border-top: none;
      padding: 10px 16px;
  }
