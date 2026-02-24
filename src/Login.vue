@@ -217,7 +217,7 @@ const debugStore = () => {
     </span>
 
     <!-- Quick Fill Button (for testing) -->
-    <div class="quick-fill">
+    <!-- <div class="quick-fill">
       <button 
         type="button"
         class="quick-fill-btn"
@@ -225,7 +225,7 @@ const debugStore = () => {
       >
         Fill Valid Credentials (Phone: 712345678)
       </button>
-    </div>
+    </div> -->
   </form>
 </template>
 
