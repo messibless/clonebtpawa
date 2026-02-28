@@ -72,6 +72,31 @@ export const dnmmyGamesData = [
     hasBoostedOdds: true,
     hasTwoUp: true
   },
+
+  {
+    "id": 1,
+    "eventId": 31838944,
+    "time": "15:30:00",
+    "date": "2024-12-27",
+    "homeTeam": "Manchester United",
+    "awayTeam": "Chelsea FC",
+    "league": "Football / England / Premier League",
+    "homeOdds": {
+        "value": "2.75",
+        "hasFireIcon": true
+    },
+    "drawOdds": {
+        "value": "3.20",
+        "hasFireIcon": false
+    },
+    "awayOdds": {
+        "value": "2.60",
+        "hasFireIcon": false
+    },
+    "betCount": 161,
+    "hasBoostedOdds": true,
+    "hasTwoUp": true
+},
   {
     id: 2,
     eventId: 31930329,

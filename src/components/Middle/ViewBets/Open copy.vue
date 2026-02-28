@@ -21,29 +21,10 @@ onMounted(() => {
    <!-- LOADER SECTION -->
    <div v-if="isLoading" class="loading-container">
                         <img :src="Loader" alt="Loading..." />
-          </div>
+            </div>
 
-  <section v-else-if="!hasData" data-v-beccd7ea="" aria-hidden="false" class="tab-section" >
-
-<div data-v-34417751="" data-v-beccd7ea="">
-    <div data-v-34417751="" class="no-data-text">
-        <div data-v-994d5d7e="" data-v-beccd7ea="" class="empty-betslip-open"><svg
-                data-v-02f45589="" data-v-994d5d7e="" class="svg-icon empty-betslip-icon"
-                style="vertical-align: middle;"><!---->
-                <use data-v-02f45589="" xlink:href="#icon-betslip-illustration"></use>
-            </svg> <span data-v-994d5d7e="" class="caption">There are currently no open
-                betslips.</span>
-            <div data-v-994d5d7e="" class="empty-betslip-button"><a data-v-994d5d7e=""
-                    href="/events" class="empty-betslip-button-link"
-                    data-test-id="emptyBetslipBtn">Browse Matches</a></div>
-        </div>
-    </div>
-</div>
-
-</section>
-
-            
-            <section v-else data-v-beccd7ea="" aria-hidden="false" class="tab-section" >
+            <div v-else>
+            <section data-v-beccd7ea="" aria-hidden="false" class="tab-section"  v-if="hasData">
                 <div data-v-34417751="" data-v-beccd7ea="">
                             <div data-v-34417751="" class="bet" data-test-id="bet-pending-10655410033" data-test-class="bet-pending">
                             <div data-v-34417751="" class="bet-line bet-header">
@@ -89,7 +70,25 @@ onMounted(() => {
 
 
 
+                <section data-v-beccd7ea="" aria-hidden="false" class="tab-section" v-else>
 
+                    <div data-v-34417751="" data-v-beccd7ea="">
+                        <div data-v-34417751="" class="no-data-text">
+                            <div data-v-994d5d7e="" data-v-beccd7ea="" class="empty-betslip-open"><svg
+                                    data-v-02f45589="" data-v-994d5d7e="" class="svg-icon empty-betslip-icon"
+                                    style="vertical-align: middle;"><!---->
+                                    <use data-v-02f45589="" xlink:href="#icon-betslip-illustration"></use>
+                                </svg> <span data-v-994d5d7e="" class="caption">There are currently no open
+                                    betslips.</span>
+                                <div data-v-994d5d7e="" class="empty-betslip-button"><a data-v-994d5d7e=""
+                                        href="/events" class="empty-betslip-button-link"
+                                        data-test-id="emptyBetslipBtn">Browse Matches</a></div>
+                            </div>
+                        </div>
+                    </div>
+                  
+            </section>
+            </div>
 
 
             </div>

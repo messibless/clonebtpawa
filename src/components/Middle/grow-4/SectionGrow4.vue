@@ -1,10 +1,11 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed ,onMounted} from 'vue';
 import AirtelLogo from '../../../assets/img/airtel.png';
 import RightSidebar from '../../../components/Header/account-sidebar/RightSidebar.vue'
 import Account from './account/Account.vue';
 import { useAuthStore } from '../../../stores/authStore'
 import { inject } from 'vue'
+import api from '../../../services/api'
 
 const authStore = useAuthStore()
 // Get authentication state
@@ -26,6 +27,46 @@ const closeSidebar = () => {
     accountSidebar.close()
   }
 }
+
+
+
+// State variables (kama useState)
+const balanceState = ref({})
+const loading = ref(false)
+const error = ref('')
+
+// Function to fetch fixtures
+const fetchBalance = async () => {
+  loading.value = true
+  error.value = ''
+  try {
+    const response = await api.get('/balance/') // API endpoint yako
+    balanceState.value = response.data
+    console.log('Fetched balance:', balanceState.value)
+  } catch (err) {
+    console.error('Error fetching balance:', err)
+    error.value = 'Failed to load balance'
+  } finally {
+    loading.value = false
+  }
+}
+
+// onMounted replaces useEffect with empty dependency array
+onMounted(() => {
+  fetchBalance()
+})
+
+
+const formattedBalance = computed(() => {
+  if (!balanceState.value.amount) return '0.00'
+  const amountNumber = parseFloat(balanceState.value.amount)  // convert string to number
+  return new Intl.NumberFormat('en-US', {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(amountNumber)
+})
+
 </script>
 
 <template>
@@ -73,7 +114,7 @@ const closeSidebar = () => {
                                     <span data-v-821495bc="" class="betslip-header-title">
                                         <label data-v-821495bc="">Your Balance</label>
                                     </span> 
-                                    <span data-v-821495bc="" class="count">TSh 1,735.46</span>
+                                    <span data-v-821495bc="" class="count">TSh {{ formattedBalance }}</span>
                                 </div>
                             </div>
                         </div>

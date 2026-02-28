@@ -1,5 +1,4 @@
 <script setup>
-
 import HeadBannerImage from '../../../../assets/media/lg_990x272_4_cffeb66092.webp'
 import HeadBannerImage2 from '../../../../assets/media/lg_ENG_990x272jetx_new_max_multiplier_1_d51ba7c9f9.webp'
 import AfricanLeague from '../../../../assets/media/noun_europe_188772_1_de866e5d6c.svg'
@@ -8,17 +7,74 @@ import leagueShortcut from '../league-shortcut.vue';
 import FootballBannerImage from '../../../../assets/media/lg_990x272_1_4fd3446df7.webp'
 
 import { dummyGamesData } from '../data/dummyGameData'
-
 import { ref, onMounted } from 'vue'
 
-const games = ref([])
+// 🔹 Import api client yako
+import api from '../../../../services/api'
 
+// State variables (kama useState)
+const fixtures = ref([])
+const loading = ref(false)
+const error = ref('')
+
+// Function to fetch fixtures
+const fetchFixtures = async () => {
+  loading.value = true
+  error.value = ''
+  try {
+    const response = await api.get('/fixtures/') // API endpoint yako
+    fixtures.value = response.data
+    console.log('Fetched fixtures:', fixtures.value)
+  } catch (err) {
+    console.error('Error fetching fixtures:', err)
+    error.value = 'Failed to load fixtures'
+  } finally {
+    loading.value = false
+  }
+}
+
+// onMounted replaces useEffect with empty dependency array
 onMounted(() => {
-  setTimeout(() => {
-    games.value = dummyGamesData
-  }, 1200)
+  fetchFixtures()
 })
 
+// Function to format date
+const formatDate = (dateString) => {
+  const [year,month, day ] = dateString.split('-')
+  const isoDate = `${year}-${month}-${day}` // YYYY-MM-DD
+  const dateObj = new Date(isoDate)
+
+  // Get short weekday manually
+  const weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+  const dayName = weekdays[dateObj.getDay()]
+
+  // Format mm/dd
+  const monthStr = String(dateObj.getMonth() + 1).padStart(2,'0')
+  const dayStr = String(dateObj.getDate()).padStart(2,'0')
+
+  return `${dayName} ${dayStr}/${monthStr}` // ✅ Sat 28/02
+}
+
+
+
+const formatTime = (timeString) => {
+  // timeString = "12:23:00"
+  let [hour, minutes] = timeString.split(':').map(Number)
+
+  // Round minutes to nearest 0 or 30
+  if (minutes < 15) minutes = 0
+  else if (minutes < 45) minutes = 30
+  else {
+    minutes = 0
+    hour = (hour + 1) % 24
+  }
+
+  // Pad numbers
+  const hourStr = String(hour).padStart(2,'0')
+  const minStr = String(minutes).padStart(2,'0')
+
+  return `${hourStr}:${minStr}`
+}
 </script>
 <template>
   
@@ -42,13 +98,13 @@ onMounted(() => {
               </div>
 
               <!-- start here -->
-              <div data-v-ea5d556a="" data-v-4310f641="" v-for="game in games" :key="game.id"
+              <div data-v-ea5d556a="" data-v-4310f641="" v-for="game in fixtures" :key="game.id"
                 class="game-events-container prematch" data-test-id="bpEvent" :data-event-id="game.eventId">
                 <a data-v-ea5d556a="" :href="`/event/${game.eventId}`" class="game-event-wrapper pointer"
                   :data-test-id="`nav-event-${game.eventId}-link`" :name="`id-${game.eventId}`">
                   <div data-v-ea5d556a="" class="game-event-header">
                     <div data-v-ea5d556a="" class="game-event-header-left-content">
-                      {{ game.time }} <span data-v-ea5d556a="" class="game-event-date">{{ game.date }}</span>
+                      {{ formatTime(game.time) }} <span data-v-ea5d556a="" class="game-event-date">{{ formatDate(game.date)}}</span>
                     </div>
                     <div data-v-ea5d556a="" class="game-event-header-right-content">
                       <!-- Two-Up Badge (conditional) -->
