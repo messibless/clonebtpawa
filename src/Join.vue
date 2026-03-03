@@ -7,7 +7,7 @@ const router = useRouter()
 const authStore = useAuthStore()
 
 // Registration form data
-const phoneNumber = ref('778483660')
+const phoneNumber = ref('')
 const password = ref('')
 const acceptTerms = ref(true)
 const errorMessage = ref('')
