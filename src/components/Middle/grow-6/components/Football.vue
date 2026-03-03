@@ -22,9 +22,9 @@ const fetchFixtures = async () => {
   loading.value = true
   error.value = ''
   try {
-    const response = await api.get('/fixtures/') // API endpoint yako
+    const response = await api.get('/football/') // API endpoint yako
     fixtures.value = response.data
-    console.log('Fetched fixtures:', fixtures.value)
+    console.log('Fetched football matches:', fixtures.value)
   } catch (err) {
     console.error('Error fetching fixtures:', err)
     error.value = 'Failed to load fixtures'
@@ -159,11 +159,11 @@ const formatTime = (timeString) => {
                                     data-test-id="bet-price-select-button" class="anchor-wrap">
                                     <span data-v-9fc495af="" class="event-selection" data-test-id="selection">1</span>
                                     <span data-v-9fc495af="" class="event-odds" data-test-id="value">
-                                      <svg v-if="game.homeOdds.hasFireIcon" data-v-02f45589="" data-v-9fc495af=""
+                                      <svg v-if="game.homeHasFireIcon" data-v-02f45589="" data-v-9fc495af=""
                                         class="svg-icon price-icon icon-hot" style="vertical-align: middle;">
                                         <use data-v-02f45589="" xlink:href="#icon-hot"></use>
                                       </svg>
-                                      <span data-v-9fc495af="">{{ game.homeOdds.value }}</span>
+                                      <span data-v-9fc495af="">{{ game.homeOdds }}</span>
                                     </span>
                                   </span>
                                 </span>
@@ -177,11 +177,11 @@ const formatTime = (timeString) => {
                                     data-test-id="bet-price-select-button" class="anchor-wrap">
                                     <span data-v-9fc495af="" class="event-selection" data-test-id="selection">X</span>
                                     <span data-v-9fc495af="" class="event-odds" data-test-id="value">
-                                      <svg v-if="game.drawOdds.hasFireIcon" data-v-02f45589="" data-v-9fc495af=""
+                                      <svg v-if="game.drawHasFireIcon" data-v-02f45589="" data-v-9fc495af=""
                                         class="svg-icon price-icon icon-hot" style="vertical-align: middle;">
                                         <use data-v-02f45589="" xlink:href="#icon-hot"></use>
                                       </svg>
-                                      <span data-v-9fc495af="">{{ game.drawOdds.value }}</span>
+                                      <span data-v-9fc495af="">{{ game.drawOdds }}</span>
                                     </span>
                                   </span>
                                 </span>
@@ -195,11 +195,12 @@ const formatTime = (timeString) => {
                                     data-test-id="bet-price-select-button" class="anchor-wrap">
                                     <span data-v-9fc495af="" class="event-selection" data-test-id="selection">2</span>
                                     <span data-v-9fc495af="" class="event-odds" data-test-id="value">
-                                      <svg v-if="game.awayOdds.hasFireIcon" data-v-02f45589="" data-v-9fc495af=""
+                                      <svg v-if="game.awayHasFireIcon
+                                            " data-v-02f45589="" data-v-9fc495af=""
                                         class="svg-icon price-icon icon-hot" style="vertical-align: middle;">
                                         <use data-v-02f45589="" xlink:href="#icon-hot"></use>
                                       </svg>
-                                      <span data-v-9fc495af="">{{ game.awayOdds.value }}</span>
+                                      <span data-v-9fc495af="">{{ game.awayOdds }}</span>
                                     </span>
                                   </span>
                                 </span>

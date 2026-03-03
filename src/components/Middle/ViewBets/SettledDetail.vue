@@ -234,11 +234,11 @@ const toggleTaxDetail = ()=>{
                         </svg> <span data-v-95226610="" data-v-695b065a="">CS Herediano U21 - AD Municipal Liberia
                             U21</span></div>
                     <div data-v-695b065a="" class="league">U21 Liga Ulatina</div>
-                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Over/Under | Full Time (Under)
-                            (1.5)</span></div>
+                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Correct Score | Full Time (1-2)
+                            </span></div>
                 </div>
                 <div data-v-695b065a="" class="value">
-                    <div data-v-695b065a=""><span data-v-695b065a="" class="result">1-0</span></div>
+                    <div data-v-695b065a=""><span data-v-695b065a="" class="result">1-2</span></div>
                     <div data-v-695b065a="" class="event-info"><!----> <!----></div>
                 </div>
             </div>

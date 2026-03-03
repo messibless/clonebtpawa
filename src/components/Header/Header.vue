@@ -44,7 +44,7 @@ const fetchBalance = async () => {
   loading.value = true
   error.value = ''
   try {
-    const response = await api.get('/balance/') // API endpoint yako
+    const response = await api.get('/balance') // API endpoint yako
     balanceState.value = response.data
     console.log('Fetched balance:', balanceState.value)
   } catch (err) {

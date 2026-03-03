@@ -10,8 +10,9 @@ const fetchBets = async () => {
   loading.value = true
   error.value = ''
   try {
-    const response = await api.get('/bets/') // API yako
+    const response = await api.get('/bets') // API yako
     allBets.value = response.data  // assume response.data = array ya bets
+    console.log("fetched all bet", allBets.value)
   } catch (err) {
     console.error(err)
     error.value = 'Failed to load bets'
@@ -27,7 +28,6 @@ const openBets = computed(() =>
 const settledBets = computed(() =>
   allBets.value.filter(bet => bet.status === 'SETTLED')
 )
-
 export function useBets() {
   return { allBets, openBets, settledBets, fetchBets, loading, error }
 }

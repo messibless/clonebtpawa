@@ -67,7 +67,6 @@ const handleWithdraw = () => {
                                             name="amount" 
                                             type="number" 
                                             step="1"
-                                            placeholder="0"
                                         >
                                     </div>
                                     <div data-v-1a892a33="" class="help-text">Min: 100, Max: 3,000,000</div>

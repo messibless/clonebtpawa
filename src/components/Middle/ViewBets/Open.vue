@@ -1,4 +1,6 @@
 <script setup>
+
+// open.vue
 import { ref, onMounted, computed } from 'vue' // Import computed
 import Loader from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
 import { useBets } from './composables/useBets'

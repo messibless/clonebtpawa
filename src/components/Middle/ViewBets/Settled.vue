@@ -5,6 +5,8 @@ import settledBetsData from './assets/settledBetsData';
 import LoaderImg from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
 
 const router = useRouter();
+
+
 const allSettledBets = ref([]);
 const isLoading = ref(true);
 const isLoadingMore = ref(false);

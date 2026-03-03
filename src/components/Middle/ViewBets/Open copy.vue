@@ -21,7 +21,7 @@ onMounted(() => {
    <!-- LOADER SECTION -->
    <div v-if="isLoading" class="loading-container">
                         <img :src="Loader" alt="Loading..." />
-            </div>
+          </div>
 
             <div v-else>
             <section data-v-beccd7ea="" aria-hidden="false" class="tab-section"  v-if="hasData">

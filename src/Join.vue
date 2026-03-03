@@ -479,8 +479,8 @@ input[type="text"] {
 }
 
 .checkbox-input:checked + .checkbox-label .checkbox-input-custom {
-  background: #8dc63f;
-  border-color: #8dc63f;
+  background: #d9edb2;
+  border-color: #d9edb2;;
 }
 
 .checkbox-input-custom.with-border {
