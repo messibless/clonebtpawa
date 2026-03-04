@@ -1121,13 +1121,13 @@ svg.icon-size-medium[data-v-02f45589], img.icon-size-medium[data-v-02f45589] {
     box-shadow: 0 0 0 .5px rgba(170, 174, 176, .5);
 }
 .fi-gb-eng.fis {
-    background-image: url(/src/assets/sidebarFlags/gb-eng-DTHmDHq3.svg);
+    background-image: url(./assets/flags/gb-eng-DTHmDHq3.svg);
 }
 .fi.fis {
     width: 1em;
 }
 .fi-gb-eng {
-    background-image: url(/assets/gb-eng-C8iDhGHN.svg);
+    background-image: url(./assets/flags/gb-eng-C8iDhGHN.svg);
 }
 .fi {
     width: 1.33333em;
@@ -1207,7 +1207,7 @@ svg.icon-size-medium[data-v-02f45589], img.icon-size-medium[data-v-02f45589] {
     box-shadow: 0 0 0 .5px rgba(170, 174, 176, .5);
 }
 .fi-it.fis {
-    background-image: url(/src/assets/sidebarFlags/it-lvp2tGC_.svg);
+    background-image: url(./assets/flags/it-lvp2tGC_.svg);
 }
 .fi.fis {
     width: 1em;
