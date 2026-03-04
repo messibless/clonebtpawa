@@ -346,52 +346,41 @@
   
 
 
-      <div data-v-aabe1219="" class="expansion-panel dark is-open" data-test-id="menu-otherCountries">
-  <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer">
-    <!---->
-    <div data-v-aabe1219="" class="row-cell align-middle title-text">
-      <h3 data-v-aabe1219="">Other Countries</h3>
-    </div> 
-    <!---->
-    <div data-v-aabe1219="" class="row-cell align-middle expand-icon">
-      <svg data-v-02f45589="" data-v-aabe1219="" class="svg-icon icon-size-medium" style="vertical-align: middle;">
-        <!---->
-        <use data-v-02f45589="" xlink:href="#icon-arrow-up"></use>
-      </svg>
-    </div>
-  </div>
+        <div data-v-aabe1219="" class="expansion-panel dark is-open" data-test-id="menu-otherCountries">
+          <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer"><!---->
+            <div data-v-aabe1219="" class="row-cell align-middle title-text">
+              <h3 data-v-aabe1219="">Other Countries</h3>
+            </div> <!---->
+            <div data-v-aabe1219="" class="row-cell align-middle expand-icon"><svg data-v-02f45589="" data-v-aabe1219=""
+                class="svg-icon icon-size-medium" style="vertical-align: middle;"><!---->
+                <use data-v-02f45589="" xlink:href="#icon-arrow-up"></use>
+              </svg></div>
+          </div>
 
-  <div data-v-aabe1219="" class="expansion-panel-content">
-    <div data-v-7a6cc4a0="" v-for="country in otherCountries" :key="country.id" class="menu-item dark sub-menu" :data-test-id="'country-menu-' + country.id">
-      <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
-        <div data-v-7a6cc4a0="" class="table">
-          <div data-v-7a6cc4a0="" class="row-cell align-middle details">
-            <!-- Using dynamic flag with proper binding -->
-            <img 
-              :src="country.flagImg" 
-              :alt="country.name" 
-              class="rounded-flag icon-size-large icon-flag" 
-              style="width: 18px; height: 18px; border-radius: 50%; margin-right: 8px;"
-            />
-            <span data-v-7a6cc4a0="" class="menu-text name">{{ country.name }}</span> 
-            <!---->
+          <div data-v-aabe1219="" class="expansion-panel-content">
+            <div data-v-7a6cc4a0=""  v-for="country in otherCountries" :key="country.id" class="menu-item dark sub-menu" data-test-id="country-menu-61">
+              <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details">
+                    <!-- <span data-v-81261974=""class="fi fi-dz fis rounded-flag icon-size-large icon-flag" title="DZ"></span>  -->
+                    <img  :src="country.flagImg"
+                    :alt="country.name" data-v-81261974=""class="fi fi-dz fis rounded-flag icon-size-large icon-flag" title="DZ"/>
+                      <span
+                      data-v-7a6cc4a0="" class="menu-text name">{{ country.name }}</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">{{ country.count }}</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
+                      class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
+                      <use data-v-02f45589="" xlink:href="#arrow_down"></use>
+                    </svg></div>
+                </div>
+              </div>
+              <div data-v-aabe1219="" class="expansion-panel dark"><!----> <!----></div>
+            </div>
+            
           </div>
-          <div data-v-7a6cc4a0="" class="row-cell align-middle control">
-            <span data-v-7a6cc4a0="" class="menu-text">{{ country.count }}</span> 
-            <svg data-v-02f45589="" data-v-7a6cc4a0="" class="svg-icon icon-size-very-small" style="vertical-align: middle;">
-              <!---->
-              <use data-v-02f45589="" xlink:href="#arrow_down"></use>
-            </svg>
-          </div>
+
+
         </div>
-      </div>
-      <div data-v-aabe1219="" class="expansion-panel dark">
-        <!----> 
-        <!---->
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -445,70 +434,69 @@ return {
 }
 })
 
+
 const otherCountries = ref([
-  { id: 61, name: 'Algeria', count: 5, flagImg: new URL('../../../assets/sidebarFlags/dz-EwXBYPv9.svg', import.meta.url).href },
-  { id: 126, name: 'Argentina', count: 50, flagImg: new URL('../../../assets/sidebarFlags/ar-apVegy4c.svg', import.meta.url).href },
-  { id: 248, name: 'Australia', count: 11, flagImg: new URL('../../../assets/sidebarFlags/au-kL8f0uMB.svg', import.meta.url).href },
-  { id: 239, name: 'Austria', count: 20, flagImg: new URL('../../../assets/sidebarFlags/at-D-LsLSdx.svg', import.meta.url).href },
-  { id: 178, name: 'Azerbaijan', count: 5, flagImg: new URL('../../../assets/sidebarFlags/az-z2IthT8Q.svg', import.meta.url).href },
-  { id: 240, name: 'Belgium', count: 16, flagImg: new URL('../../../assets/sidebarFlags/be-Dtq4MkQz.svg', import.meta.url).href },
-  { id: 225, name: 'Bosnia and Herzegovina', count: 3, flagImg: new URL('../../../assets/sidebarFlags/ba-CiiOt6u0.svg', import.meta.url).href },
-  { id: 128, name: 'Brazil', count: 53, flagImg: new URL('../../../assets/sidebarFlags/br-Yf30zEjB.svg', import.meta.url).href },
-  { id: 196, name: 'Bulgaria', count: 16, flagImg: new URL('../../../assets/sidebarFlags/bg-cWragUdK.svg', import.meta.url).href },
-  { id: 129, name: 'Chile', count: 10, flagImg: new URL('../../../assets/sidebarFlags/cl-B2rf9gTF.svg', import.meta.url).href },
-  { id: 130, name: 'Colombia', count: 11, flagImg: new URL('../../../assets/sidebarFlags/co-BRjxMuCM.svg', import.meta.url).href }, 
-  { id: 119, name: 'Costa Rica', count: 3, flagImg: new URL('../../../assets/sidebarFlags/cr-CcuKkUIo.svg', import.meta.url).href }, 
-  { id: 226, name: 'Croatia', count: 5, flagImg: new URL('../../../assets/sidebarFlags/hr-C7VqhX5l.svg', import.meta.url).href },
-  { id: 180, name: 'Cyprus', count: 7, flagImg: new URL('../../../assets/sidebarFlags/cy-Bgo0XIP0.svg', import.meta.url).href }, 
-  { id: 197, name: 'Czech Republic', count: 16, flagImg: new URL('../../../assets/sidebarFlags/cz-CgTuLLXv.svg', import.meta.url).href }, 
-  { id: 207, name: 'Denmark', count: 13, flagImg: new URL('../../../assets/sidebarFlags/dk-2cglAULc.svg', import.meta.url).href },
-  { id: 131, name: 'Ecuador', count: 8, flagImg: new URL('../../../assets/sidebarFlags/ec-sTVr1A3S.svg', import.meta.url).href },
-  { id: 62, name: 'Egypt', count: 7, flagImg: new URL('../../../assets/sidebarFlags/eg-C1MYAOXe.svg', import.meta.url).href },
-  { id: 208, name: 'Estonia', count: 1, flagImg: new URL('../../../assets/sidebarFlags/ee-B0tgUOEC.svg', import.meta.url).href },
-  { id: 36, name: 'Ethiopia', count: 2, flagImg: new URL('../../../assets/sidebarFlags/et-cfPInayI.svg', import.meta.url).href },
-  { id: 228, name: 'Greece', count: 19, flagImg: new URL('../../../assets/sidebarFlags/gr-COThnT__.svg', import.meta.url).href },
-  { id: 121, name: 'Guatemala', count: 2, flagImg: new URL('../../../assets/sidebarFlags/gt-Ufdm0MFv.svg', import.meta.url).href },
-  { id: 198, name: 'Hungary', count: 7, flagImg: new URL('../../../assets/sidebarFlags/hu-Bm8S5mAU.svg', import.meta.url).href },
-  { id: 212, name: 'Iceland', count: 1, flagImg: new URL('../../../assets/sidebarFlags/is-Cdq2ElPF.svg', import.meta.url).href },
-  { id: 160, name: 'India', count: 4, flagImg: new URL('../../../assets/sidebarFlags/in-BrINBvML.svg', import.meta.url).href },
-  { id: 168, name: 'Indonesia', count: 8, flagImg: new URL('../../../assets/sidebarFlags/id-CJiY5UnY.svg', import.meta.url).href },
-  { id: 213, name: 'Ireland', count: 10, flagImg: new URL('../../../assets/sidebarFlags/ie-DhxI4aJv.svg', import.meta.url).href },
-  { id: 183, name: 'Israel', count: 7, flagImg: new URL('../../../assets/sidebarFlags/il-CeFQotKl.svg', import.meta.url).href },
-  { id: 154, name: 'Japan', count: 11, flagImg: new URL('../../../assets/sidebarFlags/jp-B5RfAVGb.svg', import.meta.url).href },
-  { id: 184, name: 'Jordan', count: 5, flagImg: new URL('../../../assets/sidebarFlags/jo-CiGTAWEd.svg', import.meta.url).href },
-  { id: 185, name: 'Kuwait', count: 1, flagImg: new URL('../../../assets/sidebarFlags/kw-CIaYkhdM.svg', import.meta.url).href },
-  { id: 123, name: 'Mexico', count: 25, flagImg: new URL('../../../assets/sidebarFlags/mx-4c9y9ryX.svg', import.meta.url).href },
-  { id: 246, name: 'Netherlands', count: 30, flagImg: new URL('../../../assets/sidebarFlags/nl-DKN85plC.svg', import.meta.url).href },
-  { id: 289, name: 'Northern Ireland', count: 9, flagImg: new URL('../../../assets/sidebarFlags/gb-eng-DTHmDHq3.svg', import.meta.url).href },
-  { id: 187, name: 'Oman', count: 1, flagImg: new URL('../../../assets/sidebarFlags/om-Ri__rIwP.svg', import.meta.url).href },
-  { id: 135, name: 'Paraguay', count: 5, flagImg: new URL('../../../assets/sidebarFlags/py-CRTEf2ay.svg', import.meta.url).href },
-  { id: 136, name: 'Peru', count: 9, flagImg: new URL('../../../assets/sidebarFlags/pe--eye3JWr.svg', import.meta.url).href },
-  { id: 199, name: 'Poland', count: 19, flagImg: new URL('../../../assets/sidebarFlags/pl-jl6riBSr.svg', import.meta.url).href },
-  { id: 233, name: 'Portugal', count: 32, flagImg: new URL('../../../assets/sidebarFlags/pt-BLLm3V0o.svg', import.meta.url).href },
-  { id: 188, name: 'Qatar', count: 5, flagImg: new URL('../../../assets/sidebarFlags/qa-CekFoc-3.svg', import.meta.url).href },
-  { id: 156, name: 'Republic of Korea', count: 7, flagImg: new URL('../../../assets/sidebarFlags/kr-KUIaWHQD.svg', import.meta.url).href },
-  { id: 201, name: 'Romania', count: 23, flagImg: new URL('../../../assets/sidebarFlags/ro-C2av9jVe.svg', import.meta.url).href },
-  { id: 202, name: 'Russian Federation', count: 30, flagImg: new URL('../../../assets/sidebarFlags/ru-DbUtf_DX.svg', import.meta.url).href },
-  { id: 189, name: 'Saudi Arabia', count: 16, flagImg: new URL('../../../assets/sidebarFlags/sa-eH5F7cXy.svg', import.meta.url).href },
-  { id: 290, name: 'Scotland', count: 36, flagImg: new URL('../../../assets/sidebarFlags/gb-DSer7Jgn.svg', import.meta.url).href },
-  { id: 235, name: 'Serbia', count: 8, flagImg: new URL('../../../assets/sidebarFlags/rs-D2wyuxjv.svg', import.meta.url).href },
-  { id: 173, name: 'Singapore', count: 4, flagImg: new URL('../../../assets/sidebarFlags/sg-DisnRdSe.svg', import.meta.url).href },
-  { id: 203, name: 'Slovakia', count: 6, flagImg: new URL('../../../assets/sidebarFlags/sk-DafobJl2.svg', import.meta.url).href },
-  { id: 236, name: 'Slovenia', count: 5, flagImg: new URL('../../../assets/sidebarFlags/si-BRlyqHOn.svg', import.meta.url).href },
-  { id: 71, name: 'South Africa', count: 2, flagImg: new URL('../../../assets/sidebarFlags/za-BUKoH9qm.svg', import.meta.url).href },
-  { id: 221, name: 'Sweden', count: 8, flagImg: new URL('../../../assets/sidebarFlags/se-DHad7SFX.svg', import.meta.url).href },
-  { id: 247, name: 'Switzerland', count: 12, flagImg: new URL('../../../assets/sidebarFlags/ch-Do8WoVrp.svg', import.meta.url).href },
-  { id: 191, name: 'Syrian Arab Republic', count: 1, flagImg: new URL('../../../assets/sidebarFlags/sy-Dp3djvX9.svg', import.meta.url).href },
-  { id: 174, name: 'Thailand', count: 7, flagImg: new URL('../../../assets/sidebarFlags/th-DK2zZyMY.svg', import.meta.url).href },
-  { id: 192, name: 'Turkey', count: 18, flagImg: new URL('../../../assets/sidebarFlags/tr-Dgwi_nfe.svg', import.meta.url).href },
-  { id: 204, name: 'Ukraine', count: 8, flagImg: new URL('../../../assets/sidebarFlags/ua-BquxXKta.svg', import.meta.url).href },
-  { id: 138, name: 'Uruguay', count: 8, flagImg: new URL('../../../assets/sidebarFlags/uy-B2Qs7aGx.svg', import.meta.url).href },
-  { id: 144, name: 'USA', count: 15, flagImg: new URL('../../../assets/sidebarFlags/us-DAM9Utrf.svg', import.meta.url).href },
-  { id: 176, name: 'Vietnam', count: 2, flagImg: new URL('../../../assets/sidebarFlags/vn-CsUBJx2L.svg', import.meta.url).href },
-  { id: 291, name: 'Wales', count: 3, flagImg: new URL('../../../assets/sidebarFlags/gb-wls-lLp_JivI.svg', import.meta.url).href }
+  { id: 61, name: 'Algeria', count: 5, flagImg: './assets/flags/dz-EwXBYPv9.svg' },
+  { id: 126, name: 'Argentina', count: 50, flagImg: './assets/flags/ar-apVegy4c.svg' },
+  { id: 248, name: 'Australia', count: 11, flagImg: './assets/flags/au-kL8f0uMB.svg' },
+  { id: 239, name: 'Austria', count: 20, flagImg: './assets/flags/at-D-LsLSdx.svg' },
+  { id: 178, name: 'Azerbaijan', count: 5, flagImg: './assets/flags/az-z2IthT8Q.svg' },
+  { id: 240, name: 'Belgium', count: 16, flagImg: './assets/flags/be-Dtq4MkQz.svg' },
+  { id: 225, name: 'Bosnia and Herzegovina', count: 3, flagImg: './assets/flags/ba-CiiOt6u0.svg' },
+  { id: 128, name: 'Brazil', count: 53, flagImg: './assets/flags/br-Yf30zEjB.svg' },
+  { id: 196, name: 'Bulgaria', count: 16, flagImg: './assets/flags/bg-cWragUdK.svg' },
+  { id: 129, name: 'Chile', count: 10, flagImg: './assets/flags/cl-B2rf9gTF.svg' },
+  { id: 130, name: 'Colombia', count: 11, flagImg: './assets/flags/co-BRjxMuCM.svg' }, 
+  { id: 119, name: 'Costa Rica', count: 3, flagImg: './assets/flags/cr-CcuKkUIo.svg' }, 
+  { id: 226, name: 'Croatia', count: 5, flagImg: './assets/flags/hr-C7VqhX5l.svg' },
+  { id: 180, name: 'Cyprus', count: 7, flagImg: './assets/flags/cy-Bgo0XIP0.svg' }, 
+  { id: 197, name: 'Czech Republic', count: 16, flagImg: './assets/flags/cz-CgTuLLXv.svg' }, 
+  { id: 207, name: 'Denmark', count: 13, flagImg: './assets/flags/dk-2cglAULc.svg' },
+  { id: 131, name: 'Ecuador', count: 8, flagImg: './assets/flags/ec-sTVr1A3S.svg' }, // Update path
+  { id: 62, name: 'Egypt', count: 7, flagImg: './assets/flags/eg-C1MYAOXe.svg' }, // Update path
+  { id: 208, name: 'Estonia', count: 1, flagImg: './assets/flags/ee-B0tgUOEC.svg' }, // Update path
+  { id: 36, name: 'Ethiopia', count: 2, flagImg: './assets/flags/et-cfPInayI.svg' }, // Update path
+  { id: 228, name: 'Greece', count: 19, flagImg: './assets/flags/gr-COThnT__.svg' }, // Update path
+  { id: 121, name: 'Guatemala', count: 2, flagImg: './assets/flags/gt-Ufdm0MFv.svg' }, // Update path
+  { id: 198, name: 'Hungary', count: 7, flagImg: './assets/flags/hu-Bm8S5mAU.svg' }, // Update path
+  { id: 212, name: 'Iceland', count: 1, flagImg: './assets/flags/is-Cdq2ElPF.svg' }, // Update path
+  { id: 160, name: 'India', count: 4, flagImg: './assets/flags/in-BrINBvML.svg' }, // Update path
+  { id: 168, name: 'Indonesia', count: 8, flagImg: './assets/flags/id-CJiY5UnY.svg' }, // Update path
+  { id: 213, name: 'Ireland', count: 10, flagImg: './assets/flags/ie-DhxI4aJv.svg' }, // Update path
+  { id: 183, name: 'Israel', count: 7, flagImg: './assets/flags/il-CeFQotKl.svg' }, // Update path
+  { id: 154, name: 'Japan', count: 11, flagImg: './assets/flags/jp-B5RfAVGb.svg' }, // Update path
+  { id: 184, name: 'Jordan', count: 5, flagImg: './assets/flags/jo-CiGTAWEd.svg' }, // Update path
+  { id: 185, name: 'Kuwait', count: 1, flagImg: './assets/flags/kw-CIaYkhdM.svg' }, // Update path
+  { id: 123, name: 'Mexico', count: 25, flagImg: './assets/flags/mx-4c9y9ryX.svg' }, // Update path
+  { id: 246, name: 'Netherlands', count: 30, flagImg: '/src/assets/sidebarFlags/nl-DKN85plC.svg' }, // Update path
+  { id: 289, name: 'Northern Ireland', count: 9, flagImg: '/src/assets/sidebarFlags/gb-eng-DTHmDHq3.svg' }, // Update path
+  { id: 187, name: 'Oman', count: 1, flagImg: '/src/assets/sidebarFlags/om-Ri__rIwP.svg' }, // Update path
+  { id: 135, name: 'Paraguay', count: 5, flagImg: '/src/assets/sidebarFlags/py-CRTEf2ay.svg' }, // Update path
+  { id: 136, name: 'Peru', count: 9, flagImg: '/src/assets/sidebarFlags/pe--eye3JWr.svg' }, // Update path
+  { id: 199, name: 'Poland', count: 19, flagImg: '/src/assets/sidebarFlags/pl-jl6riBSr.svg' }, // Update path
+  { id: 233, name: 'Portugal', count: 32, flagImg: '/src/assets/sidebarFlags/pt-BLLm3V0o.svg' }, // Update path
+  { id: 188, name: 'Qatar', count: 5, flagImg: '/src/assets/sidebarFlags/qa-CekFoc-3.svg' }, // Update path
+  { id: 156, name: 'Republic of Korea', count: 7, flagImg: '/src/assets/sidebarFlags/kr-KUIaWHQD.svg' }, // Update path
+  { id: 201, name: 'Romania', count: 23, flagImg: '/src/assets/sidebarFlags/ro-C2av9jVe.svg' }, // Update path
+  { id: 202, name: 'Russian Federation', count: 30, flagImg: '/src/assets/sidebarFlags/ru-DbUtf_DX.svg' }, // Update path
+  { id: 189, name: 'Saudi Arabia', count: 16, flagImg: '/src/assets/sidebarFlags/sa-eH5F7cXy.svg' }, // Update path
+  { id: 290, name: 'Scotland', count: 36, flagImg: '/src/assets/sidebarFlags/gb-DSer7Jgn.svg' }, // Update path
+  { id: 235, name: 'Serbia', count: 8, flagImg: '/src/assets/sidebarFlags/rs-D2wyuxjv.svg' }, // Update path
+  { id: 173, name: 'Singapore', count: 4, flagImg: '/src/assets/sidebarFlags/sg-DisnRdSe.svg' }, // Update path
+  { id: 203, name: 'Slovakia', count: 6, flagImg: '/src/assets/sidebarFlags/sk-DafobJl2.svg' }, // Update path
+  { id: 236, name: 'Slovenia', count: 5, flagImg: '/src/assets/sidebarFlags/si-BRlyqHOn.svg' }, // Update path
+  { id: 71, name: 'South Africa', count: 2, flagImg: '/src/assets/sidebarFlags/za-BUKoH9qm.svg' }, // Update path
+  { id: 221, name: 'Sweden', count: 8, flagImg: '/src/assets/sidebarFlags/se-DHad7SFX.svg' }, // Update path
+  { id: 247, name: 'Switzerland', count: 12, flagImg: '/src/assets/sidebarFlags/ch-Do8WoVrp.svg' }, // Update path
+  { id: 191, name: 'Syrian Arab Republic', count: 1, flagImg: '/src/assets/sidebarFlags/sy-Dp3djvX9.svg' }, // Update path
+  { id: 174, name: 'Thailand', count: 7, flagImg: '/src/assets/sidebarFlags/th-DK2zZyMY.svg' }, 
+  { id: 192, name: 'Turkey', count: 18, flagImg: '/src/assets/sidebarFlags/tr-Dgwi_nfe.svg' }, 
+  { id: 204, name: 'Ukraine', count: 8, flagImg: '/src/assets/sidebarFlags/ua-BquxXKta.svg' }, // Update path
+  { id: 138, name: 'Uruguay', count: 8, flagImg: '/src/assets/sidebarFlags/uy-B2Qs7aGx.svg' }, // Update path
+  { id: 144, name: 'USA', count: 15, flagImg: '/src/assets/sidebarFlags/us-DAM9Utrf.svg' }, // Update path
+  { id: 176, name: 'Vietnam', count: 2, flagImg: '/src/assets/sidebarFlags/vn-CsUBJx2L.svg' }, // Update path
+  { id: 291, name: 'Wales', count: 3, flagImg: '/src/assets/sidebarFlags/gb-wls-lLp_JivI.svg' } 
 ])
-
-
 </script>
 
 <style lang="scss" scoped>
