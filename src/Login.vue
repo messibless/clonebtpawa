@@ -216,17 +216,9 @@ const debugStore = () => {
       </a>
     </span>
 
-    <!-- Quick Fill Button (for testing) -->
-    <!-- <div class="quick-fill">
-      <button 
-        type="button"
-        class="quick-fill-btn"
-        @click="fillValidCredentials"
-      >
-        Fill Valid Credentials (Phone: 750843433, Password: testpass456)
-      </button>
-    </div> -->
-  </form>
+  
+ 
+ </form>
 </template>
 
 <style lang="scss" scoped>

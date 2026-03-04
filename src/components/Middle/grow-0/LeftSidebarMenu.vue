@@ -436,8 +436,8 @@ return {
 
 
 const otherCountries = ref([
-  { id: 61, name: 'Algeria', count: 5, flagImg: '/src/assets/sidebarFlags/dz-EwXBYPv9.svg' },
-  { id: 126, name: 'Argentina', count: 50, flagImg: '/src/assets/sidebarFlags/ar-apVegy4c.svg' },
+  { id: 61, name: 'Algeria', count: 5, flagImg: './assets/flags/dz-EwXBYPv9.svg' },
+  { id: 126, name: 'Argentina', count: 50, flagImg: './assets/flags/ar-apVegy4c.svg' },
   { id: 248, name: 'Australia', count: 11, flagImg: '/src/assets/sidebarFlags/au-kL8f0uMB.svg' },
   { id: 239, name: 'Austria', count: 20, flagImg: '/src/assets/sidebarFlags/at-D-LsLSdx.svg' },
   { id: 178, name: 'Azerbaijan', count: 5, flagImg: '/src/assets/sidebarFlags/az-z2IthT8Q.svg' },
