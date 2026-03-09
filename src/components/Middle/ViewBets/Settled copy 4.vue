@@ -3,13 +3,8 @@ import { ref, computed, onMounted, nextTick } from 'vue';
 import { useRouter } from 'vue-router'
 import settledBetsData from './assets/settledBetsData';
 import LoaderImg from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
-import { useBets } from './composables/useBets'
 
-import { useBetsStore } from '../../../stores/betsStore'
-
-const { settledBets, fetchBets, loading } = useBets()
 const router = useRouter();
-const betsStore = useBetsStore()
 
 
 const allSettledBets = ref([]);
@@ -37,18 +32,17 @@ const loadMore = () => {
     }, 1000);
 };
 
-onMounted(async () => {
+onMounted(() => {
+    // 1. Pakua data ya awali
+    setTimeout(() => {
+        allSettledBets.value = settledBetsData;
+        localStorage.setItem('settledBets', JSON.stringify(allSettledBets.value));
+        isLoading.value = false;
 
-await fetchBets()
-
- 
-allSettledBets.value = settledBets.value
-isLoading.value = false
- // Save to localStorage
- localStorage.setItem('settledBets', JSON.stringify(allSettledBets.value))
-
-setupObserver()
-})
+        // 2. Anzisha observer baada ya data kuwa rendered
+        setupObserver();
+    }, 1500);
+});
 
 const setupObserver = () => {
     // IntersectionObserver inaangalia kama element iko "visible"
@@ -69,13 +63,10 @@ const setupObserver = () => {
 };
 
 const goToBetDetails = (bet) => {
-  // Save to store before navigating
-  betsStore.setCurrentBet(bet)
-  
-  router.push({
-    path: `/bets/regular/${bet.id}`
-    // No need for state now
-  })
+    router.push({
+        path: `/bets/regular/${bet.id}`,
+        state: { allBets: allSettledBets.value, currentBet: bet }
+    });
 }
 </script>
 
@@ -83,25 +74,29 @@ const goToBetDetails = (bet) => {
     <div data-v-beccd7ea="" class="bets-list-container">
    
                        <!-- LOADER SECTION -->
-                       <div v-if="loading" class="loading-container">
+                       <div v-if="isLoading" class="loading-container">
                            <img :src="LoaderImg" alt="Loading..." />
                        </div>
    
                <div v-else>
                    <section data-v-beccd7ea="" aria-hidden="false" class="tab-section">
-                      
-                    <div class="SettledBetsFilterToggle_container__xZZbS"><i
-                        class="fa-kit fa-eyeoff SettledBetsFilterToggle_icon__QPEW5" aria-hidden="true"></i>
-                    <div class="SettledBetsFilterToggle_content__G1aSL"><span
-                            class="SettledBetsFilterToggle_label__gJQvm">Hide lost betslips</span><span
-                            class="SettledBetsFilterToggle_helperText__pQPr2">Only won bets will be shown</span></div>
-                    <div class="Toggle_toggleContainer__pZU0c">
-                        <div class="Toggle_toggle__QrBXX Toggle_toggleBinaryTheme__1nn8h"><button type="button"
-                                class="Toggle_toggleButton__5dYiw Toggle_active__u5wYc"></button><button type="button"
-                                class="Toggle_toggleButton__5dYiw"></button></div>
-                    </div>
-                </div>
+                       <div data-v-beccd7ea="" class="hide-lose-container">
+                           <span data-v-beccd7ea="" class="text-small">HideLost</span>
+                               
+                           <div data-v-f36b6f6d="" data-v-beccd7ea="" class="toggle-container"
+                               data-test-id="settled-filter-toggle">
+                               <div data-v-f36b6f6d="" data-test-id="toggle-container" class="toggle"><button data-v-f36b6f6d=""
+                                       data-test-id="select-button" class="active no-padding"></button><button data-v-f36b6f6d=""
+                                       data-test-id="select-button" class="no-padding"></button></div>
+                           </div>
+                       </div>
 
+
+
+
+
+
+   
                        <div >
                            <div  v-if="allSettledBets.length === 0"  data-v-34417751="" class="bet" data-test-id="bet-settled-9336337628" data-test-class="bet-settled">
    
@@ -148,7 +143,7 @@ const goToBetDetails = (bet) => {
                                                </div>
                                            </div>
                                            <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">ODDS</span> <span
-                                                   data-v-34417751="" class="value">{{ bet.total_odds }}</span> <!----></div>
+                                                   data-v-34417751="" class="value">{{ bet.odds }}</span> <!----></div>
                                            <div data-v-34417751="" class="bet-detail end"><span data-v-34417751="" class="label">PAYOUT</span>
                                                <div data-v-34417751="" class="currency-container bold-symbol">
                                                    <div data-v-34417751="" class="currency value"> <span class="symbol contrast">TSh</span>
@@ -165,7 +160,7 @@ const goToBetDetails = (bet) => {
                         </div>
 
                         <div v-if="displayLimit >= allSettledBets.length && allSettledBets.length > 0" class="no-more-data">
-                           
+                            No more games to load
                         </div>
                            </div>
    
@@ -180,122 +175,7 @@ const goToBetDetails = (bet) => {
                </div>
    </template>
 <style lang="scss" scoped>
-
-
-.SettledBetsFilterToggle_container__xZZbS {
-    border: 1px solid #e6e7e2;
-    margin: 12px 0px 12px;
-    padding: 12px;
-}
-
-.SettledBetsFilterToggle_container__xZZbS {
-    align-items: center;
-    display: flex;
-    gap: 12px;
-    justify-content: space-between;
-}
-.fa-kit.fa-eyeoff {
-    --fa: "\e0ab";
-}
-
-.SettledBetsFilterToggle_icon__QPEW5, .SettledBetsFilterToggle_label__gJQvm {
-    color: #252a2d;
-}
-.SettledBetsFilterToggle_icon__QPEW5 {
-    flex-shrink: 0;
-    font-size: 1.25rem;
-}
-.SettledBetsFilterToggle_icon__QPEW5, .SettledBetsFilterToggle_label__gJQvm {
-    color: #252a2d;
-}
-.SettledBetsFilterToggle_content__G1aSL {
-    flex: 1 1;
-    min-width: 0;
-}
-
-.SettledBetsFilterToggle_content__G1aSL {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-.SettledBetsFilterToggle_label__gJQvm {
-    font-size: .9375rem;
-    font-weight: 400;
-}
-
-.SettledBetsFilterToggle_icon__QPEW5, .SettledBetsFilterToggle_label__gJQvm {
-    color: #252a2d;
-}
-.SettledBetsFilterToggle_helperText__pQPr2 {
-    color: #8e9499;
-    font-size: .8125rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Toggle_toggleContainer__pZU0c {
-    box-sizing: border-box;
-}
-.Toggle_toggle__QrBXX.Toggle_toggleBinaryTheme__1nn8h, .Toggle_toggleButton__5dYiw {
-    cursor: pointer;
-}
-
-.Toggle_toggle__QrBXX.Toggle_toggleBinaryTheme__1nn8h, .Toggle_toggleButton__5dYiw {
-    cursor: pointer;
-}
-.Toggle_toggle__QrBXX {
-    background-color: #f4f5f0;
-    border: 1px solid #e6e7e2;
-    border-radius: 12px;
-    display: inline-flex;
-    padding: 1px;
-    width: 100%;
-}
-.Toggle_toggleButton__5dYiw.Toggle_active__u5wYc {
-    background-color: #fff;
-    border: 1px solid #e6e7e2;
-    color: #252a2d;
-    font-weight: 600;
-}
-
-.Toggle_toggleButton__5dYiw.Toggle_active__u5wYc {
-    background-color: #fff;
-    border: 1px solid #e6e7e2;
-    color: #252a2d;
-    font-weight: 600;
-}
-.Toggle_toggleButton__5dYiw {
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    color: #8e9398;
-    flex: 1 1;
-    font-family: inherit;
-    font-size: 13px;
-    padding: 8px;
-    transition: background-color .2s ease;
-}
-.Toggle_toggle__QrBXX.Toggle_toggleBinaryTheme__1nn8h, .Toggle_toggleButton__5dYiw {
-    cursor: pointer;
-}
-
-.Toggle_toggleButton__5dYiw {
-    background: transparent;
-    border: none;
-    border-radius: 10px;
-    color: #8e9398;
-    flex: 1 1;
-    font-family: inherit;
-    font-size: 13px;
-    padding: 8px;
-    transition: background-color .2s ease;
-}
-
-.Toggle_toggle__QrBXX.Toggle_toggleBinaryTheme__1nn8h, .Toggle_toggleButton__5dYiw {
-    cursor: pointer;
-}
-
-
-
+// CSS zako za awali...
 .loading-container {
     display: flex;
     justify-content: center;

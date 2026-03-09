@@ -1,128 +1,85 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import { ref, onMounted, computed } from 'vue'
-import { useBetsStore } from '../../../stores/betsStore' // Adjust path based on your structure
+import { ref, onMounted } from 'vue'
 import WiningCupImage from '../../../assets/media/main_trophy_bronze_b8a77b5e1a.webp' 
 import WiningCupImageBackground from '../../../assets/media/Property_1_Bronze_confetti_b5028c1425.webp' 
-import Loader from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
-
 const route = useRoute()
 const router = useRouter()
-const betsStore = useBetsStore()
+const betId = route.params.id
 
-// Get current bet from store
-const currentBet = computed(() => betsStore.currentBet)
+const currentBet = ref(null)
+
 const isTaxDetailsOpen = ref(false)
-const isLoading = ref(true)
 
-onMounted(async () => {
-  const betId = route.params.id
-  
-  // Check if we have the bet in store
-  if (currentBet.value) {
-    console.log('Bet received from store:', currentBet.value)
-    isLoading.value = false
-    return
-  }
-  
-  // Try to find bet by ID from store's settledBets
-  const foundBet = betsStore.getBetById(betId)
-  if (foundBet) {
-    betsStore.setCurrentBet(foundBet)
-    console.log('Found bet in store by ID:', foundBet)
-    isLoading.value = false
-    return
-  }
-  
-  // Fallback: Try localStorage
-  const storedBets = localStorage.getItem('settledBets')
-  if (storedBets) {
-    const bets = JSON.parse(storedBets)
-    const foundBet = bets.find(b => b.id == betId)
-    if (foundBet) {
-      betsStore.setCurrentBet(foundBet)
-      betsStore.setSettledBets(bets) // Also update store
-      console.log('Found bet via localStorage:', foundBet)
-      isLoading.value = false
-      return
-    }
-  }
-  
-  // If all else fails, load from API
-  await loadBetFromApi(betId)
-})
+const taxDetailTitle = ref('Tax Details')
 
-// Load bet from API
-const loadBetFromApi = async (betId) => {
-  try {
-    isLoading.value = true
+import Loader from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
+
+
+const isLoading = ref(false)
+
+onMounted(()=>{
+
+
+
     
+console.log('Looking for bet ID:', betId);
+console.log('Type of betId from route:', typeof betId);
+
+
+
+// Method 2: Try localStorage
+const storedBets = localStorage.getItem('settledBets');
+
+if (storedBets) {
+    const allBets = JSON.parse(storedBets);
  
+    // Try ways to find the bet
+    const foundBet = allBets.find(bet => {
+        
+        
+        // Try loose comparison
+        if (bet.id == betId) { // Double equals for type coercion
+            console.log('Found by loose comparison');
+            return true;
+        }
+        
+        return false;
+    });
     
-    // Simulating API call for now
-    await new Promise(resolve => setTimeout(resolve, 500))
-    
-    
-    
-    // Update settledBets if needed
-    const currentSettledBets = betsStore.settledBets
-    if (!currentSettledBets.find(b => b.id == betId)) {
-      betsStore.setSettledBets([...currentSettledBets])
+    if (foundBet) {
+        currentBet.value = foundBet;
+        console.log('Found bet:', currentBet.value);
+    } else {
+        console.log('Bet not found. Available IDs:', allBets.map(b => b.id));
+        console.log('Looking for:', betId);
     }
+} else {
+    console.log('No settledBets in localStorage');
+}
+
+    isLoading.value = true
+    setTimeout(() => {
+        isLoading.value = false
+    }, 1000); // Simulate loading for 1 second
+})
+
+const toggleTaxDetail = ()=>{
+    isTaxDetailsOpen.value = !isTaxDetailsOpen.value
+}
+
+
+
+
     
-  } catch (error) {
-    console.error('Failed to load bet from API:', error)
-  } finally {
-    isLoading.value = false
-  }
-}
+    const goBack = () => {
+      router.push({ name: 'Settled' })
+      
+      // router.go(-1)
+    }
+    </script>
 
-const toggleTaxDetail = () => {
-  isTaxDetailsOpen.value = !isTaxDetailsOpen.value
-}
-
-const goBack = () => {
-  // Clear current bet when going back (optional)
-  // betsStore.clearCurrentBet()
-  router.push({ name: 'Settled' })
-}
-
-// Helper computed properties for bet data
-const betPayout = computed(() => {
-  return currentBet.value?.payout || '0.00'
-})
-
-const betStake = computed(() => {
-  return currentBet.value?.stake || '0.00'
-})
-
-
-const potentialWin = computed(() => {
-  // Check if currentBet exists and has value
-  if (!currentBet.value) return 0
-  
-  const holdOdds = currentBet.value.total_odds - 1
-  return holdOdds * currentBet.value.stake
-})
-
-
-const withHoldingTax = computed(() => {
-  return (potentialWin.value * 0.12).toFixed(2)
-})
-
-const payoutWin = computed(() => {
-  // Force convert everything to numbers
-  const potential = Number(potentialWin.value) || 0
-  const tax = Number(withHoldingTax.value) || 0
-  const stake = Number(currentBet.value?.stake) || 0
-  
-  const result = potential - tax + stake
-  return result.toFixed(2) // toFixed inafanya kazi kwenye number
-})
-
-
-</script>
 
 <template>
     
@@ -156,7 +113,7 @@ const payoutWin = computed(() => {
                 style="border-image: linear-gradient(to right, rgb(176, 96, 55), rgb(230, 149, 103), rgb(217, 111, 53), rgb(141, 69, 29), rgb(230, 149, 103)) 1 / 1 / 0 stretch;">
                 <div data-v-7f504cc4="" class="summary-line">
                     <div data-v-7f504cc4="" class="label">Odds:</div>
-                    <div data-v-7f504cc4="" class="value">{{ currentBet.total_odds }}</div>
+                    <div data-v-7f504cc4="" class="value">{{ currentBet.odds }}</div>
                 </div>
                 <div data-v-7f504cc4="" class="summary-line selected">
                     <div data-v-7f504cc4="" class="label">Stake:</div>
@@ -166,7 +123,7 @@ const payoutWin = computed(() => {
                 <div data-v-7f504cc4="" class="summary-line selected">
                     <div data-v-7f504cc4="" class="label">Potential Winnings:</div>
                     <div data-v-7f504cc4="" class="currency value" data-test-id="possibleWinAmount"> <span
-                            class="symbol contrast">TSh</span> <span class="amount">{{ potentialWin }}</span> <!----></div>
+                            class="symbol contrast">TSh</span> <span class="amount">2.40</span> <!----></div>
                 </div> 
                 <div data-v-5d3da755="" data-v-7f504cc4="" class="tax-details">
     <div data-v-aabe1219="" data-v-5d3da755=""
@@ -203,7 +160,7 @@ const payoutWin = computed(() => {
             <div data-v-aabe1219="" class="row-cell align-middle tax-amount-header">
                 <div data-v-5d3da755="" class="currency value">
                     <span class="symbol contrast">TSh</span>
-                    <span class="amount">{{ withHoldingTax }}</span>
+                    <span class="amount">0.29</span>
                 </div>
             </div>
             </div>
@@ -224,18 +181,18 @@ const payoutWin = computed(() => {
                 <div data-v-5d3da755="" class="label">Gross Winnings:</div>
                 <div data-v-5d3da755="" class="currency value" data-test-id="grossWinnings">
                     <span class="symbol contrast">TSh</span>
-                    <span class="amount">{{ potentialWin }}</span>
+                    <span class="amount">2.40</span>
                 </div>
             </div>
             
             <div data-v-5d3da755="" class="divider"></div>
-
+            
             <!-- Withholding Tax (also shown in header) -->
             <div data-v-5d3da755="" class="summary-line">
                 <div data-v-5d3da755="" class="label">Withholding Tax 12%:</div>
                 <div data-v-5d3da755="" class="currency value" data-test-id="withholdingTax">
                     <span class="symbol contrast">TSh</span>
-                    <span class="amount">{{ withHoldingTax }}</span>
+                    <span class="amount">0.29</span>
                 </div>
             </div>
             
@@ -247,7 +204,7 @@ const payoutWin = computed(() => {
                 <div data-v-7f504cc4="" class="summary-line result" data-test-id="summaryLine">
                     <div data-v-7f504cc4="" class="label winning-result">Payout:</div>
                     <div data-v-7f504cc4="" class="currency value winning-result" data-test-class="betResult"
-                        data-test-id="betResultWon">WON <span class="symbol">TSh</span> <span class="amount">{{payoutWin }}</span>
+                        data-test-id="betResultWon">WON <span class="symbol">TSh</span> <span class="amount">3.11</span>
                         </div>
                 </div>
             </div>
@@ -257,106 +214,51 @@ const payoutWin = computed(() => {
                         style="vertical-align: middle;"><!---->
                         <use data-v-02f45589="" xlink:href="#icon-share"></use>
                     </svg> <span data-v-7f504cc4="">Share your win</span></button></div> <!----> <!----> <!----> <!---->
-        </div> 
-        
-
-           <!-- Teams start here -->
-        <div data-v-695b065a="" data-v-7f504cc4="" class="event" data-test-id="stakeInfo">
+        </div> <!---->
+        <div data-v-695b065a="" data-v-7f504cc4="" class="event" data-test-id="stakeInfo"><!----> <!---->
             <div data-v-695b065a="" class="event-line event-header"><!---->
                 <div data-v-695b065a="" class="event-label">
                     <div data-v-695b065a="" class="label">
-                        <div data-v-695b065a="">{{ currentBet.timeMatche1 }} <span data-v-695b065a="" class="date">{{ currentBet.dateMatche1 }}</span></div>
-                    </div> 
+                        <div data-v-695b065a="">12:00 am <span data-v-695b065a="" class="date">Sat 30/08</span></div>
+                    </div> <!----> <!---->
                 </div>
-                <div data-v-695b065a="" class="value odd win"><span data-v-695b065a="" class="">{{ currentBet.oddsMatche1}}</span>
-                     <span
+                <div data-v-695b065a="" class="value odd win"><span data-v-695b065a="" class="">3.40</span> <span
                         data-v-891f4695="" data-v-695b065a="" class="badge type-win mode-circle badge-result"><!---->
-                </span>
-                    
-                </div>
+                        <!----></span></div>
             </div>
             <div data-v-695b065a="" class="event-line">
                 <div data-v-695b065a="" class="label">
                     <div data-v-695b065a="" class="match" data-test-id="matchName"><svg data-v-02f45589=""
                             data-v-695b065a="" class="svg-icon sport-icon" style="vertical-align: middle;"><!---->
                             <use data-v-02f45589="" xlink:href="#icon-football"></use>
-                        </svg> <span data-v-95226610="" data-v-695b065a="">{{ currentBet.homeMatche1 }} - {{ currentBet.awayMatche1 }}</span></div>
-                    <div data-v-695b065a="" class="league">{{ currentBet.leagueMatche1 }}</div>
-                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Correct Score | Full Time ({{ currentBet.scoreMatche1 }})
+                        </svg> <span data-v-95226610="" data-v-695b065a="">CS Herediano U21 - AD Municipal Liberia
+                            U21</span></div>
+                    <div data-v-695b065a="" class="league">U21 Liga Ulatina</div>
+                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Correct Score | Full Time (1-2)
                             </span></div>
                 </div>
                 <div data-v-695b065a="" class="value">
-                    <div data-v-695b065a=""><span data-v-695b065a="" class="result">{{ currentBet.scoreMatche1 }}</span></div>
-                    <div data-v-695b065a="" class="event-info"></div>
+                    <div data-v-695b065a=""><span data-v-695b065a="" class="result">1-2</span></div>
+                    <div data-v-695b065a="" class="event-info"><!----> <!----></div>
                 </div>
             </div>
-        </div>
-
-
-
-
-
-
-        <div data-v-695b065a="" data-v-7f504cc4="" class="event" data-test-id="stakeInfo">
-            <div data-v-695b065a="" class="event-line event-header"><!---->
-                <div data-v-695b065a="" class="event-label">
-                    <div data-v-695b065a="" class="label">
-                        <div data-v-695b065a="">{{ currentBet.timeMatche2 }} <span data-v-695b065a="" class="date">{{ currentBet.dateMatche2 }}</span></div>
-                    </div> 
-                </div>
-                <div data-v-695b065a="" class="value odd win"><span data-v-695b065a="" class="">{{ currentBet.oddsMatche2}}</span>
-                     <span
-                        data-v-891f4695="" data-v-695b065a="" class="badge type-win mode-circle badge-result"><!---->
-                </span>
-                    
-                </div>
-            </div>
-            <div data-v-695b065a="" class="event-line">
-                <div data-v-695b065a="" class="label">
-                    <div data-v-695b065a="" class="match" data-test-id="matchName"><svg data-v-02f45589=""
-                            data-v-695b065a="" class="svg-icon sport-icon" style="vertical-align: middle;"><!---->
-                            <use data-v-02f45589="" xlink:href="#icon-football"></use>
-                        </svg> <span data-v-95226610="" data-v-695b065a="">{{ currentBet.homeMatche2 }} - {{ currentBet.awayMatche2 }}</span></div>
-                    <div data-v-695b065a="" class="league">{{ currentBet.leagueMatche2 }}</div>
-                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Correct Score | Full Time ({{ currentBet.scoreMatche2 }})
-                            </span></div>
-                </div>
-                <div data-v-695b065a="" class="value">
-                    <div data-v-695b065a=""><span data-v-695b065a="" class="result">{{ currentBet.scoreMatche2 }}</span></div>
-                    <div data-v-695b065a="" class="event-info"></div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        
-
-
-        <!-- Teams end here -->
-
-
+        </div> <!---->
         <div data-v-7f504cc4="" class="legend">
             <div data-v-7f504cc4="" class="lightgray placed-date">
-                <div data-v-7f504cc4="">Bet placed on <span data-v-7f504cc4="" class="nowrap">{{ currentBet.date }} at {{ currentBet.time }}</span></div>
+                <div data-v-7f504cc4="">Bet placed on <span data-v-7f504cc4="" class="nowrap">Sat 30/08 at 1:21
+                        am</span></div>
                 <div data-v-7f504cc4="" class="summary-legend"><span data-v-891f4695="" data-v-7f504cc4=""
-                        class="badge type-pending mode-circle"></span> <span
+                        class="badge type-pending mode-circle"><!----> <!----></span> <span
                         data-v-7f504cc4="">Pending</span> <span data-v-891f4695="" data-v-7f504cc4=""
-                        class="badge type-win mode-circle"></span> <span data-v-7f504cc4="">Won</span>
+                        class="badge type-win mode-circle"><!----> <!----></span> <span data-v-7f504cc4="">Won</span>
                     <span data-v-891f4695="" data-v-7f504cc4="" class="badge type-lose mode-circle"><!---->
-                        </span> <span data-v-7f504cc4="">Lost</span> <span data-v-891f4695="" data-v-7f504cc4=""
+                        <!----></span> <span data-v-7f504cc4="">Lost</span> <span data-v-891f4695="" data-v-7f504cc4=""
                         class="badge type-cancelled mode-circle"><svg data-v-02f45589="" data-v-891f4695=""
                             class="svg-icon icon icon-size-medium" style="vertical-align: middle;"><!---->
                             <use data-v-02f45589="" xlink:href="#icon-close"></use>
-                        </svg> </span> <span data-v-7f504cc4="">Void</span></div>
+                        </svg> <!----></span> <span data-v-7f504cc4="">Void</span></div>
             </div>
         </div>
-
         <div data-v-fb673205="" data-v-7f504cc4="" class="mybets-regulation">
             <p data-v-fb673205="" class="mybets-regulation-msg"><span data-v-fb673205="">All bets are accepted and
                     settled in accordance with our <b><a href="/terms" class="underline">Terms and Conditions</a></b>

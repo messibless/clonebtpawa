@@ -25,8 +25,9 @@ const handleWithdraw = () => {
     <div data-v-3cb9dec9="" class="withdraw router-view" params="[object Object]">
         <div data-v-c9b60287="" data-v-3cb9dec9="">
             <div data-v-907442d3="" class="header-container">
-                <h2 data-v-907442d3="">Withdraw</h2>
+                <h2 data-v-907442d3="">Withdraw </h2>
             </div>
+            <span class="StrapiWidgetWithdraw_description__QWS6l">Making a withdrawal is free and easy. Just enter these details and then click WITHDRAW.</span>
             <div data-v-c9b60287="" class="withdraw-component">
                 <div data-v-c9b60287="" class="withdraw-form-wrapper">
                     <div data-v-c9b60287="">
@@ -61,12 +62,9 @@ const handleWithdraw = () => {
                                         <input 
                                             v-model="amount"
                                             data-v-1a892a33="" 
-                                            pattern="[0-9]*" 
-                                            inputmode="numeric"
+                                            inputmode="text"
                                             id="withdraw-form-amount" 
-                                            name="amount" 
-                                            type="number" 
-                                            step="1"
+                                            type="text" 
                                         >
                                     </div>
                                     <div data-v-1a892a33="" class="help-text">Min: 100, Max: 3,000,000</div>
@@ -86,12 +84,28 @@ const handleWithdraw = () => {
                 </div>
             </div>
         </div>
+
+
     </div>
+
 </template>
 
 <style lang="scss" scoped>
 /* Hizi hapa ni styles zako ulizozitoa, nimebakiza data-v selectors kama zilivyo */
 
+
+.StrapiWidgetWithdraw_description__QWS6l, .StrapiWidgetWithdraw_infoTextKE__0NfOb {
+    margin-bottom: 10px;
+    color: #252a2d;
+}
+
+.StrapiWidgetWithdraw_description__QWS6l, .StrapiWidgetWithdraw_successTitle__I6Hja {
+    font-weight: 400;
+}
+.StrapiWidgetWithdraw_description__QWS6l, .StrapiWidgetWithdraw_infoTextKE__0NfOb, .StrapiWidgetWithdraw_successTitle__I6Hja {
+    font-size: 14px;
+    line-height: 18px;
+}
 .withdraw[data-v-3cb9dec9] {
     padding: 20px;
 }

@@ -5,7 +5,7 @@ import AfricanLeague from '../../../../assets/media/noun_europe_188772_1_de866e5
 import EuropeanLeague from '../../../../assets/media/Europe_43bd11c816.svg'
 import leagueShortcut from '../league-shortcut.vue';
 import FootballBannerImage from '../../../../assets/media/lg_990x272_1_4fd3446df7.webp'
-
+import IconFoo from '../assets/analytics_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import { dummyGamesData } from '../data/dummyGameData'
 import { ref, onMounted } from 'vue'
 
@@ -104,7 +104,7 @@ const formatTime = (timeString) => {
                   :data-test-id="`nav-event-${game.eventId}-link`" :name="`id-${game.eventId}`">
                   <div data-v-ea5d556a="" class="game-event-header">
                     <div data-v-ea5d556a="" class="game-event-header-left-content">
-                      {{ formatTime(game.time) }} <span data-v-ea5d556a="" class="game-event-date">{{ formatDate(game.date)}}</span>
+                      {{ game.time }} <span data-v-ea5d556a="" class="game-event-date">{{ game.date}}</span>
                     </div>
                     <div data-v-ea5d556a="" class="game-event-header-right-content">
                       <!-- Two-Up Badge (conditional) -->
@@ -115,6 +115,9 @@ const formatTime = (timeString) => {
                           <use data-v-02f45589="" xlink:href="#icon-two-up"></use>
                         </svg>
                       </span>
+                      <button type="button" class="SportEvents_statisticsIconWrapper__0Ash1 SportEvents_statisticsIconWithDivider__1Rhe8" fdprocessedid="7pgogk">
+                        <img :src="IconFoo" alt="hh" srcset="">
+                      </button>
 
                       <!-- Boosted Odds Badge (conditional) -->
                       <span v-if="game.hasBoostedOdds" data-v-891f4695="" data-v-ea5d556a=""

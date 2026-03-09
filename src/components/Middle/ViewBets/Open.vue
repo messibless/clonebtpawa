@@ -7,7 +7,7 @@ import { useBets } from './composables/useBets'
 
 
 
-const { openBets, fetchBets, isLoading } = useBets()
+const { openBets, fetchBets, loading } = useBets()
 
 const hasData = computed(() => openBets.value.length > 0)
 
@@ -21,7 +21,7 @@ onMounted(() => {
 <template>
  <div data-v-beccd7ea="" class="bets-list-container">
    <!-- LOADER SECTION -->
-   <div v-if="isLoading" class="loading-container">
+   <div v-if="loading" class="loading-container">
                         <img :src="Loader" alt="Loading..." />
           </div>
 
@@ -45,15 +45,22 @@ onMounted(() => {
 </section>
 
             
-            <section v-else data-v-beccd7ea="" aria-hidden="false" class="tab-section" >
+            <section 
+            v-else 
+
+            data-v-beccd7ea="" aria-hidden="false" class="tab-section" >
                 <div data-v-34417751="" data-v-beccd7ea="">
-                            <div data-v-34417751="" class="bet" data-test-id="bet-pending-10655410033" data-test-class="bet-pending">
+                            
+                  <div
+                  v-for="bet in openBets" 
+                  :key="bet.id"
+                   data-v-34417751="" class="bet" data-test-id="bet-pending-10655410033" data-test-class="bet-pending">
                             <div data-v-34417751="" class="bet-line bet-header">
                                 <div data-v-34417751="" class="header-container">
-                                <div data-v-34417751="" class="header-title"><span data-v-34417751="" class="time">11:17 am,&nbsp;
-                                    </span> <span data-v-34417751="" class="date">Fri 16/01</span> <span data-v-34417751=""
+                                <div data-v-34417751="" class="header-title"><span data-v-34417751="" class="time">{{ bet.time }};
+                                    </span> <span data-v-34417751="" class="date">{{ bet.date }}</span> <span data-v-34417751=""
                                     class="bet-live-now"></span></div>
-                                <div data-v-34417751="" class="id" data-test-id="bet-id">ID: #10655410033 </div>
+                                <div data-v-34417751="" class="id" data-test-id="bet-id">ID: #{{ bet.id }} </div>
                                 </div>
                             </div>
                             <div data-v-34417751="" class="bet-line bet-status">
@@ -70,16 +77,16 @@ onMounted(() => {
                             <div data-v-34417751="" class="bet-line bet-body">
                                 <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">STAKE</span>
                                 <div data-v-34417751="" class="currency-container">
-                                    <div data-v-34417751="" class="currency value"> <span class="amount">3.00</span>
+                                    <div data-v-34417751="" class="currency value"> <span class="amount">{{ bet.stake }}</span>
                                     </div>
                                 </div> 
                                 </div>
                                 <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">ODDS</span> <span
-                                    data-v-34417751="" class="value">1.39</span> </div>
+                                    data-v-34417751="" class="value">{{ bet.total_odds }}</span> </div>
                                 <div data-v-34417751="" class="bet-detail end"><span data-v-34417751="" class="label">PAYOUT</span>
                                 <div data-v-34417751="" class="currency-container bold-symbol">
                                     <div data-v-34417751="" class="currency value"> <span class="symbol contrast">TSh</span> <span
-                                        class="amount">4.03</span></div>
+                                        class="amount">{{ bet.payout }}</span></div>
                                 </div> 
                                 </div>
                         </div>

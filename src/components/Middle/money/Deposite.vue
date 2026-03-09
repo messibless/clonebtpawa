@@ -76,6 +76,9 @@ const handleDeposit = () => {
                             <strong>PS! Make sure that you have a mobile money account and sufficient funds to make a deposit.</strong>
                         </p>
                     </div>
+                    <div class="space">
+
+                    </div>
 
                     <div data-v-93d3cc4d="" data-v-fc0cbc39="" class="payment-component-wrapper">
                         <div data-v-93d3cc4d="">
@@ -111,10 +114,9 @@ const handleDeposit = () => {
                                                     <input 
                                                         v-model="amount"
                                                         data-v-1a892a33="" 
-                                                        inputmode="decimal" 
                                                         id="deposit-form-amount-input" 
                                                         name="amount-input" 
-                                                        type="number"
+                                                        type="text"
                                                     >
                                                 </div>
                                                 <div data-v-1a892a33="" class="help-text">Min: 100.00, Max: 5,000,000.00</div>
@@ -300,12 +302,15 @@ const handleDeposit = () => {
 }
 .rich-text-components p[data-v-e5847ff3] {
     line-height: 1.4;
+    
 }
 .rich-text-components p[data-v-e5847ff3] {
     line-height: 1.4;
     color: #252a2d;
 }
-
+.space{
+    margin-bottom: 40px;
+}
 p, .page-error, .notify, label, .info {
     font-weight: 400;
 }

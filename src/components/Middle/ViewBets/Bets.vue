@@ -1,7 +1,11 @@
 <script setup>
     import { useRoute } from 'vue-router'
     import { ref, computed } from 'vue'
+    import { useBets } from './composables/useBets'
 
+
+
+const { openBets, fetchBets, loading } = useBets()
     const route = useRoute()
     
     // Helper to check active route
@@ -10,7 +14,7 @@
     }
 
 
-
+    const openBetsCount = computed(() => openBets.value.length)
 
 // const items = ref([])
 
@@ -67,7 +71,7 @@ const hasData = computed(() => {
 
                   <div data-v-d3915418="" class="tab-item-border" v-if="hasData">
                     <span data-v-d3915418="" class="tab-text">Open</span> 
-                    <span data-v-d3915418="" class="tab-counter active">1</span>
+                    <span data-v-d3915418="" class="tab-counter active">{{ openBetsCount }}</span>
                   </div>
 
                   <div data-v-d3915418="" class="tab-item-border" v-else>
