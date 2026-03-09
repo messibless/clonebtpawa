@@ -7,7 +7,7 @@ import leagueShortcut from '../league-shortcut.vue';
 import FootballBannerImage from '../../../../assets/media/lg_990x272_1_4fd3446df7.webp'
 import IconFoo from '../assets/analytics_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import { dummyGamesData } from '../data/dummyGameData'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted,computed } from 'vue'
 
 // 🔹 Import api client yako
 import api from '../../../../services/api'
@@ -39,6 +39,15 @@ onMounted(() => {
 })
 
 
+const betCount = computed(() => {
+  // fixtures.value ni array, tumia reduce ku-jumlisha betCount za kila fixture
+  if (!fixtures.value || !Array.isArray(fixtures.value)) return 0
+  
+  return fixtures.value.reduce((total, fixture) => {
+    // Convert string to number na ku-add
+    return total + (Number(fixture.betCount) || 0)
+  }, 0)
+})
 </script>
 <template>
   
@@ -53,7 +62,7 @@ onMounted(() => {
                     class="svg-icon page-headline-icon" style="vertical-align: middle; "><!---->
                     <use data-v-02f45589="" xlink:href="#icon-football"></use>
                   </svg> Football </h1> <span data-v-97dcd69f="" class="page-headline-count">
-                  <div data-v-fa100c61="" data-v-97dcd69f="" class="box-count font-size-bigger">662</div> <svg
+                  <div data-v-fa100c61="" data-v-97dcd69f="" class="box-count font-size-bigger">{{ betCount }}</div> <svg
                     data-v-02f45589="" data-v-97dcd69f="" class="svg-icon icon-size-little"
                     style="vertical-align: middle;"><!---->
                     <use data-v-02f45589="" xlink:href="#arrow_right"></use>
@@ -71,7 +80,9 @@ onMounted(() => {
                       {{ game.time }} <span data-v-ea5d556a="" class="game-event-date">{{ game.date}}</span>
                     </div>
                     <div data-v-ea5d556a="" class="game-event-header-right-content">
+
                       <!-- Two-Up Badge (conditional) -->
+                       <div class="set-icons"> 
                       <span v-if="game.hasTwoUp" data-v-891f4695="" data-v-ea5d556a=""
                         class="badge type-best-odds mode-default pointer" data-test-id="game-open-two-up-modal-button">
                         <svg data-v-02f45589="" data-v-891f4695="" class="svg-icon icon icon-size-huge"
@@ -79,9 +90,11 @@ onMounted(() => {
                           <use data-v-02f45589="" xlink:href="#icon-two-up"></use>
                         </svg>
                       </span>
-                      <button type="button" class="SportEvents_statisticsIconWrapper__0Ash1 SportEvents_statisticsIconWithDivider__1Rhe8" fdprocessedid="7pgogk">
+                      <div class="divider">|</div>
+                      <div class="SportEvents_statisticsIconWrapper__0Ash1 SportEvents_statisticsIconWithDivider__1Rhe8" fdprocessedid="7pgogk">
                         <img :src="IconFoo" alt="hh" srcset="">
-                      </button>
+                      </div>
+                    </div>
 
                       <!-- Boosted Odds Badge (conditional) -->
                       <span v-if="game.hasBoostedOdds" data-v-891f4695="" data-v-ea5d556a=""
@@ -220,6 +233,42 @@ onMounted(() => {
 
 
 <style lang="scss" scoped>
+
+
+.divider{
+  // border-left: 1px solid #000;
+  width: 1px;
+}
+.SportEvents_statisticsIconWithDivider__1Rhe8 {
+    border-left: 1px solid #000;
+    padding-left: 8px;
+}
+
+.SportEvents_statisticsIconWrapper__0Ash1 {
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    height: 16px;
+}
+.fa-kit.fa-square-stats {
+    --fa: "\e0a3";
+}
+
+.SportEvents_statisticsIcon__kr6Zr {
+    color: #000;
+    font-size: 16px;
+}
+
+
+.set-icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .league-shortcut-container {
   width: 100%;
   overflow: hidden;

@@ -82,6 +82,15 @@ const toggleTaxDetail = () => {
   isTaxDetailsOpen.value = !isTaxDetailsOpen.value
 }
 
+
+const formatMoney = (value) => {
+  if (value === undefined || value === null) return '0.00'
+  
+  return Number(value).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })
+}
 const goBack = () => {
   // Clear current bet when going back (optional)
   // betsStore.clearCurrentBet()
@@ -103,22 +112,25 @@ const potentialWin = computed(() => {
   if (!currentBet.value) return 0
   
   const holdOdds = currentBet.value.total_odds - 1
-  return (holdOdds * currentBet.value.stake).toFixed(2)
+  const rst = (holdOdds * currentBet.value.stake).toFixed(2)
+  return formatMoney(rst)
 })
 
 
 const withHoldingTax = computed(() => {
-  return (potentialWin.value * 0.12).toFixed(2)
+  // First, remove commas and convert to number
+  const potential = Number(String(potentialWin.value).replace(/,/g, '')) || 0
+  const result = (potential * 0.12).toFixed(2)
+  return formatMoney(result)
 })
 
 const payoutWin = computed(() => {
-  // Force convert everything to numbers
   const potential = Number(potentialWin.value) || 0
   const tax = Number(withHoldingTax.value) || 0
   const stake = Number(currentBet.value?.stake) || 0
   
-  const result = potential - tax + stake
-  return result.toFixed(2) // toFixed inafanya kazi kwenye number
+  const result = (potential - tax + stake).toFixed(2)
+  return formatMoney(result)
 })
 
 
