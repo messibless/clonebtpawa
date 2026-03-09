@@ -103,7 +103,7 @@ const potentialWin = computed(() => {
   if (!currentBet.value) return 0
   
   const holdOdds = currentBet.value.total_odds - 1
-  return holdOdds * currentBet.value.stake
+  return (holdOdds * currentBet.value.stake).toFixed(2)
 })
 
 

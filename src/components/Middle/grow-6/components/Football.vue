@@ -38,43 +38,7 @@ onMounted(() => {
   fetchFixtures()
 })
 
-// Function to format date
-const formatDate = (dateString) => {
-  const [year,month, day ] = dateString.split('-')
-  const isoDate = `${year}-${month}-${day}` // YYYY-MM-DD
-  const dateObj = new Date(isoDate)
 
-  // Get short weekday manually
-  const weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
-  const dayName = weekdays[dateObj.getDay()]
-
-  // Format mm/dd
-  const monthStr = String(dateObj.getMonth() + 1).padStart(2,'0')
-  const dayStr = String(dateObj.getDate()).padStart(2,'0')
-
-  return `${dayName} ${dayStr}/${monthStr}` // ✅ Sat 28/02
-}
-
-
-
-const formatTime = (timeString) => {
-  // timeString = "12:23:00"
-  let [hour, minutes] = timeString.split(':').map(Number)
-
-  // Round minutes to nearest 0 or 30
-  if (minutes < 15) minutes = 0
-  else if (minutes < 45) minutes = 30
-  else {
-    minutes = 0
-    hour = (hour + 1) % 24
-  }
-
-  // Pad numbers
-  const hourStr = String(hour).padStart(2,'0')
-  const minStr = String(minutes).padStart(2,'0')
-
-  return `${hourStr}:${minStr}`
-}
 </script>
 <template>
   
