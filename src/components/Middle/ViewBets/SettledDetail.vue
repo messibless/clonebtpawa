@@ -124,16 +124,6 @@ const withHoldingTax = computed(() => {
   return formatMoney(result)
 })
 
-// const payoutWin = computed(() => {
-//   const potential = Number(potentialWin.value) || 0
-//   const tax = Number(withHoldingTax.value) || 0
-//   const stake = Number(currentBet.value?.stake) || 0
-  
-//   const result = (potentialWin - withHoldingTax + stake).toFixed(2)
-//   return formatMoney(result)
-// })
-// First, create raw values for calculations
-
 const payoutWin = computed(() => {
   // Remove commas from both formatted values
   const potential = Number(String(potentialWin.value).replace(/,/g, '')) || 0

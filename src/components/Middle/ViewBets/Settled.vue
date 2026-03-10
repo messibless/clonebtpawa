@@ -77,6 +77,43 @@ const goToBetDetails = (bet) => {
     // No need for state now
   })
 }
+
+
+
+
+
+const formatMoney = (value) => {
+  if (value === undefined || value === null) return '0.00'
+  
+  return Number(value).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })
+}
+
+
+
+
+
+
+
+// Hii inatosha - inachukua displayedBets na ku-calculate payout
+
+const displayedBetsWithDetails = computed(() => {
+  return displayedBets.value.map(bet => {
+    const stake = Number(bet.stake) || 0
+    const odds = Number(bet.total_odds) || 0
+    
+    const potential = (odds - 1) * stake
+    const tax = potential * 0.12
+    const payout = potential - tax + stake
+    
+    return {
+      ...bet, // Keep all original bet data
+      calculatedPayout: formatMoney(payout) // Add calculated payout
+    }
+  })
+})
 </script>
 
 <template>
@@ -115,7 +152,7 @@ const goToBetDetails = (bet) => {
    
                            
                                <div 
-                               v-for="bet in displayedBets" 
+                               v-for="bet in displayedBetsWithDetails" 
                                :key="bet.id"
                                @click="goToBetDetails(bet)"
 
@@ -143,7 +180,7 @@ const goToBetDetails = (bet) => {
                                        <div data-v-34417751="" class="bet-line bet-body">
                                            <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">STAKE</span>
                                                <div data-v-34417751="" class="currency-container">
-                                                   <div data-v-34417751="" class="currency value"> <span class="amount">{{ bet.stake }}</span>
+                                                   <div data-v-34417751="" class="currency value"> <span class="amount">{{ formatMoney(bet.stake) }}</span>
                                                        </div>
                                                </div>
                                            </div>
@@ -152,7 +189,7 @@ const goToBetDetails = (bet) => {
                                            <div data-v-34417751="" class="bet-detail end"><span data-v-34417751="" class="label">PAYOUT</span>
                                                <div data-v-34417751="" class="currency-container bold-symbol">
                                                    <div data-v-34417751="" class="currency value"> <span class="symbol contrast">TSh</span>
-                                                       <span class="amount">{{ bet.payout }}</span> <!----></div>
+                                                       <span class="amount">{{ bet.calculatedPayout }}</span> <!----></div>
                                                </div> 
                                            </div>
                                        </div>
