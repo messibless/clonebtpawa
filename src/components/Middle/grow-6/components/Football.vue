@@ -206,7 +206,7 @@ const betCount = computed(() => {
               </div>
               <div data-v-4310f641="" data-test-id="more-sports-button" class="event-counter"><span data-v-4310f641=""
                   class="pointer"><span data-v-4310f641="">View all Football</span> <span
-                    data-v-4310f641="">662</span></span> <svg data-v-02f45589="" data-v-4310f641=""
+                    data-v-4310f641="">{{ betCount }}</span></span> <svg data-v-02f45589="" data-v-4310f641=""
                   class="svg-icon icon-size-very-small" style="vertical-align: baseline;"><!---->
                   <use data-v-02f45589="" xlink:href="#arrow_right"></use>
                 </svg></div>

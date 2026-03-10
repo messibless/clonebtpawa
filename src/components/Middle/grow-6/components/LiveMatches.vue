@@ -8,15 +8,46 @@ import leagueShortcut from '../league-shortcut.vue';
 import FootballBannerImage from '../../../../assets/media/lg_990x272_1_4fd3446df7.webp'
 
 import { dummyGamesData } from '../data/dummyGameData'
+import { ref, onMounted,computed } from 'vue'
 
-import { ref, onMounted } from 'vue'
+// 🔹 Import api client yako
+import api from '../../../../services/api'
 
-const games = ref([])
+// State variables (kama useState)
+const fixtures = ref([])
+const loading = ref(false)
+const error = ref('')
 
+// Function to fetch fixtures
+const fetchFixtures = async () => {
+  loading.value = true
+  error.value = ''
+  try {
+    const response = await api.get('/live/') // API endpoint yako
+    fixtures.value = response.data
+    console.log('Fetched live matches:', fixtures.value)
+  } catch (err) {
+    console.error('Error fetching fixtures:', err)
+    error.value = 'Failed to load fixtures'
+  } finally {
+    loading.value = false
+  }
+}
+
+// onMounted replaces useEffect with empty dependency array
 onMounted(() => {
-    setTimeout(() => {
-        games.value = dummyGamesData
-    }, 1200)
+  fetchFixtures()
+})
+
+
+const betCount = computed(() => {
+  // fixtures.value ni array, tumia reduce ku-jumlisha betCount za kila fixture
+  if (!fixtures.value || !Array.isArray(fixtures.value)) return 0
+  
+  return fixtures.value.reduce((total, fixture) => {
+    // Convert string to number na ku-add
+    return total + (Number(fixture.betCount) || 0)
+  }, 0)
 })
 
 </script>
@@ -29,44 +60,44 @@ onMounted(() => {
                         class="svg-icon page-headline-icon" style="vertical-align: middle;"><!---->
                         <use data-v-02f45589="" xlink:href="#icon-live"></use>
                     </svg> Live </h1> <span data-v-97dcd69f="" class="page-headline-count">
-                    <div data-v-fa100c61="" data-v-97dcd69f="" class="box-count font-size-bigger">42</div> <svg
+                    <div data-v-fa100c61="" data-v-97dcd69f="" class="box-count font-size-bigger">{{ betCount }}</div> <svg
                         data-v-02f45589="" data-v-97dcd69f="" class="svg-icon icon-size-little"
                         style="vertical-align: middle;"><!---->
                         <use data-v-02f45589="" xlink:href="#arrow_right"></use>
                     </svg>
                 </span>
             </div>
-            <div data-v-34ba8927="" data-v-4310f641="" class="game-events-container prematch" data-test-id="bpEvent"
-                data-event-id="32751029"><!----> <!----> <!----> <!----> <a data-v-34ba8927="" href="/event/32751029"
+            <div data-v-34ba8927="" v-for="game in fixtures" :key="game.id" data-v-4310f641="" class="game-events-container prematch" data-test-id="bpEvent"
+                data-event-id="32751029"> <a data-v-34ba8927="" href="/event/32751029"
                     class="game-event-wrapper pointer" data-test-id="nav-event-32751029-link" name="id-32751029">
                     <div data-v-34ba8927="" class="game-event-header">
                         <div data-v-34ba8927="" class="game-event-header-left-content"><span data-v-34ba8927=""
-                                class="game-event-subtitle">2H | 78'</span> <!----></div>
-                        <div data-v-34ba8927="" class="game-event-header-right-content"><!----> <!----> <!----> <!---->
+                                class="game-event-subtitle">{{game.term}}H | {{ game.timeUsed }}</span> </div>
+                        <div data-v-34ba8927="" class="game-event-header-right-content">
                         </div>
                     </div>
                     <div data-v-34ba8927="" class="game-scoreboard">
                         <div data-v-9e211631="" data-v-34ba8927="" class="scoreboard-period invert"
                             style="grid-template-columns: auto repeat(1, max-content);">
                             <div data-v-9e211631="" class="scoreboard-period-participant-name-wrapper"><span
-                                    data-v-9e211631="" class="scoreboard-period-participant-name">Karacabey
-                                    Belediyespor</span> <!----></div>
+                                    data-v-9e211631="" class="scoreboard-period-participant-name">{{ game.homeTeam }}</span> <!----></div>
                             <div data-v-9e211631="" class="scoreboard-period-score-cell bigger accent"
-                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">1
+                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">{{ game.homeGoals }}
                                     <!----></span></div>
                             <div data-v-9e211631="" class="scoreboard-period-participant-name-wrapper"><span
-                                    data-v-9e211631="" class="scoreboard-period-participant-name">Adana 01 FK</span>
+                                    data-v-9e211631="" class="scoreboard-period-participant-name">{{ game.awayTeam }}</span>
                                 <!----></div>
                             <div data-v-9e211631="" class="scoreboard-period-score-cell bigger accent"
-                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">1
+                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">{{ game.awayGoals }}
                                     <!----></span></div>
                         </div>
                     </div>
                     <div data-v-34ba8927="">
-                        <p data-v-34ba8927="" class="game-event-breadcrumbs" data-test-id="eventPath">Football / Turkey
-                            / 2. Lig</p>
+                        <p data-v-34ba8927="" class="game-event-breadcrumbs" data-test-id="eventPath">{{ game.league }}</p>
                     </div>
                 </a>
+
+
                 <div data-v-5d6a591a="" data-v-34ba8927="" class="betline-list">
                     <div data-v-5d6a591a="" class="betline-list-data">
                         <div data-v-5d6a591a="" class="betline-market"><!----> <!---->
@@ -82,7 +113,7 @@ onMounted(() => {
                                                             data-v-08809586="" class="event-selection"
                                                             data-test-id="selection">1</span> <span data-v-08809586=""
                                                             class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">4.85</span></span></span></span></span><span
+                                                                data-v-08809586="">{{ game.homeOdds }}</span></span></span></span></span><span
                                                 data-v-08809586="" data-v-aefa9a0d=""
                                                 class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3745"><span
                                                     data-v-08809586="" class="event-bet"><span data-v-08809586=""
@@ -91,7 +122,7 @@ onMounted(() => {
                                                             data-v-08809586="" class="event-selection"
                                                             data-test-id="selection">X</span> <span data-v-08809586=""
                                                             class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">1.40</span></span></span></span></span><span
+                                                                data-v-08809586="">{{ game.drawOdds }}</span></span></span></span></span><span
                                                 data-v-08809586="" data-v-aefa9a0d=""
                                                 class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3746"><span
                                                     data-v-08809586="" class="event-bet"><span data-v-08809586=""
@@ -100,11 +131,11 @@ onMounted(() => {
                                                             data-v-08809586="" class="event-selection"
                                                             data-test-id="selection">2</span> <span data-v-08809586=""
                                                             class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">5.75</span></span></span></span></span>
+                                                                data-v-08809586="">{{ game.awayOdds }}</span></span></span></span></span>
                                             <a data-v-74c3b014="" data-v-5d6a591a="" href="/event/32751029"
                                                 class="betline-count-button"
                                                 data-test-id="nav-event-32751029-betline-link"><span
-                                                    data-v-74c3b014="">23</span> <svg data-v-02f45589=""
+                                                    data-v-74c3b014="">{{ betCount }}</span> <svg data-v-02f45589=""
                                                     data-v-74c3b014="" class="svg-icon icon-size-very-small"
                                                     style="vertical-align: middle;"><!---->
                                                     <use data-v-02f45589="" xlink:href="#arrow_right"></use>
@@ -116,246 +147,9 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <div data-v-34ba8927="" data-v-4310f641="" class="game-events-container prematch" data-test-id="bpEvent"
-                data-event-id="32751017"><!----> <!----> <!----> <!----> <a data-v-34ba8927="" href="/event/32751017"
-                    class="game-event-wrapper pointer" data-test-id="nav-event-32751017-link" name="id-32751017">
-                    <div data-v-34ba8927="" class="game-event-header">
-                        <div data-v-34ba8927="" class="game-event-header-left-content"><span data-v-34ba8927=""
-                                class="game-event-subtitle">2H | 74'</span> <!----></div>
-                        <div data-v-34ba8927="" class="game-event-header-right-content"><!----> <!----> <!----> <!---->
-                        </div>
-                    </div>
-                    <div data-v-34ba8927="" class="game-scoreboard">
-                        <div data-v-9e211631="" data-v-34ba8927="" class="scoreboard-period invert"
-                            style="grid-template-columns: auto repeat(1, max-content);">
-                            <div data-v-9e211631="" class="scoreboard-period-participant-name-wrapper"><span
-                                    data-v-9e211631="" class="scoreboard-period-participant-name">Beykoz
-                                    Anadoluspor</span> <!----></div>
-                            <div data-v-9e211631="" class="scoreboard-period-score-cell bigger accent"
-                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">1
-                                    <!----></span></div>
-                            <div data-v-9e211631="" class="scoreboard-period-participant-name-wrapper"><span
-                                    data-v-9e211631="" class="scoreboard-period-participant-name">1928 Bucaspor</span>
-                                <!----></div>
-                            <div data-v-9e211631="" class="scoreboard-period-score-cell bigger accent"
-                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">1
-                                    <!----></span></div>
-                        </div>
-                    </div>
-                    <div data-v-34ba8927="">
-                        <p data-v-34ba8927="" class="game-event-breadcrumbs" data-test-id="eventPath">Football / Turkey
-                            / 2. Lig</p>
-                    </div>
-                </a>
-                <div data-v-5d6a591a="" data-v-34ba8927="" class="betline-list">
-                    <div data-v-5d6a591a="" class="betline-list-data">
-                        <div data-v-5d6a591a="" class="betline-market"><!----> <!---->
-                            <div data-v-aefa9a0d="" data-v-5d6a591a="">
-                                <div data-v-aefa9a0d="" class="event-bets">
-                                    <div data-v-aefa9a0d="" class="chunks">
-                                        <div data-v-aefa9a0d="" class="chunk"><span data-v-08809586=""
-                                                data-v-aefa9a0d="" class="event-bet-wrapper bet-price"
-                                                data-test-id="Odd-3743-3744"><span data-v-08809586=""
-                                                    class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1380941137"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">1</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">2.70</span></span></span></span></span><span
-                                                data-v-08809586="" data-v-aefa9a0d=""
-                                                class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3745"><span
-                                                    data-v-08809586="" class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1380941138"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">X</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">1.69</span></span></span></span></span><span
-                                                data-v-08809586="" data-v-aefa9a0d=""
-                                                class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3746"><span
-                                                    data-v-08809586="" class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1380941139"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">2</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">7.50</span></span></span></span></span>
-                                            <a data-v-74c3b014="" data-v-5d6a591a="" href="/event/32751017"
-                                                class="betline-count-button"
-                                                data-test-id="nav-event-32751017-betline-link"><span
-                                                    data-v-74c3b014="">20</span> <svg data-v-02f45589=""
-                                                    data-v-74c3b014="" class="svg-icon icon-size-very-small"
-                                                    style="vertical-align: middle;"><!---->
-                                                    <use data-v-02f45589="" xlink:href="#arrow_right"></use>
-                                                </svg></a></div> <!---->
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!---->
-                    </div>
-                </div>
-            </div>
-            <div data-v-34ba8927="" data-v-4310f641="" class="game-events-container prematch" data-test-id="bpEvent"
-                data-event-id="32667519"><!----> <!----> <!----> <!----> <a data-v-34ba8927="" href="/event/32667519"
-                    class="game-event-wrapper pointer" data-test-id="nav-event-32667519-link" name="id-32667519">
-                    <div data-v-34ba8927="" class="game-event-header">
-                        <div data-v-34ba8927="" class="game-event-header-left-content"><span data-v-34ba8927=""
-                                class="game-event-subtitle">2H | 73'</span> <!----></div>
-                        <div data-v-34ba8927="" class="game-event-header-right-content"><!----> <!----> <!----> <!---->
-                        </div>
-                    </div>
-                    <div data-v-34ba8927="" class="game-scoreboard">
-                        <div data-v-9e211631="" data-v-34ba8927="" class="scoreboard-period invert"
-                            style="grid-template-columns: auto repeat(1, max-content);">
-                            <div data-v-9e211631="" class="scoreboard-period-participant-name-wrapper"><span
-                                    data-v-9e211631="" class="scoreboard-period-participant-name">Bangkok FC</span>
-                                <!----></div>
-                            <div data-v-9e211631="" class="scoreboard-period-score-cell bigger accent"
-                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">1
-                                    <!----></span></div>
-                            <div data-v-9e211631="" class="scoreboard-period-participant-name-wrapper"><span
-                                    data-v-9e211631="" class="scoreboard-period-participant-name">Kasetsart FC</span>
-                                <!----></div>
-                            <div data-v-9e211631="" class="scoreboard-period-score-cell bigger accent"
-                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">1
-                                    <!----></span></div>
-                        </div>
-                    </div>
-                    <div data-v-34ba8927="">
-                        <p data-v-34ba8927="" class="game-event-breadcrumbs" data-test-id="eventPath">Football /
-                            Thailand / Thai League 2</p>
-                    </div>
-                </a>
-                <div data-v-5d6a591a="" data-v-34ba8927="" class="betline-list">
-                    <div data-v-5d6a591a="" class="betline-list-data">
-                        <div data-v-5d6a591a="" class="betline-market"><!----> <!---->
-                            <div data-v-aefa9a0d="" data-v-5d6a591a="">
-                                <div data-v-aefa9a0d="" class="event-bets">
-                                    <div data-v-aefa9a0d="" class="chunks">
-                                        <div data-v-aefa9a0d="" class="chunk"><span data-v-08809586=""
-                                                data-v-aefa9a0d="" class="event-bet-wrapper bet-price"
-                                                data-test-id="Odd-3743-3744"><span data-v-08809586=""
-                                                    class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1382320803"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">1</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">7.75</span></span></span></span></span><span
-                                                data-v-08809586="" data-v-aefa9a0d=""
-                                                class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3745"><span
-                                                    data-v-08809586="" class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1382320804"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">X</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">1.77</span></span></span></span></span><span
-                                                data-v-08809586="" data-v-aefa9a0d=""
-                                                class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3746"><span
-                                                    data-v-08809586="" class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1382320805"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">2</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">2.50</span></span></span></span></span>
-                                            <a data-v-74c3b014="" data-v-5d6a591a="" href="/event/32667519"
-                                                class="betline-count-button"
-                                                data-test-id="nav-event-32667519-betline-link"><span
-                                                    data-v-74c3b014="">32</span> <svg data-v-02f45589=""
-                                                    data-v-74c3b014="" class="svg-icon icon-size-very-small"
-                                                    style="vertical-align: middle;"><!---->
-                                                    <use data-v-02f45589="" xlink:href="#arrow_right"></use>
-                                                </svg></a></div> <!---->
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!---->
-                    </div>
-                </div>
-            </div>
-            <div data-v-34ba8927="" data-v-4310f641="" class="game-events-container prematch" data-test-id="bpEvent"
-                data-event-id="32751023"><!----> <!----> <!----> <!----> <a data-v-34ba8927="" href="/event/32751023"
-                    class="game-event-wrapper pointer" data-test-id="nav-event-32751023-link" name="id-32751023">
-                    <div data-v-34ba8927="" class="game-event-header">
-                        <div data-v-34ba8927="" class="game-event-header-left-content"><span data-v-34ba8927=""
-                                class="game-event-subtitle">2H | 75'</span> <!----></div>
-                        <div data-v-34ba8927="" class="game-event-header-right-content"><!----> <!----> <!----> <!---->
-                        </div>
-                    </div>
-                    <div data-v-34ba8927="" class="game-scoreboard">
-                        <div data-v-9e211631="" data-v-34ba8927="" class="scoreboard-period invert"
-                            style="grid-template-columns: auto repeat(1, max-content);">
-                            <div data-v-9e211631="" class="scoreboard-period-participant-name-wrapper"><span
-                                    data-v-9e211631="" class="scoreboard-period-participant-name">Arnavutkoy Belediyesi
-                                    Genclik Ve Spor</span> <!----></div>
-                            <div data-v-9e211631="" class="scoreboard-period-score-cell bigger accent"
-                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">0
-                                    <!----></span></div>
-                            <div data-v-9e211631="" class="scoreboard-period-participant-name-wrapper"><span
-                                    data-v-9e211631="" class="scoreboard-period-participant-name">Guzide
-                                    Gebzespor</span> <!----></div>
-                            <div data-v-9e211631="" class="scoreboard-period-score-cell bigger accent"
-                                style="justify-content: right;"><span data-v-9e211631="" class="score-value">2
-                                    <!----></span></div>
-                        </div>
-                    </div>
-                    <div data-v-34ba8927="">
-                        <p data-v-34ba8927="" class="game-event-breadcrumbs" data-test-id="eventPath">Football / Turkey
-                            / 2. Lig</p>
-                    </div>
-                </a>
-                <div data-v-5d6a591a="" data-v-34ba8927="" class="betline-list">
-                    <div data-v-5d6a591a="" class="betline-list-data">
-                        <div data-v-5d6a591a="" class="betline-market"><!----> <!---->
-                            <div data-v-aefa9a0d="" data-v-5d6a591a="">
-                                <div data-v-aefa9a0d="" class="event-bets">
-                                    <div data-v-aefa9a0d="" class="chunks">
-                                        <div data-v-aefa9a0d="" class="chunk"><span data-v-08809586=""
-                                                data-v-aefa9a0d="" class="event-bet-wrapper bet-price"
-                                                data-test-id="Odd-3743-3744"><span data-v-08809586=""
-                                                    class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1380892492"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">1</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">90.00</span></span></span></span></span><span
-                                                data-v-08809586="" data-v-aefa9a0d=""
-                                                class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3745"><span
-                                                    data-v-08809586="" class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1380892493"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">X</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">9.50</span></span></span></span></span><span
-                                                data-v-08809586="" data-v-aefa9a0d=""
-                                                class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3746"><span
-                                                    data-v-08809586="" class="event-bet"><span data-v-08809586=""
-                                                        id="Bp-Price-3743-1380892494"
-                                                        data-test-id="bet-price-select-button" class="anchor-wrap"><span
-                                                            data-v-08809586="" class="event-selection"
-                                                            data-test-id="selection">2</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">1.01</span></span></span></span></span>
-                                            <a data-v-74c3b014="" data-v-5d6a591a="" href="/event/32751023"
-                                                class="betline-count-button"
-                                                data-test-id="nav-event-32751023-betline-link"><span
-                                                    data-v-74c3b014="">14</span> <svg data-v-02f45589=""
-                                                    data-v-74c3b014="" class="svg-icon icon-size-very-small"
-                                                    style="vertical-align: middle;"><!---->
-                                                    <use data-v-02f45589="" xlink:href="#arrow_right"></use>
-                                                </svg></a></div> <!---->
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!---->
-                    </div>
-                </div>
-            </div>
+           
+
+
             <div data-v-4310f641="" data-test-id="more-sports-button" class="event-counter"><span data-v-4310f641=""
                     class="pointer"><span data-v-4310f641="">View all Live</span> <span
                         data-v-4310f641="">42</span></span> <svg data-v-02f45589="" data-v-4310f641=""

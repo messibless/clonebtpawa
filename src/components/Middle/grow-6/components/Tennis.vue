@@ -7,27 +7,27 @@ import leagueShortcut from '../league-shortcut.vue';
 import FootballBannerImage from '../../../../assets/media/lg_990x272_1_4fd3446df7.webp'
 
 import { dummyGamesData } from '../data/dummyGameData'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted,computed } from 'vue'
 
 // 🔹 Import api client yako
 import api from '../../../../services/api'
 
 // State variables (kama useState)
-const tennis = ref([])
+const fixtures = ref([])
 const loading = ref(false)
 const error = ref('')
 
 // Function to fetch fixtures
-const fetchTennis = async () => {
+const fetchFixtures = async () => {
   loading.value = true
   error.value = ''
   try {
     const response = await api.get('/tennis/') // API endpoint yako
-    tennis.value = response.data
-    console.log('Fetched tennis matches:', tennis.value)
+    fixtures.value = response.data
+    console.log('Fetched tennis matches:', fixtures.value)
   } catch (err) {
-    console.error('Error fetching tennis:', err)
-    error.value = 'Failed to load tennis'
+    console.error('Error fetching fixtures:', err)
+    error.value = 'Failed to load fixtures'
   } finally {
     loading.value = false
   }
@@ -35,47 +35,19 @@ const fetchTennis = async () => {
 
 // onMounted replaces useEffect with empty dependency array
 onMounted(() => {
-    fetchTennis()
+  fetchFixtures()
 })
 
 
-// Function to format date
-const formatDate = (dateString) => {
-  const [year,month, day ] = dateString.split('-')
-  const isoDate = `${year}-${month}-${day}` // YYYY-MM-DD
-  const dateObj = new Date(isoDate)
-
-  // Get short weekday manually
-  const weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
-  const dayName = weekdays[dateObj.getDay()]
-
-  // Format mm/dd
-  const monthStr = String(dateObj.getMonth() + 1).padStart(2,'0')
-  const dayStr = String(dateObj.getDate()).padStart(2,'0')
-
-  return `${dayName} ${dayStr}/${monthStr}` 
-}
-
-
-
-const formatTime = (timeString) => {
-  // timeString = "12:23:00"
-  let [hour, minutes] = timeString.split(':').map(Number)
-
-  // Round minutes to nearest 0 or 30
-  if (minutes < 15) minutes = 0
-  else if (minutes < 45) minutes = 30
-  else {
-    minutes = 0
-    hour = (hour + 1) % 24
-  }
-
-  // Pad numbers
-  const hourStr = String(hour).padStart(2,'0')
-  const minStr = String(minutes).padStart(2,'0')
-
-  return `${hourStr}:${minStr}`
-}
+const betCount = computed(() => {
+  // fixtures.value ni array, tumia reduce ku-jumlisha betCount za kila fixture
+  if (!fixtures.value || !Array.isArray(fixtures.value)) return 0
+  
+  return fixtures.value.reduce((total, fixture) => {
+    // Convert string to number na ku-add
+    return total + (Number(fixture.betCount) || 0)
+  }, 0)
+})
 </script>
 <template>
   
@@ -90,7 +62,7 @@ const formatTime = (timeString) => {
                     class="svg-icon page-headline-icon" style="vertical-align: middle; "><!---->
                     <use data-v-02f45589="" xlink:href="#icon-football"></use>
                   </svg> Tennis </h1> <span data-v-97dcd69f="" class="page-headline-count">
-                  <div data-v-fa100c61="" data-v-97dcd69f="" class="box-count font-size-bigger">62</div> <svg
+                  <div data-v-fa100c61="" data-v-97dcd69f="" class="box-count font-size-bigger">{{betCount}}</div> <svg
                     data-v-02f45589="" data-v-97dcd69f="" class="svg-icon icon-size-little"
                     style="vertical-align: middle;"><!---->
                     <use data-v-02f45589="" xlink:href="#arrow_right"></use>
@@ -99,13 +71,13 @@ const formatTime = (timeString) => {
               </div>
 
               <!-- start here -->
-              <div data-v-ea5d556a="" data-v-4310f641="" v-for="game in tennis" :key="game.id"
+              <div data-v-ea5d556a="" data-v-4310f641="" v-for="game in fixtures" :key="game.id"
                 class="game-events-container prematch" data-test-id="bpEvent" :data-event-id="game.eventId">
                 <a data-v-ea5d556a="" :href="`/event/${game.eventId}`" class="game-event-wrapper pointer"
                   :data-test-id="`nav-event-${game.eventId}-link`" :name="`id-${game.eventId}`">
                   <div data-v-ea5d556a="" class="game-event-header">
                     <div data-v-ea5d556a="" class="game-event-header-left-content">
-                      {{ formatTime(game.time) }} <span data-v-ea5d556a="" class="game-event-date">{{ formatDate(game.date)}}</span>
+                      {{ game.time }} <span data-v-ea5d556a="" class="game-event-date">{{ game.date}}</span>
                     </div>
                     <div data-v-ea5d556a="" class="game-event-header-right-content">
                       <!-- Two-Up Badge (conditional) -->
@@ -171,7 +143,7 @@ const formatTime = (timeString) => {
                               </span>
 
                               <!-- Draw Odds (X) -->
-                              <span data-v-9fc495af="" data-v-00428546="" class="event-bet-wrapper bet-price"
+                              <!-- <span data-v-9fc495af="" data-v-00428546="" class="event-bet-wrapper bet-price"
                                 data-test-id="Odd-3743-3745">
                                 <span data-v-9fc495af="" class="event-bet">
                                   <span data-v-9fc495af="" :id="`Bp-Price-${game.eventId}-draw`"
@@ -186,7 +158,7 @@ const formatTime = (timeString) => {
                                     </span>
                                   </span>
                                 </span>
-                              </span>
+                              </span> -->
 
                               <!-- Away Odds (2) -->
                               <span data-v-9fc495af="" data-v-00428546="" class="event-bet-wrapper bet-price"
@@ -227,7 +199,7 @@ const formatTime = (timeString) => {
               </div>
               <div data-v-4310f641="" data-test-id="more-sports-button" class="event-counter"><span data-v-4310f641=""
                   class="pointer"><span data-v-4310f641="">View all Tennis</span> <span
-                    data-v-4310f641="">62</span></span> <svg data-v-02f45589="" data-v-4310f641=""
+                    data-v-4310f641="">{{ betCount }}</span></span> <svg data-v-02f45589="" data-v-4310f641=""
                   class="svg-icon icon-size-very-small" style="vertical-align: baseline;"><!---->
                   <use data-v-02f45589="" xlink:href="#arrow_right"></use>
                 </svg></div>
