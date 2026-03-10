@@ -213,12 +213,12 @@ label.form {
 }
 
 .withdraw-form .caption[data-v-4b7cd401], .withdraw-fee[data-v-4b7cd401] .label-text {
-    font-size: 12px;
+    font-size: 14px !important;
     line-height: 16px;
 }
 .label-text[data-v-b1b046d0] {
     margin-right: 5px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     line-height: 18px;
 }
