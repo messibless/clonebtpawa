@@ -121,7 +121,6 @@ const handleDeposit = () => {
                                                 </div>
                                                 <div data-v-1a892a33="" class="help-text">Min: 100.00, Max: 5,000,000.00</div>
                                             </div>
-                                            <div data-v-ccb4d46c="">
                                                 <button 
                                                     data-v-ccb4d46c="" 
                                                     class="button button-primary button-full" 
@@ -129,7 +128,6 @@ const handleDeposit = () => {
                                                     type="submit">
                                                     <span data-v-ccb4d46c="">Deposit</span>
                                                 </button>
-                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -577,8 +575,8 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
 }
 
 .button-full {
-    width: 100%;
-    max-width: none;
+    width: 100% !important;
+    max-width: none !important; 
 }
 .button-primary {
     color: #252a2d;

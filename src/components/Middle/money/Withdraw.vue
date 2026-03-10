@@ -209,7 +209,7 @@ label.form {
     position: relative;
 }
 .withdraw-fee .withdraw-fee-info-modal[data-v-4b7cd401], .withdraw-form .caption[data-v-4b7cd401], .withdraw-fee[data-v-4b7cd401] .label-text {
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .withdraw-form .caption[data-v-4b7cd401], .withdraw-fee[data-v-4b7cd401] .label-text {
@@ -219,7 +219,7 @@ label.form {
 .label-text[data-v-b1b046d0] {
     margin-right: 5px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 18px;
 }
 .input-field-wrapper[data-v-1a892a33] {
