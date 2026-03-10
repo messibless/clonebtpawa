@@ -5,7 +5,7 @@ import AfricanLeague from '../../../../assets/media/noun_europe_188772_1_de866e5
 import EuropeanLeague from '../../../../assets/media/Europe_43bd11c816.svg'
 import leagueShortcut from '../league-shortcut.vue';
 import FootballBannerImage from '../../../../assets/media/lg_990x272_1_4fd3446df7.webp'
-
+import IconFoo from '../assets/analytics_24dp_000000_FILL0_wght400_GRAD0_opsz24.png'
 import { dummyGamesData } from '../data/dummyGameData'
 import { ref, onMounted,computed } from 'vue'
 
@@ -81,6 +81,7 @@ const betCount = computed(() => {
                     </div>
                     <div data-v-ea5d556a="" class="game-event-header-right-content">
                       <!-- Two-Up Badge (conditional) -->
+                      <div class="set-icons"> 
                       <span v-if="game.hasTwoUp" data-v-891f4695="" data-v-ea5d556a=""
                         class="badge type-best-odds mode-default pointer" data-test-id="game-open-two-up-modal-button">
                         <svg data-v-02f45589="" data-v-891f4695="" class="svg-icon icon icon-size-huge"
@@ -88,6 +89,11 @@ const betCount = computed(() => {
                           <use data-v-02f45589="" xlink:href="#icon-two-up"></use>
                         </svg>
                       </span>
+                      <div class="divider">|</div>
+                      <div class="SportEvents_statisticsIconWrapper__0Ash1 SportEvents_statisticsIconWithDivider__1Rhe8" fdprocessedid="7pgogk">
+                        <img :src="IconFoo" alt="hh" srcset="">
+                      </div>
+                    </div>
 
                       <!-- Boosted Odds Badge (conditional) -->
                       <span v-if="game.hasBoostedOdds" data-v-891f4695="" data-v-ea5d556a=""
@@ -221,6 +227,41 @@ const betCount = computed(() => {
 
 
 <style lang="scss" scoped>
+
+.divider{
+  // border-left: 1px solid #000;
+  width: 1px;
+}
+.SportEvents_statisticsIconWithDivider__1Rhe8 {
+    border-left: 1px solid #000;
+    padding-left: 8px;
+}
+
+.SportEvents_statisticsIconWrapper__0Ash1 {
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    height: 16px;
+}
+.fa-kit.fa-square-stats {
+    --fa: "\e0a3";
+}
+
+.SportEvents_statisticsIcon__kr6Zr {
+    color: #000;
+    font-size: 16px;
+}
+
+
+.set-icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .league-shortcut-container {
   width: 100%;
   overflow: hidden;

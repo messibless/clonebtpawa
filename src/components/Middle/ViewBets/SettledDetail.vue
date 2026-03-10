@@ -124,15 +124,25 @@ const withHoldingTax = computed(() => {
   return formatMoney(result)
 })
 
+// const payoutWin = computed(() => {
+//   const potential = Number(potentialWin.value) || 0
+//   const tax = Number(withHoldingTax.value) || 0
+//   const stake = Number(currentBet.value?.stake) || 0
+  
+//   const result = (potentialWin - withHoldingTax + stake).toFixed(2)
+//   return formatMoney(result)
+// })
+// First, create raw values for calculations
+
 const payoutWin = computed(() => {
-  const potential = Number(potentialWin.value) || 0
-  const tax = Number(withHoldingTax.value) || 0
+  // Remove commas from both formatted values
+  const potential = Number(String(potentialWin.value).replace(/,/g, '')) || 0
+  const tax = Number(String(withHoldingTax.value).replace(/,/g, '')) || 0
   const stake = Number(currentBet.value?.stake) || 0
   
   const result = (potential - tax + stake).toFixed(2)
   return formatMoney(result)
 })
-
 
 </script>
 
@@ -173,7 +183,7 @@ const payoutWin = computed(() => {
                 <div data-v-7f504cc4="" class="summary-line selected">
                     <div data-v-7f504cc4="" class="label">Stake:</div>
                     <div data-v-7f504cc4="" class="currency value" data-test-id="stakeAmount"> <span
-                            class="symbol contrast">TSh</span> {{ currentBet.stake }}<span class="amount"></span> <!----></div>
+                            class="symbol contrast">TSh</span> {{ formatMoney(currentBet.stake) }}<span class="amount"></span> <!----></div>
                 </div> 
                 <div data-v-7f504cc4="" class="summary-line selected">
                     <div data-v-7f504cc4="" class="label">Potential Winnings:</div>
