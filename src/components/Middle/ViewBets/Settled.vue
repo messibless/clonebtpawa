@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 import settledBetsData from './assets/settledBetsData';
 import LoaderImg from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
 import { useBets } from './composables/useBets'
-import IconEye from './assets/visibility_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png'
+import IconEye from './assets/visibility_off_24dp_000_FILL0_wght400_GRAD0_opsz24.png'
 import { useBetsStore } from '../../../stores/betsStore'
 
 const { settledBets, fetchBets, loading } = useBets()

@@ -144,38 +144,55 @@ const goToLogin = () => {
         <span v-else class="loading-text">PROCESSING...</span>
       </button>
 
-      <!-- Terms & Conditions - CENTERED KABISA NA SIMPLIFIED -->
-      <div class="terms-wrapper">
-        <label class="terms-label">
-          <input
-            v-model="acceptTerms"
-            type="checkbox"
-            class="terms-checkbox"
-          />
-          <span class="checkbox-custom"></span>
-          <span class="terms-text">
-            By creating an account you accept the 
-            <a href="/terms" target="_self" class="terms-link">
-              Terms and Conditions
-            </a>
-          </span>
-        </label>
-      </div>
+      <!-- Terms & Conditions - CENTERED KABISA -->
+<div class="terms terms-horizontal-center">
+  <span class="checkbox terms-checkbox">
+    <input
+      v-model="acceptTerms"
+      id="checkbox"
+      class="checkbox-input"
+      type="checkbox"
+    />
+    <label class="checkbox-label" for="checkbox">
+      <span class="checkbox-label-extra-space">
+        <span class="checkbox-input-custom with-border">
+          <div v-if="acceptTerms" class="icon-checkbox">
+            <svg class="svg-icon" style="vertical-align: text-top;">
+              <use xlink:href="#icon-checkbox"></use>
+            </svg>
+          </div>
+        </span>
+      </span>
+      <span class="checkbox-label-wrapper">
+        <div class="terms-text">
+          <div class="rich-text-components">
+            <p style="text-align: center; margin: 0;">
+              <span style="color: rgb(37, 42, 45);">By creating an account you accept the </span>
+              <span style="color: rgb(0, 0, 0);">
+                <a href="/terms" target="_self" style="text-decoration: underline;">
+                  Terms and Conditions
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+      </span>
+    </label>
+  </span>
+</div>
     </div>
 
     <!-- Login Link -->
-    <div class="login-wrapper">
-      <span class="login-text">
-        Already have an account? 
-        <a 
-          href="#" 
-          class="login-link"
-          @click.prevent="goToLogin"
-        >
-          Log In
-        </a>
-      </span>
-    </div>
+    <span class="login-text">
+      Already have an account? 
+      <a 
+        href="#" 
+        class="underline bold"
+        @click.prevent="goToLogin"
+      >
+        Log In
+      </a>
+    </span>
   </form>
 </template>
 
@@ -226,7 +243,6 @@ const goToLogin = () => {
 label.form {
   color: #252a2d;
   margin: 0 0 6px;
-  display: block;
 }
 
 label {
@@ -416,123 +432,220 @@ input[type="text"] {
   background: #e6e7e2;
 }
 
-/* ===== TERMS CENTERED - NEW SIMPLIFIED STYLES ===== */
-.terms-wrapper {
+.terms-horizontal-center {
+  order: 2;
+  margin: 16px auto 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 16px 0;
-  padding-top: 10px;
+  padding-top: 25px;
 }
 
-.terms-label {
+.terms {
+  color: #252a2d;
+  align-items: flex-start;
+  margin: 0 0 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  cursor: pointer;
-  max-width: 100%;
-  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .terms-checkbox {
+  margin-top: 10px;
+}
+
+.checkbox {
+  color: #252a2d;
+  cursor: pointer;
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.checkbox-input {
   display: none;
 }
 
-.checkbox-custom {
+.checkbox-label {
+  align-items: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.checkbox-label-extra-space {
+  margin: -8px 0 -8px -8px;
+  padding: 8px;
+}
+
+.checkbox-input:checked + .checkbox-label .checkbox-input-custom {
+  background: #d9edb2;
+  border-color: #d9edb2;;
+}
+
+.checkbox-input-custom.with-border {
+  border: 1px solid #aaaeb0;
+}
+
+.checkbox-input-custom {
+  background: #fff;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
   width: 16px;
   height: 16px;
-  border: 1px solid #aaaeb0;
-  border-radius: 2px;
-  background: #fff;
-  position: relative;
-  flex-shrink: 0;
-  display: inline-block;
+  display: flex;
 }
 
-.terms-checkbox:checked + .checkbox-custom {
-  background: #9ce800;
-  border-color: #9ce800;
+.checkbox-input-custom .icon-checkbox {
+  width: 10px;
+  height: 10px;
+  line-height: 18px;
 }
 
-.terms-checkbox:checked + .checkbox-custom::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  width: 4px;
-  height: 8px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+.checkbox-input-custom .icon-checkbox svg {
+  fill: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.checkbox-label-wrapper {
+  width: 100%;
 }
 
 .terms-text {
   font-size: 12px;
   line-height: 16px;
-  color: #252a2d;
+}
+
+.rich-text-components p {
+  line-height: 1.4;
+}
+
+.join-now .login-text {
   text-align: center;
-  white-space: normal;
-  word-break: break-word;
-}
-
-.terms-link {
-  color: #252a2d;
-  text-decoration: underline;
-  font-weight: 500;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.terms-link:hover {
-  text-decoration: none;
-}
-
-/* ===== LOGIN LINK CENTERED ===== */
-.login-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   margin-top: 16px;
-}
-
-.login-text {
-  text-align: center;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  color: #252a2d;
+  display: flex;
+  align-self: center;
+  justify-self: center;
 }
 
-.login-link {
-  color: #252a2d;
-  text-decoration: underline;
-  font-weight: 700;
+a {
   cursor: pointer;
-  margin-left: 4px;
+  user-select: none;
+  color: inherit;
+  text-decoration: none;
 }
 
-.login-link:hover {
-  text-decoration: none;
+.bold {
+  font-weight: 700;
+}
+
+
+
+/* TERMS CENTERED - MAREKEBISHO */
+.terms-horizontal-center {
+  order: 2;
+  margin: 16px auto 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 25px;
+}
+
+.terms {
+  color: #252a2d;
+  align-items: center; /* Badilisha kutoka flex-start hadi center */
+  margin: 0 0 16px;
+  display: flex;
+  font-size: 12px;
+  line-height: 16px;
+  justify-content: center; /* Ongeza hii */
+  width: 100%;
+}
+
+.terms-checkbox {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.checkbox {
+  color: #252a2d;
+  cursor: pointer;
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-flex; /* Badilisha kuwa inline-flex */
+  justify-content: center;
+  max-width: 100%;
+}
+
+.checkbox-label {
+  align-items: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 4px; /* Ongeza gap kidogo kati ya checkbox na text */
+  flex-wrap: wrap; /* Ruhusu wrapping kwenye screen ndogo */
+}
+
+.checkbox-label-wrapper {
+  width: auto; /* Badilisha kutoka 100% hadi auto */
+  max-width: 100%;
+}
+
+.terms-text {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center; /* Hakikisha text iko center */
+  white-space: normal; /* Ruhusu text kuvunja line */
+}
+
+.rich-text-components p {
+  line-height: 1.4;
+  text-align: center !important; /* Force center */
+  margin: 0; /* Remove default margin */
 }
 
 /* Responsive - kwa screen ndogo */
 @media (max-width: 480px) {
-  .terms-label {
+  .checkbox-label {
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
   }
   
   .terms-text {
-    font-size: 11px;
     text-align: center;
   }
   
-  .terms-link {
-    white-space: normal;
+  .rich-text-components p {
+    text-align: center;
+    font-size: 11px; /* Smaller text kwa mobile */
   }
+}
+
+/* Optional: Ikiwa unataka terms iwe kwenye line moja */
+.rich-text-components p span {
+  white-space: normal; /* Badilisha kutoka nowrap */
+}
+
+/* Ensure the link is properly styled */
+.rich-text-components a {
+  cursor: pointer;
+  user-select: none;
+  color: inherit;
+  text-decoration: underline;
+  white-space: nowrap; /* Prevent link from breaking */
+}
+
+/* Make sure the text wraps properly */
+.rich-text-components p {
+  word-break: break-word;
 }
 </style>
