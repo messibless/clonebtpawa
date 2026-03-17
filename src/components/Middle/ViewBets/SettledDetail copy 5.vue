@@ -1,7 +1,7 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import { ref, onMounted,onUnmounted, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useBetsStore } from '../../../stores/betsStore' // Adjust path based on your structure
 import WiningCupImage from '../../../assets/media/main_trophy_bronze_b8a77b5e1a.webp' 
 import WiningCupImageBackground from '../../../assets/media/Property_1_Bronze_confetti_b5028c1425.webp' 
@@ -17,62 +17,27 @@ const isTaxDetailsOpen = ref(false)
 const isLoading = ref(true)
 
 // Countdown functionality
-// Countdown functionality
 const countdownNumber = ref(5)
 const circleOffset = ref(0)
 const circumference = 2 * Math.PI * 10 // 2πr where r=10
-const circleColor = ref('#f1ab11') // Yellow/Orange color
-let countdownInterval = null
 
-// Update countdown - FULL CYCLE kama Betpawa
+// Function to update countdown
 const updateCountdown = () => {
+  // Calculate circle progress (from 0 to circumference)
+  const progress = (5 - countdownNumber.value) / 5
+  circleOffset.value = circumference * progress
+  
   // Update number
   if (countdownNumber.value > 1) {
     countdownNumber.value--
   } else {
     countdownNumber.value = 5
   }
-  
-  // Calculate circle progress
-  // When number is 5: circleOffset = circumference (tupu)
-  // When number is 1: circleOffset = circumference * 0.2 (imesoma kidogo tu)
-  circleOffset.value = circumference * (countdownNumber.value / 5)
-  
-  // Badilisha color inapofika 1 (optional - kama Betpawa)
-  if (countdownNumber.value === 1) {
-    circleColor.value = '#ff4444' // Nyekundu inapokaribia kuisha
-  } else {
-    circleColor.value = '#f1ab11' // Rudi kwenye yellow/orange
-  }
 }
-
-// Start countdown
-const startCountdown = () => {
-  // Set initial state - anza na 5, circle tupu
-  countdownNumber.value = 5
-  circleOffset.value = circumference
-  
-  // Clear existing interval
-  if (countdownInterval) {
-    clearInterval(countdownInterval)
-  }
-  
-  // Start new interval
-  countdownInterval = setInterval(updateCountdown, 1000)
-}
-
-
-onUnmounted(() => {
-  // Cleanup interval
-  if (countdownInterval) {
-    clearInterval(countdownInterval)
-  }
-})
 
 
 onMounted(async () => {
   const betId = route.params.id
-  startCountdown()
   
   // Check if we have the bet in store
   if (currentBet.value) {
@@ -334,42 +299,26 @@ const payoutWin = computed(() => {
         </div> 
 
 
-    
-
-        <div class="in-play-wrapper" data-test-id="in-play-wrapper">
-    <div class="countdown-container">
-      <div class="countdown-circle">
-        <span class="countdown-number">{{ countdownNumber }}</span>
-        <svg width="24" height="24" viewBox="0 0 24 24">
-          <circle
-            class="circle-bg"
-            cx="12"
-            cy="12"
-            r="10"
-            fill="none"
-            stroke="#e6e7e2"
-            stroke-width="2"
-          />
-          <circle
-            class="circle-progress"
-            cx="12"
-            cy="12"
-            r="10"
-            fill="none"
-            :stroke="circleColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            :stroke-dasharray="circumference"
-            :stroke-dashoffset="circleOffset"
-            transform="rotate(-90 12 12)"
-          />
+        <div class="BetslipSelection_inPlay__a7Z8d" data-test-id="in-play-wrapper">
+    <div class="Countdown_countdown__WY2gx pl-2 pr-1 Countdown_start__VQIV1"
+         data-test-id="in-play-countdown">
+      <div class="Countdown_refresh__nGADb">
+        <div class="Countdown_number__ScEUQ">{{ countdownNumber }}</div>
+        <svg class="Countdown_countdownCircleIcon__O7ZNx"
+             width="20" height="20">
+          <circle r="10" cx="10" cy="10" 
+                  :style="{ 
+                    strokeDasharray: circumference,
+                    strokeDashoffset: circleOffset,
+                    transition: 'stroke-dashoffset 1s linear'
+                  }"></circle>
         </svg>
       </div>
-      <span class="in-play-text">
-        Livescores shown are for informational purposes only, and may be delayed or differ from actual results.
-        <a href="/rules" class="read-more">Read more</a>.
-      </span>
     </div>
+    <span class="BetslipSelection_inPlayText__cq500">Livescores shown are for informational purposes
+      only, and may be delayed or differ from actual results. <a class="link bold" href="/rules">Read
+        more</a>.
+    </span>
   </div>
         
 
@@ -1119,77 +1068,79 @@ a.underline:not([class*=button]) {
 
 
 
-/* Countdown styles - kufanana na Betpawa */
-.in-play-wrapper {
-  background-color: #fff;
-  padding: 12px 16px;
-  margin: 8px 0;
-  border-top: 1px solid #e6e7e2;
-  border-bottom: 1px solid #e6e7e2;
-}
 
-.countdown-container {
+
+/* Countdown styles */
+.BetslipSelection_inPlay__a7Z8d {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  gap: 8px;
+  background-color: #f4f5f0;
+  padding: 8px 12px;
+  margin: 8px 0;
+  font-size: 12px;
+  color: #7a8185;
 }
 
-.countdown-circle {
+.Countdown_countdown__WY2gx {
+  display: flex;
+  align-items: center;
+  min-width: 40px;
+}
+
+.Countdown_refresh__nGADb {
   position: relative;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.countdown-number {
+.Countdown_number__ScEUQ {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  color: #f39810;
+  color: #252a2d;
   z-index: 1;
 }
 
-.circle-bg {
-  stroke: #fff;
+.Countdown_countdownCircleIcon__O7ZNx {
+  transform: rotate(-90deg);
+  width: 20px;
+  height: 20px;
 }
 
-.circle-progress {
-  transition: stroke-dashoffset 0.8s linear, stroke 0.3s ease;
+.Countdown_countdownCircleIcon__O7ZNx circle {
+  stroke: #f1ab11;
+  fill: none;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  r: 10;
+  cx: 10;
+  cy: 10;
 }
 
-.in-play-text {
-  font-size: 12px;
-  line-height: 1.5;
-  color: #7a8185;
+.BetslipSelection_inPlayText__cq500 {
   flex: 1;
+  line-height: 1.4;
 }
 
-.read-more {
+.link.bold {
   color: #252a2d;
   font-weight: 700;
   text-decoration: underline;
-  margin-left: 4px;
 }
 
-.read-more:hover {
+.link.bold:hover {
   text-decoration: none;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .in-play-wrapper {
-    padding: 10px 12px;
-  }
-  
-  .countdown-container {
-    gap: 8px;
-  }
-  
-  .in-play-text {
-    font-size: 11px;
-  }
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pr-1 {
+  padding-right: 4px;
 }
   </style>

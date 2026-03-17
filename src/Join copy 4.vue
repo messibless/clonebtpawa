@@ -144,42 +144,42 @@ const goToLogin = () => {
         <span v-else class="loading-text">PROCESSING...</span>
       </button>
 
-      <!-- Terms & Conditions - CENTERED KABISA -->
-<div class="terms terms-horizontal-center">
-  <span class="checkbox terms-checkbox">
-    <input
-      v-model="acceptTerms"
-      id="checkbox"
-      class="checkbox-input"
-      type="checkbox"
-    />
-    <label class="checkbox-label" for="checkbox">
-      <span class="checkbox-label-extra-space">
-        <span class="checkbox-input-custom with-border">
-          <div v-if="acceptTerms" class="icon-checkbox">
-            <svg class="svg-icon" style="vertical-align: text-top;">
-              <use xlink:href="#icon-checkbox"></use>
-            </svg>
-          </div>
-        </span>
-      </span>
-      <span class="checkbox-label-wrapper">
-        <div class="terms-text">
-          <div class="rich-text-components">
-            <p style="text-align: center; margin: 0;">
-              <span style="color: rgb(37, 42, 45);">By creating an account you accept the </span>
-              <span style="color: rgb(0, 0, 0);">
-                <a href="/terms" target="_self" style="text-decoration: underline;">
-                  Terms and Conditions
-                </a>
+      <!-- Terms & Conditions -->
+      <div class="terms terms-horizontal-center">
+        <span class="checkbox terms-checkbox">
+          <input
+            v-model="acceptTerms"
+            id="checkbox"
+            class="checkbox-input"
+            type="checkbox"
+          />
+          <label class="checkbox-label" for="checkbox">
+            <span class="checkbox-label-extra-space">
+              <span class="checkbox-input-custom with-border">
+                <div v-if="acceptTerms" class="icon-checkbox">
+                  <svg class="svg-icon" style="vertical-align: text-top;">
+                    <use xlink:href="#icon-checkbox"></use>
+                  </svg>
+                </div>
               </span>
-            </p>
-          </div>
-        </div>
-      </span>
-    </label>
-  </span>
-</div>
+            </span>
+            <span class="checkbox-label-wrapper">
+              <div class="terms-text">
+                <div class="rich-text-components">
+                  <p style="text-align: left;">
+                    <span style="color: rgb(37, 42, 45);">By creating an account you accept the </span>
+                    <span style="color: rgb(0, 0, 0);">
+                      <a href="/terms" target="_self" style="text-decoration: underline;">
+                        Terms and Conditions
+                      </a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </span>
+          </label>
+        </span>
+      </div>
     </div>
 
     <!-- Login Link -->
@@ -542,110 +542,5 @@ a {
 
 .bold {
   font-weight: 700;
-}
-
-
-
-/* TERMS CENTERED - MAREKEBISHO */
-.terms-horizontal-center {
-  order: 2;
-  margin: 16px auto 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding-top: 25px;
-}
-
-.terms {
-  color: #252a2d;
-  align-items: center; /* Badilisha kutoka flex-start hadi center */
-  margin: 0 0 16px;
-  display: flex;
-  font-size: 12px;
-  line-height: 16px;
-  justify-content: center; /* Ongeza hii */
-  width: 100%;
-}
-
-.terms-checkbox {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.checkbox {
-  color: #252a2d;
-  cursor: pointer;
-  margin: 0 0 20px;
-  font-size: 14px;
-  font-weight: 400;
-  display: inline-flex; /* Badilisha kuwa inline-flex */
-  justify-content: center;
-  max-width: 100%;
-}
-
-.checkbox-label {
-  align-items: center;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  gap: 4px; /* Ongeza gap kidogo kati ya checkbox na text */
-  flex-wrap: wrap; /* Ruhusu wrapping kwenye screen ndogo */
-}
-
-.checkbox-label-wrapper {
-  width: auto; /* Badilisha kutoka 100% hadi auto */
-  max-width: 100%;
-}
-
-.terms-text {
-  font-size: 12px;
-  line-height: 16px;
-  text-align: center; /* Hakikisha text iko center */
-  white-space: normal; /* Ruhusu text kuvunja line */
-}
-
-.rich-text-components p {
-  line-height: 1.4;
-  text-align: center !important; /* Force center */
-  margin: 0; /* Remove default margin */
-}
-
-/* Responsive - kwa screen ndogo */
-@media (max-width: 480px) {
-  .checkbox-label {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .terms-text {
-    text-align: center;
-  }
-  
-  .rich-text-components p {
-    text-align: center;
-    font-size: 11px; /* Smaller text kwa mobile */
-  }
-}
-
-/* Optional: Ikiwa unataka terms iwe kwenye line moja */
-.rich-text-components p span {
-  white-space: normal; /* Badilisha kutoka nowrap */
-}
-
-/* Ensure the link is properly styled */
-.rich-text-components a {
-  cursor: pointer;
-  user-select: none;
-  color: inherit;
-  text-decoration: underline;
-  white-space: nowrap; /* Prevent link from breaking */
-}
-
-/* Make sure the text wraps properly */
-.rich-text-components p {
-  word-break: break-word;
 }
 </style>

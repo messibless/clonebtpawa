@@ -1,8 +1,8 @@
 <template>
     <div data-v-db2b7f29="" class="main-footer"><!---->
-        <div data-v-db2b7f29="" class="cta-container"><a data-v-db2b7f29="" href="/join-now"
+        <!-- <div data-v-db2b7f29="" class="cta-container"><a data-v-db2b7f29="" href="/join-now"
                 class="button button-accent upperCase" id="join-now-bottom" data-test-id="footer-join-now-link">Join
-                Now</a></div>
+                Now</a></div> -->
         <div data-v-db2b7f29="" class="footer-menu action-menu">
             <div data-v-64eb1fad="" data-v-db2b7f29=""
                 class="language-switch menu-item horizontal dark footer-language"><span data-v-64eb1fad=""

@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 import settledBetsData from './assets/settledBetsData';
 import LoaderImg from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
 import { useBets } from './composables/useBets'
-
+import IconEye from './assets/visibility_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png'
 import { useBetsStore } from '../../../stores/betsStore'
 
 const { settledBets, fetchBets, loading } = useBets()
@@ -127,8 +127,9 @@ const displayedBetsWithDetails = computed(() => {
                <div v-else>
                    <section data-v-beccd7ea="" aria-hidden="false" class="tab-section">
                       
-                    <div class="SettledBetsFilterToggle_container__xZZbS"><i
-                        class="fa-kit fa-eyeoff SettledBetsFilterToggle_icon__QPEW5" aria-hidden="true"></i>
+                    <div class="SettledBetsFilterToggle_container__xZZbS">
+     
+                        <img :src="IconEye" alt="" srcset="">
                     <div class="SettledBetsFilterToggle_content__G1aSL"><span
                             class="SettledBetsFilterToggle_label__gJQvm">Hide lost betslips</span><span
                             class="SettledBetsFilterToggle_helperText__pQPr2">Only won bets will be shown</span></div>
