@@ -140,7 +140,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
 <style lang="scss" scoped>
 // Ongeza container ya nje
 .league-shortcut-container {
-    max-width: inherit; // Itarithi max-width kutoka parent
+    width: 556px; // Itarithi max-width kutoka parent
 }
 .league-shortcut {
     display: flex;

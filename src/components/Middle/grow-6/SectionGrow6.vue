@@ -74,7 +74,7 @@ onMounted(() => {
 
                     <!-- League Shortcut - Container yenye width control -->
                     <div class="league-shortcut-container">
-                                    <!-- <leagueShortcut /> -->
+                                    <leagueShortcut />
                                 </div>
 
        
