@@ -86,7 +86,7 @@ const formatMoney = (value) => {
                             <div data-v-34417751="" class="bet-line bet-body">
                                 <div data-v-34417751="" class="bet-detail"><span data-v-34417751="" class="label">STAKE</span>
                                 <div data-v-34417751="" class="currency-container">
-                                    <div data-v-34417751="" class="currency value"> <span class="amount">{{ bet.stake }}</span>
+                                    <div data-v-34417751="" class="currency value"> <span class="amount">{{ formatMoney(bet.stake) }}</span>
                                     </div>
                                 </div> 
                                 </div>
