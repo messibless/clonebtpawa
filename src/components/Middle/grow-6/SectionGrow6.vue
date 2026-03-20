@@ -22,6 +22,7 @@ import Tennis from './components/Tennis.vue';
 
 
 import Loader from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
+import HomeCard from './components/HomeCard.vue'
 
 
 const isLoading = ref(true);
@@ -63,11 +64,13 @@ onMounted(() => {
                         <img :src="Loader" alt="Loading..." />
                     </div>
                 <div data-v-fc0cbc39=""  v-else class="generic-page-content-wrapper ">
-                    <div data-v-7c473a5b="" data-v-fc0cbc39="" class="" data-test-id="tag-BannersCollection"
+
+                    <!-- <div data-v-7c473a5b="" data-v-fc0cbc39="" class="" data-test-id="tag-BannersCollection"
                         data-banner-collection="" data-test-class="cmsTag"><a data-v-7c473a5b=""
                             href="/1up?utm_medium=nli&amp;utm_campaign=1up_dc" class=""
                             data-test-id="nav--1up?utm_medium=nli&amp;utm_campaign=1up_dc-link"><img data-v-5455027b=""
-                                data-v-7c473a5b="" :src="HeadBannerImage3"></a></div>
+                                data-v-7c473a5b="" :src="HeadBannerImage3"></a></div> -->
+                                <HomeCard/>
 
                     <!-- League Shortcut - Container yenye width control -->
                     <div class="league-shortcut-container">

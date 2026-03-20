@@ -18,9 +18,7 @@
               data-v-a02f1bb9="" class="svg-icon" style="vertical-align: middle;"><!---->
               <use data-v-02f45589="" xlink:href="#icon-cross-squared"></use>
             </svg></span></div>
-
-        <div data-v-cafe7da3="" data-v-c42aca5e="" class="menu-tiles">
-            <a data-v-0822ca80="" data-v-cafe7da3=""
+        <div data-v-cafe7da3="" data-v-c42aca5e="" class="menu-tiles"><a data-v-0822ca80="" data-v-cafe7da3=""
             class="router-link-active router-link-exact-active selected menu-tile" rel="noopener"
             data-test-id="leftMenu-menu-tile-Homepage-0" aria-current="page">
             <div data-v-0822ca80="" class="tile"><!----> <svg data-v-02f45589="" data-v-0822ca80=""
@@ -28,8 +26,7 @@
                 <use data-v-02f45589="" xlink:href="#icon-home"></use>
               </svg> <!----></div>
             <div data-v-0822ca80="" class="label">Home</div>
-          </a>
-          <a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
+          </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
             data-test-id="leftMenu-menu-tile-Upcoming-1">
             <div data-v-0822ca80="" class="tile"><!----> <svg data-v-02f45589="" data-v-0822ca80=""
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
@@ -87,8 +84,7 @@
               <div data-v-0822ca80="" class="count">44</div>
             </div>
             <div data-v-0822ca80="" class="label">Popular</div>
-          </a>
-        </div>
+          </a></div>
         <div data-v-7dd7ea89="" data-v-c42aca5e="" class="sticky-scroll-element categories-sticky-wrapper">
           <div data-v-1b8694e9="" data-v-c42aca5e="" class="menu-categories">
             <div data-v-d3915418="" data-v-1b8694e9="" class="tabs round scrollable dark have-scroll category-tabs">
@@ -136,10 +132,7 @@
               </ul>
             </div>
           </div>
-    </div>
-
-
-
+        </div>
         <div data-v-aabe1219="" data-v-c42aca5e="" class="expansion-panel dark is-open" data-test-id="menu-tournaments">
           <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer"><!---->
             <div data-v-aabe1219="" class="row-cell align-middle title-text">

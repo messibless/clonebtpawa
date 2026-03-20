@@ -16,6 +16,15 @@ onMounted(() => {
 })
 
 
+const formatMoney = (value) => {
+  if (value === undefined || value === null) return '0.00'
+  
+  return Number(value).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })
+}
+
 </script>
 
 <template>
@@ -86,7 +95,7 @@ onMounted(() => {
                                 <div data-v-34417751="" class="bet-detail end"><span data-v-34417751="" class="label">PAYOUT</span>
                                 <div data-v-34417751="" class="currency-container bold-symbol">
                                     <div data-v-34417751="" class="currency value"> <span class="symbol contrast">TSh</span> <span
-                                        class="amount">{{ bet.payout }}</span></div>
+                                        class="amount">{{ formatMoney(bet.payout) }}</span></div>
                                 </div> 
                                 </div>
                         </div>

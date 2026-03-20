@@ -1,24 +1,23 @@
-<!-- LeftSidebarMenu -->
-
-
-
-
-
+<!-- LeftSidebarMenu - Dynamic Data Version -->
 
 <template>
-    <!-- @click="handleClose" -->
     <div data-v-c057a854="" class="side-bar content leftMenu open overlap transition full-screen" style="width: 360px;">
       <div data-v-c42aca5e="" class="lmenu-main">
-        <div data-v-a02f1bb9="" data-v-c42aca5e="" class="left-menu-header"><a data-v-a02f1bb9="" href="/"
-            class="router-link-active router-link-exact-active logo-link" data-test-id="left-menu-logo"
-            aria-current="page"><svg data-v-02f45589="" data-v-a02f1bb9="" class="svg-icon logo" icon-fallback="logo"
-              style="vertical-align: top;"><!---->
+        <!-- Header -->
+        <div data-v-a02f1bb9="" data-v-c42aca5e="" class="left-menu-header">
+          <a data-v-a02f1bb9="" href="/" class="router-link-active router-link-exact-active logo-link" 
+             data-test-id="left-menu-logo" aria-current="page">
+            <svg data-v-02f45589="" data-v-a02f1bb9="" class="svg-icon logo" icon-fallback="logo" style="vertical-align: top;">
               <use data-v-02f45589="" xlink:href="#logo"></use>
-            </svg></a> <span @click="handleClose" data-v-a02f1bb9="" class="close" data-test-id="left-menu-close"><svg data-v-02f45589=""
-              data-v-a02f1bb9="" class="svg-icon" style="vertical-align: middle;"><!---->
+            </svg>
+          </a> 
+          <span @click="handleClose" data-v-a02f1bb9="" class="close" data-test-id="left-menu-close">
+            <svg data-v-02f45589="" data-v-a02f1bb9="" class="svg-icon" style="vertical-align: middle;">
               <use data-v-02f45589="" xlink:href="#icon-cross-squared"></use>
-            </svg></span></div>
-
+            </svg>
+          </span>
+        </div>
+  
         <div data-v-cafe7da3="" data-v-c42aca5e="" class="menu-tiles">
             <a data-v-0822ca80="" data-v-cafe7da3=""
             class="router-link-active router-link-exact-active selected menu-tile" rel="noopener"
@@ -137,388 +136,267 @@
             </div>
           </div>
     </div>
-
-
-
+  
+        <!-- Categories (Static) -->
+        <div data-v-7dd7ea89="" data-v-c42aca5e="" class="sticky-scroll-element categories-sticky-wrapper">
+          <!-- ... categories (unchanged) ... -->
+        </div>
+  
+        <!-- LEAGUES SECTION - DYNAMIC DATA -->
         <div data-v-aabe1219="" data-v-c42aca5e="" class="expansion-panel dark is-open" data-test-id="menu-tournaments">
-          <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer"><!---->
+          <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer">
             <div data-v-aabe1219="" class="row-cell align-middle title-text">
               <h3 data-v-aabe1219="">Leagues</h3>
-            </div> <!---->
-            <div data-v-aabe1219="" class="row-cell align-middle expand-icon"><svg data-v-02f45589="" data-v-aabe1219=""
-                class="svg-icon icon-size-medium" style="vertical-align: middle;"><!---->
+            </div>
+            <div data-v-aabe1219="" class="row-cell align-middle expand-icon">
+              <svg data-v-02f45589="" data-v-aabe1219="" class="svg-icon icon-size-medium">
                 <use data-v-02f45589="" xlink:href="#icon-arrow-up"></use>
-              </svg></div>
-          </div>
-          <div data-v-aabe1219="" class="expansion-panel-content">
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/11965">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                      class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
-                      data-v-7a6cc4a0="" class="menu-text name">Premier League</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">21</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12145"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12145">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                      class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
-                      data-v-7a6cc4a0="" class="menu-text name">FA Cup</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">6</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12097"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12097">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                      class="fi fi-it fis rounded-flag icon-size-large icon-flag" title="IT"></span> <span
-                      data-v-7a6cc4a0="" class="menu-text name">Serie A</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">17</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12110"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12110">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                      class="fi fi-de fis rounded-flag icon-size-large icon-flag" title="DE"></span> <span
-                      data-v-7a6cc4a0="" class="menu-text name">Bundesliga</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">11</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12039"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12039">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                      class="fi fi-es fis rounded-flag icon-size-large icon-flag" title="ES"></span> <span
-                      data-v-7a6cc4a0="" class="menu-text name">LaLiga</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">16</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12127"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12127">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                      class="fi fi-fr fis rounded-flag icon-size-large icon-flag" title="FR"></span> <span
-                      data-v-7a6cc4a0="" class="menu-text name">Ligue 1</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">13</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12541"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12541">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
-                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
-                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Champions League</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">8</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12546"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12546">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
-                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
-                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Europa League</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">8</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12545"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12545">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
-                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
-                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Conference League</span> <!---->
-                  </div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">8</span> <!----></div>
-                </div>
-              </a> </div>
-          </div>
-        </div>
-        <div data-v-c42aca5e="">
-          <div data-v-aabe1219="" class="expansion-panel dark is-open" data-test-id="menu-popularCountries">
-            <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer"><!---->
-              <div data-v-aabe1219="" class="row-cell align-middle title-text">
-                <h3 data-v-aabe1219="">Popular Countries</h3>
-              </div> <!---->
-              <div data-v-aabe1219="" class="row-cell align-middle expand-icon"><svg data-v-02f45589="" data-v-aabe1219=""
-                  class="svg-icon icon-size-medium" style="vertical-align: middle;"><!---->
-                  <use data-v-02f45589="" xlink:href="#icon-arrow-up"></use>
-                </svg></div>
-            </div>
-            <div data-v-aabe1219="" class="expansion-panel-content">
-              <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="country-menu-288">
-                <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
-                  <div data-v-7a6cc4a0="" class="table">
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                        class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
-                        data-v-7a6cc4a0="" class="menu-text name">England</span> <!----></div>
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">128</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
-                        class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
-                        <use data-v-02f45589="" xlink:href="#arrow_down"></use>
-                      </svg></div>
-                  </div>
-                </div>
-                <div data-v-aabe1219="" class="expansion-panel dark"><!----> <!----></div>
-              </div>
-              <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="country-menu-241">
-                <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
-                  <div data-v-7a6cc4a0="" class="table">
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                        class="fi fi-fr fis rounded-flag icon-size-large icon-flag" title="FR"></span> <span
-                        data-v-7a6cc4a0="" class="menu-text name">France</span> <!----></div>
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">34</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
-                        class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
-                        <use data-v-02f45589="" xlink:href="#arrow_down"></use>
-                      </svg></div>
-                  </div>
-                </div>
-                <div data-v-aabe1219="" class="expansion-panel dark"><!----> <!----></div>
-              </div>
-              <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="country-menu-242">
-                <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
-                  <div data-v-7a6cc4a0="" class="table">
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                        class="fi fi-de fis rounded-flag icon-size-large icon-flag" title="DE"></span> <span
-                        data-v-7a6cc4a0="" class="menu-text name">Germany</span> <!----></div>
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">29</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
-                        class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
-                        <use data-v-02f45589="" xlink:href="#arrow_down"></use>
-                      </svg></div>
-                  </div>
-                </div>
-                <div data-v-aabe1219="" class="expansion-panel dark"><!----> <!----></div>
-              </div>
-              <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="country-menu-1">
-                <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
-                  <div data-v-7a6cc4a0="" class="table">
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db=""
-                        data-v-81261974="" class="image-icon rounded-flag icon-size-large icon-flag"
-                        :src="International" style=""> <span data-v-7a6cc4a0=""
-                        class="menu-text name">International</span> <!----></div>
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">94</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
-                        class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
-                        <use data-v-02f45589="" xlink:href="#arrow_down"></use>
-                      </svg></div>
-                  </div>
-                </div>
-                <div data-v-aabe1219="" class="expansion-panel dark"><!----> <!----></div>
-              </div>
-              <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="country-menu-230">
-                <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
-                  <div data-v-7a6cc4a0="" class="table">
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                        class="fi fi-it fis rounded-flag icon-size-large icon-flag" title="IT"></span> <span
-                        data-v-7a6cc4a0="" class="menu-text name">Italy</span> <!----></div>
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">59</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
-                        class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
-                        <use data-v-02f45589="" xlink:href="#arrow_down"></use>
-                      </svg></div>
-                  </div>
-                </div>
-                <div data-v-aabe1219="" class="expansion-panel dark"><!----> <!----></div>
-              </div>
-              <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="country-menu-237">
-                <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
-                  <div data-v-7a6cc4a0="" class="table">
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
-                        class="fi fi-es fis rounded-flag icon-size-large icon-flag" title="ES"></span> <span
-                        data-v-7a6cc4a0="" class="menu-text name">Spain</span> <!----></div>
-                    <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">48</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
-                        class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
-                        <use data-v-02f45589="" xlink:href="#arrow_down"></use>
-                      </svg></div>
-                  </div>
-                </div>
-                <div data-v-aabe1219="" class="expansion-panel dark"><!----> <!----></div>
-              </div>
-            </div>
-          </div>
-        
-    
-  
-  
-        <div data-v-aabe1219="" class="expansion-panel dark is-open" data-test-id="menu-otherCountries">
-    <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer">
-      <!---->
-      <div data-v-aabe1219="" class="row-cell align-middle title-text">
-        <h3 data-v-aabe1219="">Other Countries</h3>
-      </div> 
-      <!---->
-      <div data-v-aabe1219="" class="row-cell align-middle expand-icon">
-        <svg data-v-02f45589="" data-v-aabe1219="" class="svg-icon icon-size-medium" style="vertical-align: middle;">
-          <!---->
-          <use data-v-02f45589="" xlink:href="#icon-arrow-up"></use>
-        </svg>
-      </div>
-    </div>
-  
-    <div data-v-aabe1219="" class="expansion-panel-content">
-      <div data-v-7a6cc4a0="" v-for="country in otherCountries" :key="country.id" class="menu-item dark sub-menu" :data-test-id="'country-menu-' + country.id">
-        <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
-          <div data-v-7a6cc4a0="" class="table">
-            <div data-v-7a6cc4a0="" class="row-cell align-middle details">
-              <!-- Using dynamic flag with proper binding -->
-              <img 
-                :src="country.flagImg" 
-                :alt="country.name" 
-                class="rounded-flag icon-size-large icon-flag" 
-                style="width: 18px; height: 18px; border-radius: 50%; margin-right: 8px;"
-              />
-              <span data-v-7a6cc4a0="" class="menu-text name">{{ country.name }}</span> 
-              <!---->
-            </div>
-            <div data-v-7a6cc4a0="" class="row-cell align-middle control">
-              <span data-v-7a6cc4a0="" class="menu-text">{{ country.count }}</span> 
-              <svg data-v-02f45589="" data-v-7a6cc4a0="" class="svg-icon icon-size-very-small" style="vertical-align: middle;">
-                <!---->
-                <use data-v-02f45589="" xlink:href="#arrow_down"></use>
               </svg>
             </div>
           </div>
+          <div data-v-aabe1219="" class="expansion-panel-content">
+            <!-- Loading State -->
+            <div v-if="leaguesLoading" class="loading-state">Loading leagues...</div>
+            
+            <!-- Error State -->
+            <div v-else-if="leaguesError" class="error-state">{{ leaguesError }}</div>
+            
+            <!-- Dynamic Data -->
+            <div v-else v-for="league in leagues" :key="league.id" 
+                 data-v-7a6cc4a0="" class="menu-item dark sub-menu" 
+                 :data-test-id="'tournament-' + league.id">
+              <a data-v-7a6cc4a0="" :data-test-id="'nav-Group-link'" class="link" :href="'/events/group/' + league.id">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details">
+                    <!-- Dynamic Flag -->
+                    <img v-if="league.flagImg" 
+                         :src="league.flagImg" 
+                         :alt="league.name" 
+                         class="rounded-flag icon-size-large icon-flag" 
+                         style="width: 18px; height: 18px; border-radius: 50%; margin-right: 8px;" />
+                    <span v-else data-v-81261974="" 
+                          :class="'fi fi-' + league.flagCode + ' fis rounded-flag icon-size-large icon-flag'" 
+                          :title="league.flagCode?.toUpperCase()"></span>
+                    <span data-v-7a6cc4a0="" class="menu-text name">{{ league.name }}</span>
+                  </div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control">
+                    <span data-v-7a6cc4a0="" class="menu-text">{{ league.count }}</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-        <div data-v-aabe1219="" class="expansion-panel dark">
-         
+  
+        <!-- POPULAR COUNTRIES SECTION - DYNAMIC DATA -->
+        <div data-v-c42aca5e="">
+          <div data-v-aabe1219="" class="expansion-panel dark is-open" data-test-id="menu-popularCountries">
+            <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer">
+              <div data-v-aabe1219="" class="row-cell align-middle title-text">
+                <h3 data-v-aabe1219="">Popular Countries</h3>
+              </div>
+              <div data-v-aabe1219="" class="row-cell align-middle expand-icon">
+                <svg data-v-02f45589="" data-v-aabe1219="" class="svg-icon icon-size-medium">
+                  <use data-v-02f45589="" xlink:href="#icon-arrow-up"></use>
+                </svg>
+              </div>
+            </div>
+            <div data-v-aabe1219="" class="expansion-panel-content">
+              <!-- Loading State -->
+              <div v-if="popularCountriesLoading" class="loading-state">Loading countries...</div>
+              
+              <!-- Error State -->
+              <div v-else-if="popularCountriesError" class="error-state">{{ popularCountriesError }}</div>
+              
+              <!-- Dynamic Data -->
+              <div v-else v-for="country in popularCountries" :key="country.id" 
+                   data-v-7a6cc4a0="" class="menu-item dark sub-menu" 
+                   :data-test-id="'country-menu-' + country.id">
+                <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
+                  <div data-v-7a6cc4a0="" class="table">
+                    <div data-v-7a6cc4a0="" class="row-cell align-middle details">
+                      <!-- Dynamic Flag -->
+                      <img v-if="country.flagImg" 
+                           :src="country.flagImg" 
+                           :alt="country.name" 
+                           class="rounded-flag icon-size-large icon-flag" 
+                           style="width: 18px; height: 18px; border-radius: 50%; margin-right: 8px;" />
+                      <span v-else data-v-81261974="" 
+                            :class="'fi fi-' + country.flagCode + ' fis rounded-flag icon-size-large icon-flag'" 
+                            :title="country.flagCode?.toUpperCase()"></span>
+                      <span data-v-7a6cc4a0="" class="menu-text name">{{ country.name }}</span>
+                    </div>
+                    <div data-v-7a6cc4a0="" class="row-cell align-middle control">
+                      <span data-v-7a6cc4a0="" class="menu-text">{{ country.count }}</span>
+                      <svg data-v-02f45589="" data-v-7a6cc4a0="" class="svg-icon icon-size-very-small">
+                        <use data-v-02f45589="" xlink:href="#arrow_down"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- OTHER COUNTRIES SECTION - DYNAMIC DATA -->
+          <div data-v-aabe1219="" class="expansion-panel dark is-open" data-test-id="menu-otherCountries">
+            <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer">
+              <div data-v-aabe1219="" class="row-cell align-middle title-text">
+                <h3 data-v-aabe1219="">Other Countries</h3>
+              </div>
+              <div data-v-aabe1219="" class="row-cell align-middle expand-icon">
+                <svg data-v-02f45589="" data-v-aabe1219="" class="svg-icon icon-size-medium">
+                  <use data-v-02f45589="" xlink:href="#icon-arrow-up"></use>
+                </svg>
+              </div>
+            </div>
+  
+            <div data-v-aabe1219="" class="expansion-panel-content">
+              Loading State
+              <div v-if="otherCountriesLoading" class="loading-state">Loading countries...</div>
+              
+              <!-- Error State -->
+              <div v-else-if="otherCountriesError" class="error-state">{{ otherCountriesError }}</div>
+              
+              <!-- Dynamic Data -->
+              <div v-else v-for="country in otherCountries" :key="country.id" 
+                   data-v-7a6cc4a0="" class="menu-item dark sub-menu" 
+                   :data-test-id="'country-menu-' + country.id">
+                <div data-v-7a6cc4a0="" data-test-id="nav-unknown-link" class="link">
+                  <div data-v-7a6cc4a0="" class="table">
+                    <div data-v-7a6cc4a0="" class="row-cell align-middle details">
+                      <!-- Dynamic Flag -->
+                      <img v-if="country.flagImg" 
+                           :src="country.flagImg" 
+                           :alt="country.name" 
+                           class="rounded-flag icon-size-large icon-flag" 
+                           style="width: 18px; height: 18px; border-radius: 50%; margin-right: 8px;" />
+                      <span v-else data-v-81261974="" 
+                            :class="'fi fi-' + country.flagCode + ' fis rounded-flag icon-size-large icon-flag'" 
+                            :title="country.flagCode?.toUpperCase()"></span>
+                      <span data-v-7a6cc4a0="" class="menu-text name">{{ country.name }}</span>
+                    </div>
+                    <div data-v-7a6cc4a0="" class="row-cell align-middle control">
+                      <span data-v-7a6cc4a0="" class="menu-text">{{ country.count }}</span>
+                      <svg data-v-02f45589="" data-v-7a6cc4a0="" class="svg-icon icon-size-very-small">
+                        <use data-v-02f45589="" xlink:href="#arrow_down"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  
-  
-  
-        </div>
-      </div>
-    </div>
-  
-  
-    
-  
   </template>
   
   <script setup>
-  import { computed,ref } from 'vue'
+  import { computed, ref, onMounted } from 'vue'
   import { useRouter } from 'vue-router'
   import { useAuthStore } from '../../../stores/authStore'
   import EuropeFlag from '../../../assets/media/Europe_43bd11c816.svg'
-   import International from '../../../assets/img/flags/international.png';
-    import { inject } from 'vue'
-    const authStore = useAuthStore()
-  // Get authentication state
+  import International from '../../../assets/img/flags/international.png';
+  
+  const authStore = useAuthStore()
+  const router = useRouter()
+  const emit = defineEmits(['close'])
+  
+  // ========== DUMMY DATA - BADILISHA HII KUPOKEA DATA KWA API ==========
+  const fetchMenuData = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          leagues: [
+            { id: 11965, name: 'Premier League', count: 21, flagCode: 'gb-eng', flagImg: null },
+            { id: 12145, name: 'FA Cup', count: 6, flagCode: 'gb-eng', flagImg: null },
+            { id: 12097, name: 'Serie A', count: 17, flagCode: 'it', flagImg: null },
+            { id: 12110, name: 'Bundesliga', count: 11, flagCode: 'de', flagImg: null },
+            { id: 12039, name: 'LaLiga', count: 16, flagCode: 'es', flagImg: null },
+            { id: 12127, name: 'Ligue 1', count: 13, flagCode: 'fr', flagImg: null },
+            { id: 12541, name: 'UEFA Champions League', count: 8, flagCode: null, flagImg: EuropeFlag },
+            { id: 12546, name: 'UEFA Europa League', count: 8, flagCode: null, flagImg: EuropeFlag },
+            { id: 12545, name: 'UEFA Conference League', count: 8, flagCode: null, flagImg: EuropeFlag }
+          ],
+          popularCountries: [
+            { id: 288, name: 'England', count: 128, flagCode: 'gb-eng', flagImg: null },
+            { id: 241, name: 'France', count: 34, flagCode: 'fr', flagImg: null },
+            { id: 242, name: 'Germany', count: 29, flagCode: 'de', flagImg: null },
+            { id: 1, name: 'International', count: 94, flagCode: null, flagImg: International },
+            { id: 230, name: 'Italy', count: 59, flagCode: 'it', flagImg: null },
+            { id: 237, name: 'Spain', count: 48, flagCode: 'es', flagImg: null }
+          ],
+          otherCountries: [
+            { id: 61, name: 'Algeria', count: 5, flagCode: 'dz', flagImg: new URL('../../../assets/sidebarFlags/dz-EwXBYPv9.svg', import.meta.url).href },
+            { id: 126, name: 'Argentina', count: 50, flagCode: 'ar', flagImg: new URL('../../../assets/sidebarFlags/ar-apVegy4c.svg', import.meta.url).href },
+            { id: 248, name: 'Australia', count: 11, flagCode: 'au', flagImg: new URL('../../../assets/sidebarFlags/au-kL8f0uMB.svg', import.meta.url).href },
+            { id: 239, name: 'Austria', count: 20, flagCode: 'at', flagImg: new URL('../../../assets/sidebarFlags/at-D-LsLSdx.svg', import.meta.url).href },
+            { id: 178, name: 'Azerbaijan', count: 5, flagCode: 'az', flagImg: new URL('../../../assets/sidebarFlags/az-z2IthT8Q.svg', import.meta.url).href },
+            { id: 240, name: 'Belgium', count: 16, flagCode: 'be', flagImg: new URL('../../../assets/sidebarFlags/be-Dtq4MkQz.svg', import.meta.url).href },
+            { id: 225, name: 'Bosnia and Herzegovina', count: 3, flagCode: 'ba', flagImg: new URL('../../../assets/sidebarFlags/ba-CiiOt6u0.svg', import.meta.url).href },
+            { id: 128, name: 'Brazil', count: 53, flagCode: 'br', flagImg: new URL('../../../assets/sidebarFlags/br-Yf30zEjB.svg', import.meta.url).href },
+            { id: 196, name: 'Bulgaria', count: 16, flagCode: 'bg', flagImg: new URL('../../../assets/sidebarFlags/bg-cWragUdK.svg', import.meta.url).href },
+            { id: 129, name: 'Chile', count: 10, flagCode: 'cl', flagImg: new URL('../../../assets/sidebarFlags/cl-B2rf9gTF.svg', import.meta.url).href }
+            // ... rest of countries
+          ]
+        })
+      }, 500) 
+    })
+  }
+  // =====================================================================
+  
+  // Reactive state
+  const leagues = ref([])
+  const popularCountries = ref([])
+  const otherCountries = ref([])
+  const leaguesLoading = ref(true)
+  const popularCountriesLoading = ref(true)
+  const otherCountriesLoading = ref(true)
+  const leaguesError = ref(null)
+  const popularCountriesError = ref(null)
+  const otherCountriesError = ref(null)
+  
+  // Fetch data on mount
+  onMounted(async () => {
+    try {
+      const data = await fetchMenuData()
+      
+      leagues.value = data.leagues
+      popularCountries.value = data.popularCountries
+      otherCountries.value = data.otherCountries
+      
+      leaguesLoading.value = false
+      popularCountriesLoading.value = false
+      otherCountriesLoading.value = false
+      
+    } catch (error) {
+      leaguesError.value = 'Failed to load leagues'
+      popularCountriesError.value = 'Failed to load countries'
+      otherCountriesError.value = 'Failed to load countries'
+      leaguesLoading.value = false
+      popularCountriesLoading.value = false
+      otherCountriesLoading.value = false
+      console.error('Error fetching menu data:', error)
+    }
+  })
+  
+  // Auth state
   const isLoggedIn = computed(() => authStore.isLoggedIn)
   const userName = computed(() => authStore.userName)
   
-  const router = useRouter()
-  
-  
-  
   const handleLogout = () => {
-  authStore.logout()
-  router.push('/login')
+    authStore.logout()
+    router.push('/login')
   }
-  // Define emit event
-  const emit = defineEmits(['close'])
   
-  // Function ya kufunga sidebar
   const handleClose = () => {
-  emit('close')
+    emit('close')
   }
-  
-  
-  
-  // Compute sidebar style dynamically
-  const sidebarStyle = computed(() => {
-  return {
-    width: '384px',
-    position: 'absolute',
-    zIndex: '10003', // duu zaidi kuliko betslip
-    right: '0' // Right ita-set na CSS ya parent
-  }
-  })
-  
-  const otherCountries = ref([
-    { id: 61, name: 'Algeria', count: 5, flagImg: new URL('../../../assets/sidebarFlags/dz-EwXBYPv9.svg', import.meta.url).href },
-    { id: 126, name: 'Argentina', count: 50, flagImg: new URL('../../../assets/sidebarFlags/ar-apVegy4c.svg', import.meta.url).href },
-    { id: 248, name: 'Australia', count: 11, flagImg: new URL('../../../assets/sidebarFlags/au-kL8f0uMB.svg', import.meta.url).href },
-    { id: 239, name: 'Austria', count: 20, flagImg: new URL('../../../assets/sidebarFlags/at-D-LsLSdx.svg', import.meta.url).href },
-    { id: 178, name: 'Azerbaijan', count: 5, flagImg: new URL('../../../assets/sidebarFlags/az-z2IthT8Q.svg', import.meta.url).href },
-    { id: 240, name: 'Belgium', count: 16, flagImg: new URL('../../../assets/sidebarFlags/be-Dtq4MkQz.svg', import.meta.url).href },
-    { id: 225, name: 'Bosnia and Herzegovina', count: 3, flagImg: new URL('../../../assets/sidebarFlags/ba-CiiOt6u0.svg', import.meta.url).href },
-    { id: 128, name: 'Brazil', count: 53, flagImg: new URL('../../../assets/sidebarFlags/br-Yf30zEjB.svg', import.meta.url).href },
-    { id: 196, name: 'Bulgaria', count: 16, flagImg: new URL('../../../assets/sidebarFlags/bg-cWragUdK.svg', import.meta.url).href },
-    { id: 129, name: 'Chile', count: 10, flagImg: new URL('../../../assets/sidebarFlags/cl-B2rf9gTF.svg', import.meta.url).href },
-    { id: 130, name: 'Colombia', count: 11, flagImg: new URL('../../../assets/sidebarFlags/co-BRjxMuCM.svg', import.meta.url).href }, 
-    { id: 119, name: 'Costa Rica', count: 3, flagImg: new URL('../../../assets/sidebarFlags/cr-CcuKkUIo.svg', import.meta.url).href }, 
-    { id: 226, name: 'Croatia', count: 5, flagImg: new URL('../../../assets/sidebarFlags/hr-C7VqhX5l.svg', import.meta.url).href },
-    { id: 180, name: 'Cyprus', count: 7, flagImg: new URL('../../../assets/sidebarFlags/cy-Bgo0XIP0.svg', import.meta.url).href }, 
-    { id: 197, name: 'Czech Republic', count: 16, flagImg: new URL('../../../assets/sidebarFlags/cz-CgTuLLXv.svg', import.meta.url).href }, 
-    { id: 207, name: 'Denmark', count: 13, flagImg: new URL('../../../assets/sidebarFlags/dk-2cglAULc.svg', import.meta.url).href },
-    { id: 131, name: 'Ecuador', count: 8, flagImg: new URL('../../../assets/sidebarFlags/ec-sTVr1A3S.svg', import.meta.url).href },
-    { id: 62, name: 'Egypt', count: 7, flagImg: new URL('../../../assets/sidebarFlags/eg-C1MYAOXe.svg', import.meta.url).href },
-    { id: 208, name: 'Estonia', count: 1, flagImg: new URL('../../../assets/sidebarFlags/ee-B0tgUOEC.svg', import.meta.url).href },
-    { id: 36, name: 'Ethiopia', count: 2, flagImg: new URL('../../../assets/sidebarFlags/et-cfPInayI.svg', import.meta.url).href },
-    { id: 228, name: 'Greece', count: 19, flagImg: new URL('../../../assets/sidebarFlags/gr-COThnT__.svg', import.meta.url).href },
-    { id: 121, name: 'Guatemala', count: 2, flagImg: new URL('../../../assets/sidebarFlags/gt-Ufdm0MFv.svg', import.meta.url).href },
-    { id: 198, name: 'Hungary', count: 7, flagImg: new URL('../../../assets/sidebarFlags/hu-Bm8S5mAU.svg', import.meta.url).href },
-    { id: 212, name: 'Iceland', count: 1, flagImg: new URL('../../../assets/sidebarFlags/is-Cdq2ElPF.svg', import.meta.url).href },
-    { id: 160, name: 'India', count: 4, flagImg: new URL('../../../assets/sidebarFlags/in-BrINBvML.svg', import.meta.url).href },
-    { id: 168, name: 'Indonesia', count: 8, flagImg: new URL('../../../assets/sidebarFlags/id-CJiY5UnY.svg', import.meta.url).href },
-    { id: 213, name: 'Ireland', count: 10, flagImg: new URL('../../../assets/sidebarFlags/ie-DhxI4aJv.svg', import.meta.url).href },
-    { id: 183, name: 'Israel', count: 7, flagImg: new URL('../../../assets/sidebarFlags/il-CeFQotKl.svg', import.meta.url).href },
-    { id: 154, name: 'Japan', count: 11, flagImg: new URL('../../../assets/sidebarFlags/jp-B5RfAVGb.svg', import.meta.url).href },
-    { id: 184, name: 'Jordan', count: 5, flagImg: new URL('../../../assets/sidebarFlags/jo-CiGTAWEd.svg', import.meta.url).href },
-    { id: 185, name: 'Kuwait', count: 1, flagImg: new URL('../../../assets/sidebarFlags/kw-CIaYkhdM.svg', import.meta.url).href },
-    { id: 123, name: 'Mexico', count: 25, flagImg: new URL('../../../assets/sidebarFlags/mx-4c9y9ryX.svg', import.meta.url).href },
-    { id: 246, name: 'Netherlands', count: 30, flagImg: new URL('../../../assets/sidebarFlags/nl-DKN85plC.svg', import.meta.url).href },
-    { id: 289, name: 'Northern Ireland', count: 9, flagImg: new URL('../../../assets/sidebarFlags/gb-eng-DTHmDHq3.svg', import.meta.url).href },
-    { id: 187, name: 'Oman', count: 1, flagImg: new URL('../../../assets/sidebarFlags/om-Ri__rIwP.svg', import.meta.url).href },
-    { id: 135, name: 'Paraguay', count: 5, flagImg: new URL('../../../assets/sidebarFlags/py-CRTEf2ay.svg', import.meta.url).href },
-    { id: 136, name: 'Peru', count: 9, flagImg: new URL('../../../assets/sidebarFlags/pe--eye3JWr.svg', import.meta.url).href },
-    { id: 199, name: 'Poland', count: 19, flagImg: new URL('../../../assets/sidebarFlags/pl-jl6riBSr.svg', import.meta.url).href },
-    { id: 233, name: 'Portugal', count: 32, flagImg: new URL('../../../assets/sidebarFlags/pt-BLLm3V0o.svg', import.meta.url).href },
-    { id: 188, name: 'Qatar', count: 5, flagImg: new URL('../../../assets/sidebarFlags/qa-CekFoc-3.svg', import.meta.url).href },
-    { id: 156, name: 'Republic of Korea', count: 7, flagImg: new URL('../../../assets/sidebarFlags/kr-KUIaWHQD.svg', import.meta.url).href },
-    { id: 201, name: 'Romania', count: 23, flagImg: new URL('../../../assets/sidebarFlags/ro-C2av9jVe.svg', import.meta.url).href },
-    { id: 202, name: 'Russian Federation', count: 30, flagImg: new URL('../../../assets/sidebarFlags/ru-DbUtf_DX.svg', import.meta.url).href },
-    { id: 189, name: 'Saudi Arabia', count: 16, flagImg: new URL('../../../assets/sidebarFlags/sa-eH5F7cXy.svg', import.meta.url).href },
-    { id: 290, name: 'Scotland', count: 36, flagImg: new URL('../../../assets/sidebarFlags/gb-DSer7Jgn.svg', import.meta.url).href },
-    { id: 235, name: 'Serbia', count: 8, flagImg: new URL('../../../assets/sidebarFlags/rs-D2wyuxjv.svg', import.meta.url).href },
-    { id: 173, name: 'Singapore', count: 4, flagImg: new URL('../../../assets/sidebarFlags/sg-DisnRdSe.svg', import.meta.url).href },
-    { id: 203, name: 'Slovakia', count: 6, flagImg: new URL('../../../assets/sidebarFlags/sk-DafobJl2.svg', import.meta.url).href },
-    { id: 236, name: 'Slovenia', count: 5, flagImg: new URL('../../../assets/sidebarFlags/si-BRlyqHOn.svg', import.meta.url).href },
-    { id: 71, name: 'South Africa', count: 2, flagImg: new URL('../../../assets/sidebarFlags/za-BUKoH9qm.svg', import.meta.url).href },
-    { id: 221, name: 'Sweden', count: 8, flagImg: new URL('../../../assets/sidebarFlags/se-DHad7SFX.svg', import.meta.url).href },
-    { id: 247, name: 'Switzerland', count: 12, flagImg: new URL('../../../assets/sidebarFlags/ch-Do8WoVrp.svg', import.meta.url).href },
-    { id: 191, name: 'Syrian Arab Republic', count: 1, flagImg: new URL('../../../assets/sidebarFlags/sy-Dp3djvX9.svg', import.meta.url).href },
-    { id: 174, name: 'Thailand', count: 7, flagImg: new URL('../../../assets/sidebarFlags/th-DK2zZyMY.svg', import.meta.url).href },
-    { id: 192, name: 'Turkey', count: 18, flagImg: new URL('../../../assets/sidebarFlags/tr-Dgwi_nfe.svg', import.meta.url).href },
-    { id: 204, name: 'Ukraine', count: 8, flagImg: new URL('../../../assets/sidebarFlags/ua-BquxXKta.svg', import.meta.url).href },
-    { id: 138, name: 'Uruguay', count: 8, flagImg: new URL('../../../assets/sidebarFlags/uy-B2Qs7aGx.svg', import.meta.url).href },
-    { id: 144, name: 'USA', count: 15, flagImg: new URL('../../../assets/sidebarFlags/us-DAM9Utrf.svg', import.meta.url).href },
-    { id: 176, name: 'Vietnam', count: 2, flagImg: new URL('../../../assets/sidebarFlags/vn-CsUBJx2L.svg', import.meta.url).href },
-    { id: 291, name: 'Wales', count: 3, flagImg: new URL('../../../assets/sidebarFlags/gb-wls-lLp_JivI.svg', import.meta.url).href }
-  ])
-  
-  
   </script>
   
   <style lang="scss" scoped>
-  .side-bar.transition.overlap[data-v-c057a854] {
+   .side-bar.transition.overlap[data-v-c057a854] {
       transition: transform .35s ease-in;
   }
   .side-bar.overlap.full-screen[data-v-c057a854] {
@@ -542,14 +420,14 @@
   }
   
   .content[data-v-c057a854] {
-      background-color: #fff;
+      background-color: #252a2d;
       height: 100%;
       overflow-x: hidden;
   }
   .side-bar[data-v-c057a854] {
       -ms-overflow-style: none;
       scrollbar-width: none;
-      background: #fff;
+      background: #252a2d;
       width: 100%;
       transition-property: transform, width;
       position: relative;
@@ -1484,4 +1362,49 @@
     width: 16px !important;
     height: 16px !important;
 }
+  /* Add these loading states */
+  .loading-state {
+    color: #aaaeb0;
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .error-state {
+    color: #ff6b6b;
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  /* ADD THIS AT THE END - ARROW FIX ONLY */
+  .expansion-panel.dark .title.table {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
+      padding: 16px 12px 8px 16px !important;
+      box-sizing: border-box !important;
+  }
+  
+  .expansion-panel.dark .title.table .title-text {
+      flex: 1 !important;
+      margin-right: 0 !important;
+      min-width: 0 !important;
+  }
+  
+  .expansion-panel.dark .title.table .expand-icon {
+      flex-shrink: 0 !important;
+      width: 24px !important;
+      height: 24px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-left: 8px !important;
+  }
+  
+  .expansion-panel.dark .title.table .expand-icon svg {
+      width: 16px !important;
+      height: 16px !important;
+  }
   </style>
