@@ -26,11 +26,15 @@ const openBetsWithDetails = computed(() => {
   return openBets.value.map(bet => {
     const stake = Number(bet.stake) || 0
     const odds = Number(bet.total_odds) || 0
+
     
     const potential = (odds - 1) * stake
+
+   
+    
     const tax = potential * 0.12
     const payout = potential - tax + stake
-    
+    console.log("data tested :",payout)
     return {
       ...bet,
       calculatedPayout: formatMoney(payout)
