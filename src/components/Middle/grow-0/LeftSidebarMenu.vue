@@ -144,14 +144,53 @@
           <div data-v-aabe1219="" data-test-id="toggle-open-button" class="title table pointer"><!---->
             <div data-v-aabe1219="" class="row-cell align-middle title-text">
               <h3 data-v-aabe1219="">Leagues</h3>
-            </div> <!---->
+            </div> 
             <div data-v-aabe1219="" class="row-cell align-middle expand-icon"><svg data-v-02f45589="" data-v-aabe1219=""
                 class="svg-icon icon-size-medium" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-arrow-up"></use>
               </svg></div>
           </div>
+
           <div data-v-aabe1219="" class="expansion-panel-content">
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965"><a data-v-7a6cc4a0=""
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+            <a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                      class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                      data-v-7a6cc4a0="" class="menu-text name">World Cup Qualification UEFA</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">8</span> <!----></div>
+                </div>
+              </a> 
+            </div>
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+                <a data-v-7a6cc4a0=""
+                    data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                    <div data-v-7a6cc4a0="" class="table">
+                      <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                          class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                          data-v-7a6cc4a0="" class="menu-text name">FIFA World Cup Qualification, Inter-Confederation Playoffs</span> <!----></div>
+                      <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                          class="menu-text">21</span> <!----></div>
+                    </div>
+                  </a> 
+                </div>
+                <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+                    <a data-v-7a6cc4a0=""
+                        data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                        <div data-v-7a6cc4a0="" class="table">
+                          <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                              class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                              data-v-7a6cc4a0="" class="menu-text name">Int Friendly Games</span> <!----></div>
+                          <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                              class="menu-text">29</span> <!----></div>
+                        </div>
+                      </a> 
+                    </div>
+
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+            <a data-v-7a6cc4a0=""
                 data-test-id="nav-Group-link" class="link" href="/events/group/11965">
                 <div data-v-7a6cc4a0="" class="table">
                   <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
@@ -160,7 +199,9 @@
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
                       class="menu-text">21</span> <!----></div>
                 </div>
-              </a> </div>
+              </a> 
+            </div>
+
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12145"><a data-v-7a6cc4a0=""
                 data-test-id="nav-Group-link" class="link" href="/events/group/12145">
                 <div data-v-7a6cc4a0="" class="table">
@@ -1146,6 +1187,9 @@
   }
   .fi-gb-eng {
       background-image: url(./assets/flags/gb-eng-C8iDhGHN.svg);
+  }
+  .fi-gb-world-cup {
+      background-image: url(./assets/flags/noun_europe_188772_1_de866e5d6c.svg);
   }
   .fi {
       width: 1.33333em;

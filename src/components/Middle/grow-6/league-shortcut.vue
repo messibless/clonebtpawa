@@ -1,6 +1,7 @@
 <script setup>
 import AfricanLeague from '../../../assets/media/noun_europe_188772_1_de866e5d6c.svg';
 import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
+  import EuropeFlag from '../../../assets/media/Europe_43bd11c816.svg'
 </script>
 
 <template>
@@ -36,7 +37,8 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
             <a href="/events/group/11965" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
-                        <span class="fi fi-gb-eng fis rounded-flag icon-size-medium" title="GB-ENG"></span>
+                        <!-- <span class="fi fi-gb-eng fis rounded-flag icon-size-medium" title="GB-ENG"></span> -->
+                        <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
                         <div class="box-count">19</div>
                     </div>
                     <div class="league-shortcut-box-name">Premier League</div>
@@ -47,7 +49,8 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
             <a href="/events/group/12348" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
-                        <span class="fi fi-gb-eng fis rounded-flag icon-size-medium" title="GB-ENG"></span>
+                        <!-- <span class="fi fi-gb-eng fis rounded-flag icon-size-medium" title="GB-ENG"></span> -->
+                        <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
                         <div class="box-count">2</div>
                     </div>
                     <div class="league-shortcut-box-name">EFL Cup</div>
@@ -231,6 +234,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
     
     &.fi-gb-eng {
         background-color: #012169;
+        background-image: url('../../../assets/media/Europe_43bd11c816.svg');
         background-image: linear-gradient(to bottom, #012169 0%, #002395 100%);
     }
     
