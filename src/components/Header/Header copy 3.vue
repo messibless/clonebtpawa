@@ -1,10 +1,11 @@
 <script setup>
-import { ref, computed, inject, onMounted } from 'vue'
+import { ref, computed, inject,onMounted } from 'vue'
 import { useAuthStore } from '../../../src/stores/authStore'
 import { useBalanceStore } from '../../../src/stores/balance'
 
 const authStore = useAuthStore()
 const balanceStore = useBalanceStore()
+
 
 // Get balance state from store
 const formattedBalance = computed(() => balanceStore.formattedBalance)
@@ -32,17 +33,7 @@ const openAccountSidebar = () => {
   }
 }
 
-// FETCH BALANCE WHEN COMPONENT MOUNTS - HII ILIKOSEKANA
-onMounted(async () => {
-  console.log('Header mounted, isLoggedIn:', isLoggedIn.value)
-  if (isLoggedIn.value) {
-    console.log('Calling fetchBalance...')
-    await balanceStore.fetchBalance()
-    console.log('Balance after fetch:', balanceStore.balanceState.value)
-  } else {
-    console.log('User not logged in, skipping balance fetch')
-  }
-})
+
 </script>
 
 <template>

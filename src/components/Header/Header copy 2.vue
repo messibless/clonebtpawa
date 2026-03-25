@@ -1,14 +1,10 @@
 <script setup>
-import { ref, computed, inject, onMounted } from 'vue'
+import { ref, computed, inject,onMounted } from 'vue'
 import { useAuthStore } from '../../../src/stores/authStore'
-import { useBalanceStore } from '../../../src/stores/balance'
+import api from '../../services/api'
+
 
 const authStore = useAuthStore()
-const balanceStore = useBalanceStore()
-
-// Get balance state from store
-const formattedBalance = computed(() => balanceStore.formattedBalance)
-const isLoadingBalance = computed(() => balanceStore.loading)
 
 // Get authentication state
 const isLoggedIn = computed(() => authStore.isLoggedIn)
@@ -32,16 +28,48 @@ const openAccountSidebar = () => {
   }
 }
 
-// FETCH BALANCE WHEN COMPONENT MOUNTS - HII ILIKOSEKANA
-onMounted(async () => {
-  console.log('Header mounted, isLoggedIn:', isLoggedIn.value)
-  if (isLoggedIn.value) {
-    console.log('Calling fetchBalance...')
-    await balanceStore.fetchBalance()
-    console.log('Balance after fetch:', balanceStore.balanceState.value)
-  } else {
-    console.log('User not logged in, skipping balance fetch')
+
+
+
+
+
+
+// State variables (kama useState)
+const balanceState = ref([])
+const loading = ref(false)
+const error = ref('')
+
+// Function to fetch fixtures
+const fetchBalance = async () => {
+  loading.value = true
+  error.value = ''
+  try {
+    const response = await api.get('/balance') // API endpoint yako
+    balanceState.value = response.data
+    console.log('Fetched balance:', balanceState.value)
+  } catch (err) {
+    console.error('Error fetching balance:', err)
+    error.value = 'Failed to load balance'
+  } finally {
+    loading.value = false
   }
+}
+
+// onMounted replaces useEffect with empty dependency array
+onMounted(() => {
+  fetchBalance()
+})
+
+
+
+const formattedBalance = computed(() => {
+  if (!balanceState.value.amount) return '0.00'
+  const amountNumber = parseFloat(balanceState.value.amount)  // convert string to number
+  return new Intl.NumberFormat('en-US', {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(amountNumber)
 })
 </script>
 

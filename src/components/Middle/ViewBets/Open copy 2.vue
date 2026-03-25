@@ -1,9 +1,11 @@
 <script setup>
 
 // open.vue
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue' // Import computed
 import Loader from '../../../assets/loader/default-spinner-BIEd0VkD.gif'
 import { useBets } from './composables/useBets'
+
+
 
 const { openBets, fetchBets, loading } = useBets()
 
@@ -13,30 +15,17 @@ onMounted(() => {
   fetchBets()
 })
 
+
 const formatMoney = (value) => {
   if (value === undefined || value === null) return '0.00'
+  
   return Number(value).toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })
 }
 
-// Tumia openBets badala ya displayedBets
-const openBetsWithDetails = computed(() => {
-  return openBets.value.map(bet => {
-    const stake = Number(bet.stake) || 0
-    const odds = Number(bet.total_odds) || 0
-    
-    const potential = (odds - 1) * stake
-    const tax = potential * 0.12
-    const payout = potential - tax + stake
-    
-    return {
-      ...bet,
-      calculatedPayout: formatMoney(payout)
-    }
-  })
-})
+
 
 </script>
 
@@ -74,7 +63,7 @@ const openBetsWithDetails = computed(() => {
                 <div data-v-34417751="" data-v-beccd7ea="">
                             
                   <div
-                  v-for="bet in openBetsWithDetails" 
+                  v-for="bet in openBets" 
                   :key="bet.id"
                    data-v-34417751="" class="bet" data-test-id="bet-pending-10655410033" data-test-class="bet-pending">
                             <div data-v-34417751="" class="bet-line bet-header">

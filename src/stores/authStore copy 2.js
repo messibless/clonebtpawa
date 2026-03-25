@@ -1,7 +1,6 @@
 // stores/auth.js
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import api from '../services/api' // Import api yako
 
 export const useAuthStore = defineStore('auth', () => {
   // State
@@ -9,9 +8,7 @@ export const useAuthStore = defineStore('auth', () => {
   const token = ref(null)
   const isAuthenticated = ref(false)
   const loading = ref(false)
-  const initialized = ref(false)
-  const balance = ref(0) // Add balance state
-  const balanceLoaded = ref(false) // Track if balance has been loaded
+  const initialized = ref(false) // Track if store has been initialized
 
   // Valid user data
   const validUserData = {
@@ -27,6 +24,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   // Initialize authentication state from storage (only once)
   const initializeAuth = () => {
+    // Prevent re-initialization if already done
     if (initialized.value) {
       console.log('Auth store already initialized, skipping...')
       return
@@ -36,24 +34,12 @@ export const useAuthStore = defineStore('auth', () => {
     
     const storedToken = localStorage.getItem('authToken') || sessionStorage.getItem('authToken')
     const storedUser = localStorage.getItem('userData') || sessionStorage.getItem('userData')
-    const storedBalance = localStorage.getItem('userBalance') // Get stored balance
     
     if (storedToken && storedUser) {
       try {
         token.value = storedToken
         user.value = JSON.parse(storedUser)
         isAuthenticated.value = true
-        
-        // Load balance from storage if exists
-        if (storedBalance) {
-          balance.value = parseFloat(storedBalance)
-          balanceLoaded.value = true
-          console.log('Balance loaded from storage:', balance.value)
-        } else if (user.value.balance) {
-          balance.value = user.value.balance
-          balanceLoaded.value = true
-        }
-        
         console.log('Auth store initialized with user data')
       } catch (error) {
         console.error('Error parsing stored user data:', error)
@@ -66,64 +52,29 @@ export const useAuthStore = defineStore('auth', () => {
     initialized.value = true
   }
 
-  // Fetch balance from API and store
-  const fetchBalance = async (forceRefresh = false) => {
-    // If balance already loaded and not forcing refresh, return cached balance
-    if (balanceLoaded.value && !forceRefresh) {
-      console.log('Using cached balance:', balance.value)
-      return balance.value
-    }
-    
-    loading.value = true
-    try {
-      const response = await api.get('/balance')
-      balance.value = response.data.amount || response.data.balance || 0
-      
-      // Store in localStorage for persistence
-      localStorage.setItem('userBalance', balance.value.toString())
-      
-      balanceLoaded.value = true
-      console.log('Balance fetched and stored:', balance.value)
-      return balance.value
-    } catch (error) {
-      console.error('Error fetching balance:', error)
-      // Use fallback balance from user data if available
-      if (user.value?.balance) {
-        balance.value = user.value.balance
-      }
-      return balance.value
-    } finally {
-      loading.value = false
-    }
+  // Check if user is logged in (uses cached state)
+  const checkAuthStatus = () => {
+    return isAuthenticated.value
   }
 
-  // Update balance (after betting, deposits, etc.)
-  const updateBalance = (newBalance) => {
-    balance.value = newBalance
-    localStorage.setItem('userBalance', newBalance.toString())
-    
-    // Also update user data if needed
-    if (user.value) {
-      user.value.balance = newBalance
-      updateUserData({ balance: newBalance })
-    }
-    
-    console.log('Balance updated:', newBalance)
-  }
-
-  // Login function
+  // Login function - stores data in both storage and DOM state
   const login = async (credentials, rememberMe = true) => {
     loading.value = true
     
     try {
+      // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 1000))
       
       const { phoneNumber, password } = credentials
+      
+      // Validate credentials
       const isValid = phoneNumber === validUserData.phoneNumber && password === validUserData.password
       
       if (isValid) {
+        // Generate token
         const authToken = 'dummy_jwt_token_' + Date.now()
         
+        // Store based on rememberMe choice
         if (rememberMe) {
           localStorage.setItem('authToken', authToken)
           localStorage.setItem('userData', JSON.stringify(validUserData))
@@ -132,14 +83,13 @@ export const useAuthStore = defineStore('auth', () => {
           sessionStorage.setItem('userData', JSON.stringify(validUserData))
         }
         
+        // Update state (DOM)
         token.value = authToken
         user.value = validUserData
         isAuthenticated.value = true
-        
-        // Fetch balance after login
-        await fetchBalance()
-        
         loading.value = false
+        
+        // IMPORTANT: Return success object
         return { 
           success: true, 
           user: validUserData,
@@ -147,6 +97,7 @@ export const useAuthStore = defineStore('auth', () => {
         }
       } else {
         loading.value = false
+        // Return failure object
         return { 
           success: false, 
           message: 'Invalid phone number or password' 
@@ -162,41 +113,43 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  // Logout function
+  // Logout function - clears both storage and DOM state
   const logout = () => {
     console.log('Logging out, clearing auth data...')
     
+    // Clear all storage
     localStorage.removeItem('authToken')
     localStorage.removeItem('userData')
-    localStorage.removeItem('userBalance') // Clear balance storage
     sessionStorage.removeItem('authToken')
     sessionStorage.removeItem('userData')
     
+    // Reset state (DOM)
     user.value = null
     token.value = null
     isAuthenticated.value = false
-    balance.value = 0
-    balanceLoaded.value = false
     loading.value = false
+    
+    // Don't reset initialized flag to maintain state
     
     return { success: true }
   }
 
-  // Get current user
+  // Get current user (from cached DOM state)
   const getCurrentUser = () => {
     return user.value
   }
 
-  // Check if user exists
+  // Check if user exists by phone number
   const checkUserExists = (phoneNumber) => {
     return phoneNumber === validUserData.phoneNumber
   }
 
-  // Update user data
+  // Update user data (syncs with both storage and DOM)
   const updateUserData = (newData) => {
     if (user.value) {
       user.value = { ...user.value, ...newData }
       
+      // Update storage
       const storedUser = localStorage.getItem('userData') || sessionStorage.getItem('userData')
       if (storedUser) {
         const currentUser = JSON.parse(storedUser)
@@ -208,19 +161,29 @@ export const useAuthStore = defineStore('auth', () => {
           sessionStorage.setItem('userData', JSON.stringify(updatedUser))
         }
       }
+      
+      console.log('User data updated in DOM and storage')
     }
   }
 
-  // Computed properties
+  // Update user balance
+  const updateBalance = (amount) => {
+    if (user.value) {
+      user.value.balance = amount
+      updateUserData({ balance: amount })
+    }
+  }
+
+  // Computed properties (these are reactive and cached)
   const currentUser = computed(() => user.value)
   const isLoggedIn = computed(() => isAuthenticated.value)
   const isLoading = computed(() => loading.value)
-  const userBalance = computed(() => balance.value) // Use stored balance
+  const userBalance = computed(() => user.value?.balance || 0)
   const userName = computed(() => user.value?.name || 'Guest')
   const userPhone = computed(() => user.value?.phoneNumber || '')
   const userEmail = computed(() => user.value?.email || '')
 
-  // Initialize on store creation
+  // Initialize on store creation (only once)
   initializeAuth()
 
   return {
@@ -230,8 +193,6 @@ export const useAuthStore = defineStore('auth', () => {
     isAuthenticated,
     loading,
     initialized,
-    balance,
-    balanceLoaded,
     
     // Computed
     currentUser,
@@ -244,13 +205,12 @@ export const useAuthStore = defineStore('auth', () => {
     
     // Actions
     initializeAuth,
-    checkAuthStatus: () => isAuthenticated.value,
+    checkAuthStatus,
     login,
     logout,
     getCurrentUser,
     checkUserExists,
     updateUserData,
-    updateBalance,
-    fetchBalance
+    updateBalance
   }
 })

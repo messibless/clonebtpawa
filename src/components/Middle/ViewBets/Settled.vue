@@ -41,7 +41,6 @@ onMounted(async () => {
 
 await fetchBets()
 
- 
 allSettledBets.value = settledBets.value
 isLoading.value = false
  // Save to localStorage
