@@ -72,7 +72,7 @@ const betCount = computed(() => {
                     class="game-event-wrapper pointer" data-test-id="nav-event-32751029-link" name="id-32751029">
                     <div data-v-34ba8927="" class="game-event-header">
                         <div data-v-34ba8927="" class="game-event-header-left-content"><span data-v-34ba8927=""
-                                class="game-event-subtitle">{{game.term}}H | {{ game.timeUsed }}</span> </div>
+                                class="game-event-subtitle">{{game.term}} | {{ game.timeUsed }}</span> </div>
                         <div data-v-34ba8927="" class="game-event-header-right-content">
                         </div>
                     </div>
@@ -113,7 +113,9 @@ const betCount = computed(() => {
                                                             data-v-08809586="" class="event-selection"
                                                             data-test-id="selection">1</span> <span data-v-08809586=""
                                                             class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">{{ game.homeOdds }}</span></span></span></span></span><span
+                                                                data-v-08809586="">{{ game.homeOdds }}</span></span></span></span></span>
+                                                                
+                                                                <!-- <span
                                                 data-v-08809586="" data-v-aefa9a0d=""
                                                 class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3745"><span
                                                     data-v-08809586="" class="event-bet"><span data-v-08809586=""
@@ -121,8 +123,10 @@ const betCount = computed(() => {
                                                         data-test-id="bet-price-select-button" class="anchor-wrap"><span
                                                             data-v-08809586="" class="event-selection"
                                                             data-test-id="selection">X</span> <span data-v-08809586=""
-                                                            class="event-odds" data-test-id="value"><!----> <span
-                                                                data-v-08809586="">{{ game.drawOdds }}</span></span></span></span></span><span
+                                                            class="event-odds" data-test-id="value"> <span
+                                                                data-v-08809586="">{{ game.drawOdds }}</span></span></span></span></span> -->
+                                                                
+                                                                <span
                                                 data-v-08809586="" data-v-aefa9a0d=""
                                                 class="event-bet-wrapper bet-price" data-test-id="Odd-3743-3746"><span
                                                     data-v-08809586="" class="event-bet"><span data-v-08809586=""
