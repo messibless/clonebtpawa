@@ -83,7 +83,7 @@ const openBetsWithDetails = computed(() => {
                    data-v-34417751="" class="bet" data-test-id="bet-pending-10655410033" data-test-class="bet-pending">
                             <div data-v-34417751="" class="bet-line bet-header">
                                 <div data-v-34417751="" class="header-container">
-                                <div data-v-34417751="" class="header-title"><span data-v-34417751="" class="time">{{ bet.time }};
+                                <div data-v-34417751="" class="header-title"><span data-v-34417751="" class="time">{{ bet.time }}
                                     </span> <span data-v-34417751="" class="date">{{ bet.date }}</span> <span data-v-34417751=""
                                     class="bet-live-now"></span></div>
                                 <div data-v-34417751="" class="id" data-test-id="bet-id">ID: #{{ bet.id }} </div>
