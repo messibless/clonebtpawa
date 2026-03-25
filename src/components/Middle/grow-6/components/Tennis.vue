@@ -188,7 +188,7 @@ const betCount = computed(() => {
                               <!-- Bet Count Button -->
                               <a data-v-74c3b014="" data-v-5d6a591a="" :href="`/event/${game.eventId}`"
                                 class="betline-count-button" :data-test-id="`nav-event-${game.eventId}-betline-link`">
-                                <span data-v-74c3b014="">{{ game.betCount }}</span>
+                                <span data-v-74c3b014="">{{ game.market }}</span>
                                 <svg data-v-02f45589="" data-v-74c3b014="" class="svg-icon icon-size-very-small"
                                   style="vertical-align: middle;">
                                   <use data-v-02f45589="" xlink:href="#arrow_right"></use>

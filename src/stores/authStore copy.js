@@ -1,4 +1,3 @@
-// stores/auth.js
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
@@ -8,7 +7,6 @@ export const useAuthStore = defineStore('auth', () => {
   const token = ref(null)
   const isAuthenticated = ref(false)
   const loading = ref(false)
-  const initialized = ref(false) // Track if store has been initialized
 
   // Valid user data
   const validUserData = {
@@ -22,42 +20,29 @@ export const useAuthStore = defineStore('auth', () => {
     country: 'Tanzania'
   }
 
-  // Initialize authentication state from storage (only once)
+  // Initialize authentication state from storage
   const initializeAuth = () => {
-    // Prevent re-initialization if already done
-    if (initialized.value) {
-      console.log('Auth store already initialized, skipping...')
-      return
-    }
-    
-    console.log('Initializing auth store...')
-    
     const storedToken = localStorage.getItem('authToken') || sessionStorage.getItem('authToken')
-    const storedUser = localStorage.getItem('userData') || sessionStorage.getItem('userData')
+    const storedUser = localStorage.getItem('userData')
     
     if (storedToken && storedUser) {
       try {
         token.value = storedToken
         user.value = JSON.parse(storedUser)
         isAuthenticated.value = true
-        console.log('Auth store initialized with user data')
       } catch (error) {
         console.error('Error parsing stored user data:', error)
         logout()
       }
-    } else {
-      console.log('No stored auth data found')
     }
-    
-    initialized.value = true
   }
 
-  // Check if user is logged in (uses cached state)
+  // Check if user is logged in
   const checkAuthStatus = () => {
     return isAuthenticated.value
   }
 
-  // Login function - stores data in both storage and DOM state
+  // Login function - MUST RETURN AN OBJECT
   const login = async (credentials, rememberMe = true) => {
     loading.value = true
     
@@ -83,7 +68,7 @@ export const useAuthStore = defineStore('auth', () => {
           sessionStorage.setItem('userData', JSON.stringify(validUserData))
         }
         
-        // Update state (DOM)
+        // Update state
         token.value = authToken
         user.value = validUserData
         isAuthenticated.value = true
@@ -113,28 +98,24 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  // Logout function - clears both storage and DOM state
+  // Logout function
   const logout = () => {
-    console.log('Logging out, clearing auth data...')
-    
     // Clear all storage
     localStorage.removeItem('authToken')
     localStorage.removeItem('userData')
     sessionStorage.removeItem('authToken')
     sessionStorage.removeItem('userData')
     
-    // Reset state (DOM)
+    // Reset state
     user.value = null
     token.value = null
     isAuthenticated.value = false
     loading.value = false
     
-    // Don't reset initialized flag to maintain state
-    
     return { success: true }
   }
 
-  // Get current user (from cached DOM state)
+  // Get current user
   const getCurrentUser = () => {
     return user.value
   }
@@ -144,7 +125,7 @@ export const useAuthStore = defineStore('auth', () => {
     return phoneNumber === validUserData.phoneNumber
   }
 
-  // Update user data (syncs with both storage and DOM)
+  // Update user data
   const updateUserData = (newData) => {
     if (user.value) {
       user.value = { ...user.value, ...newData }
@@ -157,12 +138,10 @@ export const useAuthStore = defineStore('auth', () => {
         
         if (localStorage.getItem('userData')) {
           localStorage.setItem('userData', JSON.stringify(updatedUser))
-        } else if (sessionStorage.getItem('userData')) {
+        } else {
           sessionStorage.setItem('userData', JSON.stringify(updatedUser))
         }
       }
-      
-      console.log('User data updated in DOM and storage')
     }
   }
 
@@ -174,16 +153,14 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  // Computed properties (these are reactive and cached)
+  // Computed properties
   const currentUser = computed(() => user.value)
   const isLoggedIn = computed(() => isAuthenticated.value)
   const isLoading = computed(() => loading.value)
   const userBalance = computed(() => user.value?.balance || 0)
   const userName = computed(() => user.value?.name || 'Guest')
-  const userPhone = computed(() => user.value?.phoneNumber || '')
-  const userEmail = computed(() => user.value?.email || '')
 
-  // Initialize on store creation (only once)
+  // Initialize on store creation
   initializeAuth()
 
   return {
@@ -192,7 +169,6 @@ export const useAuthStore = defineStore('auth', () => {
     token,
     isAuthenticated,
     loading,
-    initialized,
     
     // Computed
     currentUser,
@@ -200,8 +176,6 @@ export const useAuthStore = defineStore('auth', () => {
     isLoading,
     userBalance,
     userName,
-    userPhone,
-    userEmail,
     
     // Actions
     initializeAuth,
