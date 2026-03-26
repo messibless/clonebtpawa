@@ -247,7 +247,7 @@ onMounted(async () => {
               </div>
             </div>
           </li>
-          <!-- <li data-v-d3915418="" class="last tabs-selector" data-test-id="tabs-pawa6">
+          <li data-v-d3915418="" class="last tabs-selector" data-test-id="tabs-pawa6">
             <div data-v-d3915418="" class="tab-item">
               <div data-v-d3915418="" class="tab-item-border">
                 <div data-v-d3915418="" class="tab-icon">
@@ -259,7 +259,7 @@ onMounted(async () => {
                 <span data-v-d3915418="" class="tab-text">Pawa6</span>
               </div>
             </div>
-          </li> -->
+          </li>
         </ul>
       </div>
     </div>
