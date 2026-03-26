@@ -100,7 +100,7 @@ const hasData = computed(() => {
               </router-link>
               
               <!-- Jackpots tab -->
-              <!-- <router-link 
+              <router-link 
                 to="/bets/jackpots" 
                 :class="{ 
                   active: isActive('/bets/jackpots'),
@@ -114,7 +114,7 @@ const hasData = computed(() => {
                     <span data-v-d3915418="" class="tab-text">Jackpots</span>
                   </div>
                 </div>
-              </router-link> -->
+              </router-link>
               
               <!-- Virtuals tab -->
               <router-link 
