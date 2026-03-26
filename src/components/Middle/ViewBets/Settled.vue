@@ -164,7 +164,7 @@ const displayedBetsWithDetails = computed(() => {
                                        <div data-v-34417751="" class="bet-line bet-header">
                                            <div data-v-34417751="" class="header-container">
                                                <div data-v-34417751="" class="header-title"><span data-v-34417751="" class="time">
-                                                       {{ bet.time }}&nbsp; </span> <span data-v-34417751="" class="date">{{ bet.date }}</span> <span
+                                                       {{ bet.time }} </span> <span data-v-34417751="" class="date">{{ bet.date }}</span> <span
                                                        data-v-34417751="" class="bet-live-now"></span></div>
                                                <div data-v-34417751="" class="id" data-test-id="bet-id">ID: #{{ bet.id }} <!----></div>
                                            </div>
@@ -485,6 +485,7 @@ section {
     line-height: 18px;
 }
 .bet-line.bet-header .date[data-v-34417751]{
+    margin-left:6px;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;

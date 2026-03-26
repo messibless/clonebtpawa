@@ -266,6 +266,7 @@ svg[data-v-02f45589], img[data-v-02f45589] {
   font-weight: 400;
 }
 .bet-line.bet-header .date[data-v-34417751]{
+  margin-left: 6px;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
