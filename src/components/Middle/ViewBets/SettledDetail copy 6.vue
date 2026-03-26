@@ -227,7 +227,7 @@ const payoutWin = computed(() => {
                         class="amount">{{ payoutWin }}</span> <!----></div>
             </div> <!---->
             <div data-v-7f504cc4="" class="betslip-summary-container win-tier"
-                >
+                style="border-image: linear-gradient(to right, rgb(176, 96, 55), rgb(230, 149, 103), rgb(217, 111, 53), rgb(141, 69, 29), rgb(230, 149, 103)) 1 / 1 / 0 stretch;">
                 <div data-v-7f504cc4="" class="summary-line">
                     <div data-v-7f504cc4="" class="label">Odds:</div>
                     <div data-v-7f504cc4="" class="value">{{ currentBet.total_odds }}</div>
