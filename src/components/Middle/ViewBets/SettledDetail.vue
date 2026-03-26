@@ -226,7 +226,8 @@ const payoutWin = computed(() => {
                         <span class="win-big-text">winning big </span></span> <span class="symbol">TSh</span> <span
                         class="amount">{{ payoutWin }}</span> <!----></div>
             </div> <!---->
-            <div data-v-7f504cc4="" class="betslip-summary-container win-tier"
+            <div data-v-7f504cc4="" class="betslip-summary-container win-tier"  style="margin-bottom: 20px;"
+
                 >
                 <div data-v-7f504cc4="" class="summary-line">
                     <div data-v-7f504cc4="" class="label">Odds:</div>
@@ -319,7 +320,7 @@ const payoutWin = computed(() => {
 </div>
 
                 <div data-v-7f504cc4="" class="summary-line result" data-test-id="summaryLine">
-                    <div data-v-7f504cc4="" class="label winning-result">Payout:</div>
+                    <div data-v-7f504cc4="" class="label winning-result"><span style="color: black;">Payout:</span></div>
                     <div data-v-7f504cc4="" class="currency value winning-result" data-test-class="betResult"
                         data-test-id="betResultWon">WON <span class="symbol">TSh</span> <span class="amount">{{payoutWin }}</span>
                         </div>
@@ -372,10 +373,9 @@ const payoutWin = computed(() => {
       </span>
     </div>
   </div> -->
-        
-
+      
            <!-- Teams start here -->
-        <div data-v-695b065a="" data-v-7f504cc4="" class="event" data-test-id="stakeInfo">
+        <div data-v-695b065a="" data-v-7f504cc4="" class="event" data-test-id="stakeInfo" >
             <div data-v-695b065a="" class="event-line event-header"><!---->
                 <div data-v-695b065a="" class="event-label">
                     <div data-v-695b065a="" class="label">
