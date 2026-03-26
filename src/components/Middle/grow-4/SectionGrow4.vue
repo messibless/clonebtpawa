@@ -6,7 +6,12 @@ import Account from './account/Account.vue';
 import { useAuthStore } from '../../../stores/authStore'
 import { inject } from 'vue'
 import api from '../../../services/api'
+import { useBalanceStore } from '../../../stores/balance'
 
+const balanceStore = useBalanceStore()
+// Get balance state from store
+const formattedBalance = computed(() => balanceStore.formattedBalance)
+const isLoadingBalance = computed(() => balanceStore.loading)
 const authStore = useAuthStore()
 // Get authentication state
 const isLoggedIn = computed(() => authStore.isLoggedIn)
@@ -30,42 +35,25 @@ const closeSidebar = () => {
 
 
 
-// State variables (kama useState)
-const balanceState = ref({})
-const loading = ref(false)
-const error = ref('')
-
-// Function to fetch fixtures
-const fetchBalance = async () => {
-  loading.value = true
-  error.value = ''
-  try {
-    const response = await api.get('/balance/') // API endpoint yako
-    balanceState.value = response.data
-    console.log('Fetched balance:', balanceState.value)
-  } catch (err) {
-    console.error('Error fetching balance:', err)
-    error.value = 'Failed to load balance'
-  } finally {
-    loading.value = false
-  }
-}
 
 // onMounted replaces useEffect with empty dependency array
-onMounted(() => {
-  fetchBalance()
+// onMounted(() => {
+//   fetchBalance()
+// })
+
+
+onMounted(async () => {
+  console.log('Header mounted, isLoggedIn:', isLoggedIn.value)
+  if (isLoggedIn.value) {
+    console.log('Calling fetchBalance...')
+    await balanceStore.fetchBalance()
+    console.log('Balance after fetch:', balanceStore.balanceState.value)
+  } else {
+    console.log('User not logged in, skipping balance fetch')
+  }
 })
 
 
-const formattedBalance = computed(() => {
-  if (!balanceState.value.amount) return '0.00'
-  const amountNumber = parseFloat(balanceState.value.amount)  // convert string to number
-  return new Intl.NumberFormat('en-US', {
-    style: 'decimal',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  }).format(amountNumber)
-})
 
 </script>
 

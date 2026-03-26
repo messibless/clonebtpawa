@@ -8,15 +8,23 @@ export const useBalanceStore = defineStore('balance', () => {
   const balanceState = ref(null)
   const loading = ref(false)
   const error = ref('')
+  const hasFetched = ref(false) // ADD THIS - Track if already fetched
 
   // Function to fetch balance from API
-  const fetchBalance = async () => {
+  const fetchBalance = async (force = false) => { // ADD force parameter
+    // Only fetch if not fetched before OR force=true
+    if (!force && hasFetched.value) {
+      console.log('Balance already fetched, using cached data')
+      return balanceState.value
+    }
+    
     loading.value = true
     error.value = ''
     try {
       const response = await api.get('/balance')
       balanceState.value = response.data
-      console.log('Fetched balance today:', balanceState.value)
+      hasFetched.value = true // Mark as fetched
+      console.log('Fetched balance:', balanceState.value)
       return response.data
     } catch (err) {
       console.error('Error fetching balance:', err)
@@ -25,6 +33,13 @@ export const useBalanceStore = defineStore('balance', () => {
     } finally {
       loading.value = false
     }
+  }
+
+  // Reset balance (e.g., on logout)
+  const resetBalance = () => {
+    balanceState.value = null
+    hasFetched.value = false
+    error.value = ''
   }
 
   // Computed - formatted balance
@@ -48,12 +63,20 @@ export const useBalanceStore = defineStore('balance', () => {
     balanceState,
     loading,
     error,
+    hasFetched,
     
     // Computed
     formattedBalance,
     rawBalance,
     
     // Actions
-    fetchBalance
+    fetchBalance,
+    resetBalance
+  }
+}, {
+  persist: {
+    key: 'balance-store', // Key for localStorage
+    storage: localStorage, // Use localStorage to persist
+    paths: ['balanceState', 'hasFetched'] // Only persist these
   }
 })
