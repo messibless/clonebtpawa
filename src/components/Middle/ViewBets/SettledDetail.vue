@@ -219,13 +219,13 @@ const payoutWin = computed(() => {
             </div> 
         </div>
         <div data-v-7f504cc4="" class="summary">
-            <div data-v-af0326d2="" data-v-7f504cc4="" class="tier-banner"><img data-v-5455027b="" data-v-af0326d2=""
+            <!-- <div data-v-af0326d2="" data-v-7f504cc4="" class="tier-banner"><img data-v-5455027b="" data-v-af0326d2=""
                 :src="WiningCupImage" class="trophy-img"> <img data-v-5455027b=""
                     data-v-af0326d2="" :src="WiningCupImageBackground" class="trophy-bg">
                 <div data-v-af0326d2="" class="currency congrats-text"><span data-v-af0326d2="">Congratulations on <br>
                         <span class="win-big-text">winning big </span></span> <span class="symbol">TSh</span> <span
-                        class="amount">{{ payoutWin }}</span> <!----></div>
-            </div> <!---->
+                        class="amount">{{ payoutWin }}</span> </div>
+            </div>  -->
             <div data-v-7f504cc4="" class="betslip-summary-container win-tier"  style="margin-bottom: 20px;"
 
                 >
