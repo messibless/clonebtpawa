@@ -158,9 +158,21 @@
                 <div data-v-7a6cc4a0="" class="table">
                   <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
                       class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                      data-v-7a6cc4a0="" class="menu-text name">Africa Cup of Nations, Qualification</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">3</span> <!----></div>
+                </div>
+              </a> 
+            </div>
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+            <a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                      class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">World Cup Qualification UEFA</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">8</span> <!----></div>
+                      class="menu-text">4</span> <!----></div>
                 </div>
               </a> 
             </div>
@@ -172,7 +184,7 @@
                           class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                           data-v-7a6cc4a0="" class="menu-text name">FIFA World Cup Qualification, Inter-Confederation Playoffs</span> <!----></div>
                       <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                          class="menu-text">21</span> <!----></div>
+                          class="menu-text">1</span> <!----></div>
                     </div>
                   </a> 
                 </div>
@@ -184,7 +196,20 @@
                               class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                               data-v-7a6cc4a0="" class="menu-text name">Int Friendly Games</span> <!----></div>
                           <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                              class="menu-text">29</span> <!----></div>
+                              class="menu-text">32</span> <!----></div>
+                        </div>
+                      </a> 
+                    </div>
+
+                    <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+                    <a data-v-7a6cc4a0=""
+                        data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                        <div data-v-7a6cc4a0="" class="table">
+                          <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                              class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                              data-v-7a6cc4a0="" class="menu-text name">FIFA Series</span> <!----></div>
+                          <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                              class="menu-text">5</span> <!----></div>
                         </div>
                       </a> 
                     </div>
@@ -197,7 +222,7 @@
                       class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Premier League</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">21</span> <!----></div>
+                      class="menu-text">20</span> <!----></div>
                 </div>
               </a> 
             </div>
