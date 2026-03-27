@@ -35,7 +35,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-clock"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">1115</div>
+              <div data-v-0822ca80="" class="count">1265</div>
             </div>
             <div data-v-0822ca80="" class="label">Sports</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -44,7 +44,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-live"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">8</div>
+              <div data-v-0822ca80="" class="count">33</div>
             </div>
             <div data-v-0822ca80="" class="label">Live</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -68,23 +68,15 @@
                 <use data-v-02f45589="" xlink:href="#icon-airplane"></use>
               </svg> <!----></div>
             <div data-v-0822ca80="" class="label">Aviator</div>
-          </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
-            data-test-id="leftMenu-menu-tile-pawa6-6">
-            <div data-v-0822ca80="" class="tile">
-              <div data-v-0822ca80="" class="tile-badge" style="background-color: rgb(156, 232, 0);">FREE</div> <svg
-                data-v-02f45589="" data-v-0822ca80="" class="svg-icon icon-size-huge icon"
-                style="vertical-align: middle;"><!---->
-                <use data-v-02f45589="" xlink:href="#icon-pawa6"></use>
-              </svg> <!---->
-            </div>
-            <div data-v-0822ca80="" class="label">Pawa6</div>
-          </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
+          </a>
+        
+          <a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
             data-test-id="leftMenu-menu-tile-Popular-7">
             <div data-v-0822ca80="" class="tile"><!----> <svg data-v-02f45589="" data-v-0822ca80=""
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-popular"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">44</div>
+              <div data-v-0822ca80="" class="count">37</div>
             </div>
             <div data-v-0822ca80="" class="label">Popular</div>
           </a>
