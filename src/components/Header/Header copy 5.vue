@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, inject, onMounted, watch } from 'vue'
+import { ref, computed, inject, onMounted } from 'vue'
 import { useAuthStore } from '../../../src/stores/authStore'
 import { useBalanceStore } from '../../../src/stores/balance'
 
@@ -9,14 +9,10 @@ const balanceStore = useBalanceStore()
 // Get balance state from store
 const formattedBalance = computed(() => balanceStore.formattedBalance)
 const isLoadingBalance = computed(() => balanceStore.loading)
-const balanceError = computed(() => balanceStore.error)
 
 // Get authentication state
 const isLoggedIn = computed(() => authStore.isLoggedIn)
 const userName = computed(() => authStore.userName)
-
-// Local loading state for initial fetch
-const initializing = ref(false)
 
 // Inject sidebar functions kutoka App.vue
 const leftSidebar = inject('leftSidebar')
@@ -36,99 +32,19 @@ const openAccountSidebar = () => {
   }
 }
 
-// Function to refresh balance manually
-const refreshBalance = async () => {
-  if (isLoggedIn.value) {
-    try {
-      await balanceStore.fetchBalance(true) // Force refresh
-      console.log('Balance refreshed:', balanceStore.balanceState?.value)
-    } catch (error) {
-      console.error('Failed to refresh balance:', error)
-    }
-  }
-}
-
-// Watch for login state changes to fetch balance when user logs in
-watch(isLoggedIn, async (loggedIn, wasLoggedIn) => {
-  console.log('Login state changed:', { wasLoggedIn, loggedIn })
-  
-  if (loggedIn && !wasLoggedIn) {
-    // User just logged in, fetch balance
-    console.log('User logged in, fetching balance...')
-    try {
-      await balanceStore.fetchBalance()
-      console.log('Balance fetched after login:', balanceStore.balanceState?.value)
-    } catch (error) {
-      console.error('Failed to fetch balance after login:', error)
-    }
-  } else if (!loggedIn && wasLoggedIn) {
-    // User logged out, reset balance
-    console.log('User logged out, resetting balance...')
-    balanceStore.resetBalance()
-  }
-})
-
-// FETCH BALANCE WHEN COMPONENT MOUNTS
+// FETCH BALANCE WHEN COMPONENT MOUNTS - HII ILIKOSEKANA
 onMounted(async () => {
-  console.log('Header component mounted')
-  console.log('Initial login state:', isLoggedIn.value)
-  console.log('Balance store initial state:', {
-    hasFetched: balanceStore.hasFetched,
-    balanceState: balanceStore.balanceState,
-    loading: balanceStore.loading
-  })
-  
+  console.log('Header mounted, isLoggedIn:', isLoggedIn.value)
   if (isLoggedIn.value) {
-    initializing.value = true
-    console.log('User is logged in, fetching balance...')
-    
-    try {
-      // Try to fetch balance, but don't block if it fails
-      const result = await balanceStore.fetchBalance()
-      console.log('Balance fetch completed successfully:', {
-        result,
-        balanceState: balanceStore.balanceState?.value,
-        formattedBalance: formattedBalance.value,
-        rawBalance: balanceStore.rawBalance
-      })
-    } catch (error) {
-      console.error('Failed to fetch balance on mount:', error)
-      // Don't throw error to prevent component from failing
-    } finally {
-      initializing.value = false
-    }
+    console.log('Calling fetchBalance...')
+    await balanceStore.fetchBalance()
+    console.log('Balance after fetch:', balanceStore.balanceState.value)
   } else {
     console.log('User not logged in, skipping balance fetch')
-    // Reset balance to ensure clean state
-    balanceStore.resetBalance()
   }
 })
-
-// Optional: Set up periodic balance refresh (e.g., every 30 seconds)
-// Uncomment if needed
-/*
-let refreshInterval = null
-
-onMounted(() => {
-  if (isLoggedIn.value) {
-    refreshInterval = setInterval(() => {
-      if (isLoggedIn.value && !balanceStore.loading) {
-        console.log('Periodic balance refresh...')
-        refreshBalance()
-      }
-    }, 30000) // Refresh every 30 seconds
-  }
-})
-
-// Clean up interval on unmount
-import { onUnmounted } from 'vue'
-onUnmounted(() => {
-  if (refreshInterval) {
-    clearInterval(refreshInterval)
-  }
-})
-*/
 </script>
+
 <template>
   <div class="header">
     <div data-v-3bcad4de="" class="header">
