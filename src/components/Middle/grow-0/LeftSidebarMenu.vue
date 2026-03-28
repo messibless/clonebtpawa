@@ -35,7 +35,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-clock"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">1265</div>
+              <div data-v-0822ca80="" class="count">1431</div>
             </div>
             <div data-v-0822ca80="" class="label">Sports</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -44,7 +44,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-live"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">33</div>
+              <div data-v-0822ca80="" class="count">46</div>
             </div>
             <div data-v-0822ca80="" class="label">Live</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -152,7 +152,7 @@
                       class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Africa Cup of Nations, Qualification</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">3</span> <!----></div>
+                      class="menu-text">1</span> <!----></div>
                 </div>
               </a> 
             </div>
@@ -176,7 +176,7 @@
                           class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                           data-v-7a6cc4a0="" class="menu-text name">FIFA World Cup Qualification, Inter-Confederation Playoffs</span> <!----></div>
                       <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                          class="menu-text">1</span> <!----></div>
+                          class="menu-text">2</span> <!----></div>
                     </div>
                   </a> 
                 </div>
@@ -188,7 +188,7 @@
                               class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                               data-v-7a6cc4a0="" class="menu-text name">Int Friendly Games</span> <!----></div>
                           <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                              class="menu-text">32</span> <!----></div>
+                              class="menu-text">17</span> <!----></div>
                         </div>
                       </a> 
                     </div>
@@ -201,7 +201,7 @@
                               class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                               data-v-7a6cc4a0="" class="menu-text name">FIFA Series</span> <!----></div>
                           <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                              class="menu-text">5</span> <!----></div>
+                              class="menu-text">2</span> <!----></div>
                         </div>
                       </a> 
                     </div>
@@ -214,7 +214,7 @@
                       class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Premier League</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">20</span> <!----></div>
+                      class="menu-text">17</span> <!----></div>
                 </div>
               </a> 
             </div>
