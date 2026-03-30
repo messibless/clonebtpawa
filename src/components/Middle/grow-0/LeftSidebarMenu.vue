@@ -35,7 +35,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-clock"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">1431</div>
+              <div data-v-0822ca80="" class="count">1112</div>
             </div>
             <div data-v-0822ca80="" class="label">Sports</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -44,7 +44,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-live"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">46</div>
+              <div data-v-0822ca80="" class="count">1</div>
             </div>
             <div data-v-0822ca80="" class="label">Live</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -76,7 +76,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-popular"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">37</div>
+              <div data-v-0822ca80="" class="count">56</div>
             </div>
             <div data-v-0822ca80="" class="label">Popular</div>
           </a>
@@ -152,7 +152,7 @@
                       class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Africa Cup of Nations, Qualification</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">1</span> <!----></div>
+                      class="menu-text">4</span> <!----></div>
                 </div>
               </a> 
             </div>
@@ -188,7 +188,7 @@
                               class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                               data-v-7a6cc4a0="" class="menu-text name">Int Friendly Games</span> <!----></div>
                           <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                              class="menu-text">17</span> <!----></div>
+                              class="menu-text">22</span> <!----></div>
                         </div>
                       </a> 
                     </div>
@@ -201,7 +201,7 @@
                               class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                               data-v-7a6cc4a0="" class="menu-text name">FIFA Series</span> <!----></div>
                           <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                              class="menu-text">2</span> <!----></div>
+                              class="menu-text">11</span> <!----></div>
                         </div>
                       </a> 
                     </div>
@@ -214,7 +214,7 @@
                       class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Premier League</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">17</span> <!----></div>
+                      class="menu-text">20</span> <!----></div>
                 </div>
               </a> 
             </div>
@@ -256,7 +256,7 @@
                       class="fi fi-es fis rounded-flag icon-size-large icon-flag" title="ES"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">LaLiga</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">16</span> <!----></div>
+                      class="menu-text">20</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12127"><a data-v-7a6cc4a0=""
@@ -266,7 +266,7 @@
                       class="fi fi-fr fis rounded-flag icon-size-large icon-flag" title="FR"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Ligue 1</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">13</span> <!----></div>
+                      class="menu-text">16</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12541"><a data-v-7a6cc4a0=""
@@ -276,7 +276,7 @@
                       class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
                       style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Champions League</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">8</span> <!----></div>
+                      class="menu-text">4</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12546"><a data-v-7a6cc4a0=""
@@ -286,7 +286,7 @@
                       class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
                       style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Europa League</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">8</span> <!----></div>
+                      class="menu-text">4</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12545"><a data-v-7a6cc4a0=""
@@ -297,7 +297,7 @@
                       style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Conference League</span> <!---->
                   </div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">8</span> <!----></div>
+                      class="menu-text">4</span> <!----></div>
                 </div>
               </a> </div>
           </div>
@@ -321,7 +321,7 @@
                         class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                         data-v-7a6cc4a0="" class="menu-text name">England</span> <!----></div>
                     <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">128</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
+                        class="menu-text">85</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
                         class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
                         <use data-v-02f45589="" xlink:href="#arrow_down"></use>
                       </svg></div>
@@ -336,7 +336,7 @@
                         class="fi fi-fr fis rounded-flag icon-size-large icon-flag" title="FR"></span> <span
                         data-v-7a6cc4a0="" class="menu-text name">France</span> <!----></div>
                     <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">34</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
+                        class="menu-text">35</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
                         class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
                         <use data-v-02f45589="" xlink:href="#arrow_down"></use>
                       </svg></div>
@@ -351,7 +351,7 @@
                         class="fi fi-de fis rounded-flag icon-size-large icon-flag" title="DE"></span> <span
                         data-v-7a6cc4a0="" class="menu-text name">Germany</span> <!----></div>
                     <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                        class="menu-text">29</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
+                        class="menu-text">40</span> <svg data-v-02f45589="" data-v-7a6cc4a0=""
                         class="svg-icon icon-size-very-small" style="vertical-align: middle;"><!---->
                         <use data-v-02f45589="" xlink:href="#arrow_down"></use>
                       </svg></div>
