@@ -77,8 +77,8 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
             <a href="/events/group/11965" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
-                        <!-- <span class="fi fi-gb-eng fis rounded-flag icon-size-medium" title="GB-ENG"></span> -->
-                        <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
+                        <span class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span>
+                        <!-- <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA"> -->
                         <div class="box-count">20</div>
                     </div>
                     <div class="league-shortcut-box-name">Premier League</div>
@@ -210,7 +210,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
 .league-shortcut-box-wrapper {
     flex-shrink: 0;
     text-decoration: none;
-    
+
     &:last-child {
         margin-right: 0;
     }
@@ -273,8 +273,8 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
     
     &.fi-gb-eng {
         background-color: #012169;
-        background-image: url('../../../assets/media/Europe_43bd11c816.svg');
-        background-image: linear-gradient(to bottom, #012169 0%, #002395 100%);
+        background-image: url('../../../assets/sidebarFlags/gb-eng-DTHmDHq3.svg');
+        // background-image: linear-gradient(to bottom, #012169 0%, #8e9096 100%);
     }
     
     &.fi-it {
