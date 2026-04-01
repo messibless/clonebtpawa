@@ -8,7 +8,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
     <div class="league-shortcut-container">
     <div class="league-shortcut">
         <!-- Live -->
-        <!-- <a href="/events/live" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Live">
+        <a href="/events/live" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Live">
             <div class="league-shortcut-box">
                 <div class="league-shortcut-box-top">
                     <svg class="svg-icon icon icon-size-medium icon-live">
@@ -18,12 +18,12 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 </div>
                 <div class="league-shortcut-box-name">Live</div>
             </div>
-        </a> -->
+        </a>
         
         <!-- Tournaments -->
         <div class="tournaments-shortcuts">
             <!-- Africa Cup of Nations -->
-            <!-- <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+            <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="AfricanLeague" alt="Africa">
@@ -31,9 +31,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     </div>
                     <div class="league-shortcut-box-name">Africa Cup of Nations</div>
                 </div>
-            </a> -->
+            </a>
 
-            <!-- <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+            <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="AfricanLeague" alt="Africa">
@@ -41,9 +41,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     </div>
                     <div class="league-shortcut-box-name">World Cup Qualification UEFA</div>
                 </div>
-            </a> -->
+            </a>
 
-            <!-- <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+            <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="AfricanLeague" alt="Africa">
@@ -51,9 +51,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     </div>
                     <div class="league-shortcut-box-name">FIFA World Cup Qualification, Inter-Confederation Playoffs</div>
                 </div>
-            </a> -->
+            </a>
 
-            <!-- <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+            <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="AfricanLeague" alt="Africa">
@@ -61,9 +61,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     </div>
                     <div class="league-shortcut-box-name">Int Friendly Games</div>
                 </div>
-            </a> -->
+            </a>
 
-            <!-- <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+            <a href="/events/group/15598" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="AfricanLeague" alt="Africa">
@@ -71,7 +71,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     </div>
                     <div class="league-shortcut-box-name">FIFA Series</div>
                 </div>
-            </a> -->
+            </a>
             
             <!-- Premier League -->
             <a href="/events/group/11965" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
@@ -79,22 +79,23 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <div class="league-shortcut-box-top">
                         <!-- <span class="fi fi-gb-eng fis rounded-flag icon-size-medium" title="GB-ENG"></span> -->
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
-                        <div class="box-count">20</div>
+                        <div class="box-count">19</div>
                     </div>
                     <div class="league-shortcut-box-name">Premier League</div>
                 </div>
             </a>
             
             <!-- EFL Cup -->
-            <!-- <a href="/events/group/12348" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+            <a href="/events/group/12348" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
+                        <!-- <span class="fi fi-gb-eng fis rounded-flag icon-size-medium" title="GB-ENG"></span> -->
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
                         <div class="box-count">2</div>
                     </div>
                     <div class="league-shortcut-box-name">EFL Cup</div>
                 </div>
-            </a> -->
+            </a>
             
             <!-- Serie A -->
             <a href="/events/group/12097" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">

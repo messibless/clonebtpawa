@@ -35,7 +35,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-clock"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">1364</div>
+              <div data-v-0822ca80="" class="count">1112</div>
             </div>
             <div data-v-0822ca80="" class="label">Sports</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -44,7 +44,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-live"></use>
               </svg>
-              <div data-v-0822ca80="" class="count"></div>
+              <div data-v-0822ca80="" class="count">1</div>
             </div>
             <div data-v-0822ca80="" class="label">Live</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -52,7 +52,7 @@
             <div data-v-0822ca80="" class="tile"><!----> <svg data-v-02f45589="" data-v-0822ca80=""
                 class="svg-icon icon-size-huge icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-casino"></use>
-              </svg> </div>
+              </svg> <!----></div>
             <div data-v-0822ca80="" class="label">Casino</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
             data-test-id="leftMenu-menu-tile-Virtual Sports-4">
@@ -76,7 +76,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-popular"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">64</div>
+              <div data-v-0822ca80="" class="count">56</div>
             </div>
             <div data-v-0822ca80="" class="label">Popular</div>
           </a>
@@ -144,7 +144,67 @@
           </div>
 
           <div data-v-aabe1219="" class="expansion-panel-content">
-           
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+            <a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                      class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                      data-v-7a6cc4a0="" class="menu-text name">Africa Cup of Nations, Qualification</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">4</span> <!----></div>
+                </div>
+              </a> 
+            </div>
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+            <a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                      class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                      data-v-7a6cc4a0="" class="menu-text name">World Cup Qualification UEFA</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">4</span> <!----></div>
+                </div>
+              </a> 
+            </div>
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+                <a data-v-7a6cc4a0=""
+                    data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                    <div data-v-7a6cc4a0="" class="table">
+                      <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                          class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                          data-v-7a6cc4a0="" class="menu-text name">FIFA World Cup Qualification, Inter-Confederation Playoffs</span> <!----></div>
+                      <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                          class="menu-text">2</span> <!----></div>
+                    </div>
+                  </a> 
+                </div>
+                <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+                    <a data-v-7a6cc4a0=""
+                        data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                        <div data-v-7a6cc4a0="" class="table">
+                          <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                              class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                              data-v-7a6cc4a0="" class="menu-text name">Int Friendly Games</span> <!----></div>
+                          <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                              class="menu-text">22</span> <!----></div>
+                        </div>
+                      </a> 
+                    </div>
+
+                    <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+                    <a data-v-7a6cc4a0=""
+                        data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                        <div data-v-7a6cc4a0="" class="table">
+                          <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                              class="fi fi-gb-world-cup fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                              data-v-7a6cc4a0="" class="menu-text name">FIFA Series</span> <!----></div>
+                          <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                              class="menu-text">11</span> <!----></div>
+                        </div>
+                      </a> 
+                    </div>
 
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
             <a data-v-7a6cc4a0=""
@@ -159,7 +219,16 @@
               </a> 
             </div>
 
-           
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12145"><a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/12145">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                      class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                      data-v-7a6cc4a0="" class="menu-text name">FA Cup</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">6</span> <!----></div>
+                </div>
+              </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12097"><a data-v-7a6cc4a0=""
                 data-test-id="nav-Group-link" class="link" href="/events/group/12097">
                 <div data-v-7a6cc4a0="" class="table">
@@ -167,7 +236,7 @@
                       class="fi fi-it fis rounded-flag icon-size-large icon-flag" title="IT"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Serie A</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">20</span> <!----></div>
+                      class="menu-text">17</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12110"><a data-v-7a6cc4a0=""
@@ -177,7 +246,7 @@
                       class="fi fi-de fis rounded-flag icon-size-large icon-flag" title="DE"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Bundesliga</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">18</span> <!----></div>
+                      class="menu-text">11</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12039"><a data-v-7a6cc4a0=""
@@ -197,7 +266,7 @@
                       class="fi fi-fr fis rounded-flag icon-size-large icon-flag" title="FR"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Ligue 1</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">15</span> <!----></div>
+                      class="menu-text">16</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12541"><a data-v-7a6cc4a0=""
