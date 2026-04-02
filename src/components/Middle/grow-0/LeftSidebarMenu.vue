@@ -35,7 +35,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-clock"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">1364</div>
+              <div data-v-0822ca80="" class="count">1551</div>
             </div>
             <div data-v-0822ca80="" class="label">Sports</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -44,7 +44,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-live"></use>
               </svg>
-              <div data-v-0822ca80="" class="count"></div>
+              <div data-v-0822ca80="" class="count">13</div>
             </div>
             <div data-v-0822ca80="" class="label">Live</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -76,7 +76,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-popular"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">64</div>
+              <div data-v-0822ca80="" class="count">57</div>
             </div>
             <div data-v-0822ca80="" class="label">Popular</div>
           </a>
@@ -158,6 +158,18 @@
                 </div>
               </a> 
             </div>
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
+            <a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/11965">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><span data-v-81261974=""
+                      class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
+                      data-v-7a6cc4a0="" class="menu-text name">FA Cup</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">4</span> <!----></div>
+                </div>
+              </a> 
+            </div>
 
            
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12097"><a data-v-7a6cc4a0=""
@@ -197,7 +209,7 @@
                       class="fi fi-fr fis rounded-flag icon-size-large icon-flag" title="FR"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Ligue 1</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">15</span> <!----></div>
+                      class="menu-text">16</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12541"><a data-v-7a6cc4a0=""
