@@ -2,7 +2,6 @@
 import { ref, computed, inject, onMounted, watch } from 'vue'
 import { useAuthStore } from '../../../src/stores/authStore'
 import { useBalanceStore } from '../../../src/stores/balance'
-import PlusIcon from '../../assets/img/add_24dp_000_FILL0_wght400_GRAD0_opsz24.png'
 
 const authStore = useAuthStore()
 const balanceStore = useBalanceStore()
@@ -190,12 +189,7 @@ onUnmounted(() => {
                     class="header-buttons header-buttons-authenticated"
                     data-test-id="track-top-nav-link">
                   <span data-v-2658eb31="" class="button balance">TSh {{ formattedBalance }}</span>
-                  <div class="button-deposite">
-                    <span data-v-2658eb31="" class="button button-deposite-icon ">
-                    <img :src="PlusIcon" alt="" srcset="" style="width: 16px; height: 16px;">
-
-                    </span>
-                  </div>
+                  <span data-v-2658eb31="" class="button button-primary button-deposit">Deposit</span>
                 </a>
               </span>
 
@@ -447,14 +441,8 @@ img.icon-size-medium[data-v-02f45589] {
   height: 16px;
 }
 .header-buttons[data-v-2658eb31] {
-  display: flex;
-  justify-content: center;
   align-items: center;
   display: inline-flex;
-  // background-color: #d65910;
-  padding: 2px;
-  border-radius: 22px;
-  border: 1px solidrgb(190, 190, 190);
 }
 .header-buttons .button[data-v-2658eb31] {
   padding: 7px 8px;
@@ -716,23 +704,5 @@ img.icon-size-small[data-v-02f45589] {
 }
 .tabs .tabs-selector .tab-item-border .tab-icon + .tab-text[data-v-d3915418] {
   margin-left: 8px;
-}
-
-.button-deposite{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 1px;
-  width: 22px;
-  height: 22px;
-  border-radius: 100%;
-  background-color: #9ce800;
-}
-.button-deposite-icon{
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
 }
 </style>
