@@ -454,7 +454,7 @@ img.icon-size-medium[data-v-02f45589] {
   // background-color: #d65910;
   padding: 2px;
   border-radius: 22px;
-  border: 1px solidrgb(190, 190, 190);
+  border: 1px solid rgb(190, 190, 190);
 }
 .header-buttons .button[data-v-2658eb31] {
   padding: 7px 8px;
