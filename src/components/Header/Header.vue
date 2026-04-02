@@ -187,12 +187,12 @@ onUnmounted(() => {
               <!-- Authenticated state - Balance and Deposit -->
               <span v-else data-v-2658eb31="" data-v-3bcad4de="">
                 <a data-v-2658eb31="" href="/deposit"
-                    class="header-buttons header-buttons-authenticated"
+                    class="header-buttons-loggedIn"
                     data-test-id="track-top-nav-link">
                   <span data-v-2658eb31="" class="button balance">TSh {{ formattedBalance }}</span>
                   <div class="button-deposite">
-                    <span data-v-2658eb31="" class="button button-deposite-icon ">
-                    <img :src="PlusIcon" alt="" srcset="" style="width: 16px; height: 16px;">
+                    <span data-v-2658eb31="" class=" button-deposite-icon ">
+                    <img :src="PlusIcon" alt="" srcset="" style="width: 16px; height: 16px;margin: 1px;">
 
                     </span>
                   </div>
@@ -452,13 +452,11 @@ img.icon-size-medium[data-v-02f45589] {
   align-items: center;
   display: inline-flex;
   // background-color: #d65910;
-  padding: 2px;
-  border-radius: 22px;
-  border: 1px solid rgb(190, 190, 190);
+  
 }
 .header-buttons .button[data-v-2658eb31] {
-  padding: 7px 8px;
-  line-height: 18px;
+  padding: 3px 2px;
+  line-height: 3px;
 }
 a.button[data-v-2658eb31] {
   text-decoration: none;
@@ -477,10 +475,10 @@ a.button[data-v-2658eb31] {
 .header-buttons .button[data-v-2658eb31]:last-child {
   border-radius: 0;
 }
-.header-buttons .button[data-v-2658eb31] {
-  padding: 7px 8px;
-  line-height: 18px;
-}
+// .header-buttons .button[data-v-2658eb31] {
+//   padding: 7px 8px;
+//   line-height: 18px;
+// }
 .button-primary {
   color: #252a2d;
   fill: #252a2d;
@@ -723,7 +721,7 @@ img.icon-size-small[data-v-02f45589] {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 1px;
+  margin: 2px;
   width: 22px;
   height: 22px;
   border-radius: 100%;
@@ -734,5 +732,17 @@ img.icon-size-small[data-v-02f45589] {
   align-items: center;
   justify-content: center;
  
+}
+
+.header-buttons-loggedIn[data-v-2658eb31] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  // background-color: #d65910;
+  border-radius: 22px;
+  border: 1px solid rgb(99, 99, 99);
+  font-size: 12px;
+  
 }
 </style>
