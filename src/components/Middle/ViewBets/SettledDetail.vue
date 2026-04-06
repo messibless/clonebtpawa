@@ -396,7 +396,7 @@ const payoutWin = computed(() => {
                             <use data-v-02f45589="" xlink:href="#icon-football"></use>
                         </svg> <span data-v-95226610="" data-v-695b065a="">{{ currentBet.homeMatche1 }} - {{ currentBet.awayMatche1 }}</span></div>
                     <div data-v-695b065a="" class="league">{{ currentBet.leagueMatche1 }}</div>
-                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Correct Score | Full Time-{{ currentBet.scoreMatche1 }}
+                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Correct Score | Full Time - {{ currentBet.scoreMatche1 }}
                             </span></div>
                 </div>
                 <div data-v-695b065a="" class="value">
@@ -432,7 +432,7 @@ const payoutWin = computed(() => {
                             <use data-v-02f45589="" xlink:href="#icon-football"></use>
                         </svg> <span data-v-95226610="" data-v-695b065a="">{{ currentBet.homeMatche2 }} - {{ currentBet.awayMatche2 }}</span></div>
                     <div data-v-695b065a="" class="league">{{ currentBet.leagueMatche2 }}</div>
-                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Correct Score | Full Time-{{ currentBet.scoreMatche2 }}
+                    <div data-v-695b065a="" class="bold"><span data-v-695b065a="">Correct Score | Full Time - {{ currentBet.scoreMatche2 }}
                             </span></div>
                 </div>
                 <div data-v-695b065a="" class="value">
