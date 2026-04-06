@@ -90,13 +90,7 @@ const betCount = computed(() => {
                           <use data-v-02f45589="" xlink:href="#icon-two-up"></use>
                         </svg>
                            </span>
-                           <div class="divider">|</div>
-                           <div class="SportEvents_statisticsIconWrapper__0Ash1 SportEvents_statisticsIconWithDivider__1Rhe8" fdprocessedid="7pgogk">
-                        <img :src="IconFoo" alt="hh" srcset="">
-                           </div>
-                          </div>
-
-                      <!-- Boosted Odds Badge (conditional) -->
+                           <!-- Boosted Odds Badge (conditional) -->
                            <span v-if="game.hasBoostedOdds" data-v-891f4695="" data-v-ea5d556a=""
                         class="badge type-best-odds mode-default game-best-odds-badge pointer"
                         data-test-id="game-open-boosted-odds-modal-button">
@@ -105,6 +99,13 @@ const betCount = computed(() => {
                           <use data-v-02f45589="" xlink:href="#icon-best-odds-circled"></use>
                         </svg>
                             </span>
+                           <div class="divider">|</div>
+                           <div class="SportEvents_statisticsIconWrapper__0Ash1 SportEvents_statisticsIconWithDivider__1Rhe8" fdprocessedid="7pgogk">
+                        <img :src="IconFoo" alt="hh" srcset="">
+                           </div>
+                          </div>
+
+                      
                       </div>
                   </div>
 
