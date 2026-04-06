@@ -82,30 +82,30 @@ const betCount = computed(() => {
                     <div data-v-ea5d556a="" class="game-event-header-right-content">
 
                       <!-- Two-Up Badge (conditional) -->
-                       <div class="set-icons"> 
-                      <span v-if="game.hasTwoUp" data-v-891f4695="" data-v-ea5d556a=""
+                    <div class="set-icons"> 
+                           <span v-if="game.hasTwoUp" data-v-891f4695="" data-v-ea5d556a=""
                         class="badge type-best-odds mode-default pointer" data-test-id="game-open-two-up-modal-button">
                         <svg data-v-02f45589="" data-v-891f4695="" class="svg-icon icon icon-size-huge"
                           style="vertical-align: middle;">
                           <use data-v-02f45589="" xlink:href="#icon-two-up"></use>
                         </svg>
-                      </span>
-                      <div class="divider">|</div>
-                      <div class="SportEvents_statisticsIconWrapper__0Ash1 SportEvents_statisticsIconWithDivider__1Rhe8" fdprocessedid="7pgogk">
+                           </span>
+                           <div class="divider">|</div>
+                           <div class="SportEvents_statisticsIconWrapper__0Ash1 SportEvents_statisticsIconWithDivider__1Rhe8" fdprocessedid="7pgogk">
                         <img :src="IconFoo" alt="hh" srcset="">
-                      </div>
-                    </div>
+                           </div>
+                          </div>
 
                       <!-- Boosted Odds Badge (conditional) -->
-                      <span v-if="game.hasBoostedOdds" data-v-891f4695="" data-v-ea5d556a=""
+                           <span v-if="game.hasBoostedOdds" data-v-891f4695="" data-v-ea5d556a=""
                         class="badge type-best-odds mode-default game-best-odds-badge pointer"
                         data-test-id="game-open-boosted-odds-modal-button">
                         <svg data-v-02f45589="" data-v-891f4695="" class="svg-icon icon icon-size-huge"
                           style="vertical-align: middle;">
                           <use data-v-02f45589="" xlink:href="#icon-best-odds-circled"></use>
                         </svg>
-                      </span>
-                    </div>
+                            </span>
+                      </div>
                   </div>
 
                   <div data-v-ea5d556a="" class="game-scoreboard">
@@ -429,6 +429,10 @@ img.icon-size-little[data-v-02f45589] {
 .game-event-header-left-content[data-v-ea5d556a],
 .game-event-header-right-content[data-v-ea5d556a] {
   font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .game-event-date[data-v-ea5d556a] {
