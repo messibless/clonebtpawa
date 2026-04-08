@@ -14,10 +14,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <svg class="svg-icon icon icon-size-medium icon-live">
                         <use xlink:href="#icon-live"></use>
                     </svg>
+                    <div class="box-count">8</div>
                 </div>
                 <div class="league-shortcut-box-name">Live</div>
-                <div class="box-count">8</div>
-
             </div>
         </a>
         
@@ -78,10 +77,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
+                        <div class="box-count">4</div>
                     </div>
                     <div class="league-shortcut-box-name">UEFA Champions League</div>
-                    <div class="box-count">4</div>
-
                 </div>
             </a>
             
@@ -90,10 +88,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
+                        <div class="box-count">4</div>
                     </div>
                     <div class="league-shortcut-box-name">UEFA Europa League</div>
-                    <div class="box-count">4</div>
-
                 </div>
             </a>
 
@@ -102,10 +99,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
+                        <div class="box-count">4</div>
                     </div>
                     <div class="league-shortcut-box-name">UEFA Conference League</div>
-                    <div class="box-count">4</div>
-
                 </div>
             </a>
             <!-- Premier League -->
@@ -114,10 +110,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <div class="league-shortcut-box-top">
                         <span class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span>
                         <!-- <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA"> -->
+                        <div class="box-count">20</div>
                     </div>
                     <div class="league-shortcut-box-name">Premier League</div>
-                    <div class="box-count">20</div>
-
                 </div>
             </a>
             <a href="/events/group/11965" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
@@ -125,10 +120,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <div class="league-shortcut-box-top">
                         <span class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span>
                         <!-- <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA"> -->
+                        <div class="box-count">4</div>
                     </div>
                     <div class="league-shortcut-box-name">FA Cup</div>
-                    <div class="box-count">4</div>
-
                 </div>
             </a>
             
@@ -148,10 +142,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <span class="fi fi-it fis rounded-flag icon-size-medium" title="IT"></span>
+                        <div class="box-count">20</div>
                     </div>
                     <div class="league-shortcut-box-name">Serie A</div>
-                    <div class="box-count">20</div>
-
                 </div>
             </a>
             
@@ -160,10 +153,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <span class="fi fi-de fis rounded-flag icon-size-medium" title="DE"></span>
+                        <div class="box-count">18</div>
                     </div>
                     <div class="league-shortcut-box-name">Bundesliga</div>
-                    <div class="box-count">18</div>
-
                 </div>
             </a>
             
@@ -172,10 +164,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <span class="fi fi-es fis rounded-flag icon-size-medium" title="ES"></span>
+                        <div class="box-count">20</div>
                     </div>
                     <div class="league-shortcut-box-name">LaLiga</div>
-                    <div class="box-count">20</div>
-
                 </div>
             </a>
             
@@ -184,10 +175,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <span class="fi fi-fr fis rounded-flag icon-size-medium" title="FR"></span>
+                        <div class="box-count">18</div>
                     </div>
                     <div class="league-shortcut-box-name">Ligue 1</div>
-                    <div class="box-count">18</div>
-
                 </div>
             </a>
             
@@ -196,10 +186,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
+                        <div class="box-count">18</div>
                     </div>
                     <div class="league-shortcut-box-name">UEFA Champions League</div>
-                    <div class="box-count">18</div>
-
                 </div>
             </a>
             
@@ -208,10 +197,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
+                        <div class="box-count">18</div>
                     </div>
                     <div class="league-shortcut-box-name">UEFA Europa League</div>
-                    <div class="box-count">18</div>
-
                 </div>
             </a>
         </div>
@@ -223,10 +211,9 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <svg class="svg-icon icon icon-size-medium icon-clock">
                         <use xlink:href="#icon-clock"></use>
                     </svg>
+                    <div class="box-count">662</div>
                 </div>
                 <div class="league-shortcut-box-name">Upcoming</div>
-                <div class="box-count">662</div>
-
             </div>
         </a>
     </div>
@@ -271,20 +258,19 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
     
     &:hover .league-shortcut-box {
         border-color: #9ce800;
-        background-color: #daf1aba1;
+        background-color: #f9ffed;
     }
 }
 
 .league-shortcut-box {
     border: 1px solid #e6e7e2;
-    border-radius: 20px;
+    border-radius: 6px;
     display: flex;
-    flex-direction: row;
-    gap: 4px;
+    flex-direction: column;
     justify-content: space-between;
-    // width: 88px;
+    width: 88px;
     min-width: 88px;
-    padding: 10px 10px 10px;
+    padding: 8px 8px 4px;
     background: white;
     transition: all 0.2s ease;
 }
@@ -293,7 +279,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    // margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 /* Icons */
@@ -352,13 +338,13 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
 /* Count badge */
 .box-count {
     color: #252a2d;
-    background-color: #d6d6d6;
-    border-radius: 20px;
+    background-color: #d9edb2;
+    border-radius: 4px;
     font-size: 10px;
     font-weight: 600;
-    width: 11px;
-    height: 11px;
-    padding: 3px;
+    min-width: 16px;
+    height: 14px;
+    padding: 0 3px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -366,16 +352,14 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
 
 /* League name */
 .league-shortcut-box-name {
-    display: flex;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.2;
     color: #252a2d;
     text-align: center;
     white-space: nowrap;
-   
-    // overflow: hidden;
-    // text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Active state */

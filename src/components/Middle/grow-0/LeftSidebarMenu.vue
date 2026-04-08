@@ -45,7 +45,7 @@
                 <use data-v-02f45589="" xlink:href="#icon-live"></use>
               </svg>
               <!-- live -->
-              <div data-v-0822ca80="" class="count"> </div>
+              <div data-v-0822ca80="" class="count">8</div>
             </div>
             <div data-v-0822ca80="" class="label">Live</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
