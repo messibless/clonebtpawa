@@ -35,7 +35,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-clock"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">1551</div>
+              <div data-v-0822ca80="" class="count">1208</div>
             </div>
             <div data-v-0822ca80="" class="label">Sports</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -44,7 +44,8 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-live"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">13</div>
+              <!-- live -->
+              <div data-v-0822ca80="" class="count"> </div>
             </div>
             <div data-v-0822ca80="" class="label">Live</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -76,7 +77,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-popular"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">57</div>
+              <div data-v-0822ca80="" class="count">40</div>
             </div>
             <div data-v-0822ca80="" class="label">Popular</div>
           </a>
@@ -146,6 +147,41 @@
           <div data-v-aabe1219="" class="expansion-panel-content">
            
 
+          
+
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12541"><a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/12541">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
+                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
+                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Champions League</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">4</span> <!----></div>
+                </div>
+              </a> </div>
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12546"><a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/12546">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
+                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
+                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Europa League</span> <!----></div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">4</span> <!----></div>
+                </div>
+              </a> </div>
+            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12545"><a data-v-7a6cc4a0=""
+                data-test-id="nav-Group-link" class="link" href="/events/group/12545">
+                <div data-v-7a6cc4a0="" class="table">
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
+                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
+                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Conference League</span> <!---->
+                  </div>
+                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
+                      class="menu-text">4</span> <!----></div>
+                </div>
+              </a> </div>
+
+            
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-11965">
             <a data-v-7a6cc4a0=""
                 data-test-id="nav-Group-link" class="link" href="/events/group/11965">
@@ -166,7 +202,7 @@
                       class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">FA Cup</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">4</span> <!----></div>
+                      class="menu-text">2</span> <!----></div>
                 </div>
               </a> 
             </div>
@@ -212,37 +248,8 @@
                       class="menu-text">16</span> <!----></div>
                 </div>
               </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12541"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12541">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
-                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
-                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Champions League</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">4</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12546"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12546">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
-                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
-                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Europa League</span> <!----></div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">4</span> <!----></div>
-                </div>
-              </a> </div>
-            <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12545"><a data-v-7a6cc4a0=""
-                data-test-id="nav-Group-link" class="link" href="/events/group/12545">
-                <div data-v-7a6cc4a0="" class="table">
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle details"><img data-v-1f7f90db="" data-v-81261974=""
-                      class="image-icon rounded-flag icon-size-large icon-flag" :src="EuropeFlag"
-                      style=""> <span data-v-7a6cc4a0="" class="menu-text name">UEFA Conference League</span> <!---->
-                  </div>
-                  <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">4</span> <!----></div>
-                </div>
-              </a> </div>
+
+
           </div>
         </div>
         <div data-v-c42aca5e="">

@@ -72,38 +72,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <div class="league-shortcut-box-name">FIFA Series</div>
                 </div>
             </a> -->
-               <!-- UEFA Champions League -->
-               <a href="/events/group/12541" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
-                <div class="league-shortcut-box">
-                    <div class="league-shortcut-box-top">
-                        <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
-                        <div class="box-count">4</div>
-                    </div>
-                    <div class="league-shortcut-box-name">UEFA Champions League</div>
-                </div>
-            </a>
             
-            <!-- UEFA Europa League -->
-            <a href="/events/group/12546" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
-                <div class="league-shortcut-box">
-                    <div class="league-shortcut-box-top">
-                        <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
-                        <div class="box-count">4</div>
-                    </div>
-                    <div class="league-shortcut-box-name">UEFA Europa League</div>
-                </div>
-            </a>
-
-             <!-- UEFA Europa League -->
-             <a href="/events/group/12546" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
-                <div class="league-shortcut-box">
-                    <div class="league-shortcut-box-top">
-                        <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
-                        <div class="box-count">4</div>
-                    </div>
-                    <div class="league-shortcut-box-name">UEFA Conference League</div>
-                </div>
-            </a>
             <!-- Premier League -->
             <a href="/events/group/11965" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">

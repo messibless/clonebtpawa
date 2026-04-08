@@ -82,7 +82,7 @@ const betCount = computed(() => {
                     <div data-v-ea5d556a="" class="game-event-header-right-content">
 
                       <!-- Two-Up Badge (conditional) -->
-                    <div class="set-icons"> 
+                    <div class="set-icons">
                            <span v-if="game.hasTwoUp" data-v-891f4695="" data-v-ea5d556a=""
                             class="badge type-best-odds mode-default pointer twoUpp" data-test-id="game-open-two-up-modal-button">
                             <svg data-v-02f45589="" data-v-891f4695="" class="svg-icon icon icon-size-huge"
@@ -419,7 +419,8 @@ img.icon-size-little[data-v-02f45589] {
   font-weight: 400;
 }
 .twoUpp{
-  margin-right: 5px;
+  margin-right: 10px;
+  background-color: #ff7a00;
 }
 
 .game-event-date[data-v-ea5d556a],
