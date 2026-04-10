@@ -164,7 +164,7 @@ const displayedBetsWithDetails = computed(() => {
                                        <div data-v-34417751="" class="bet-line bet-header">
                                            <div data-v-34417751="" class="header-container">
                                                <div data-v-34417751="" class="header-title"><span data-v-34417751="" class="time">
-                                                       {{ bet.time }} </span> <span data-v-34417751="" class="date">{{ bet.date }}</span> <span
+                                                       {{ bet.time }}, </span> <span data-v-34417751="" class="date">{{ bet.date }}</span> <span
                                                        data-v-34417751="" class="bet-live-now"></span></div>
                                                <div data-v-34417751="" class="id" data-test-id="bet-id">ID: #{{ bet.id }} <!----></div>
                                            </div>

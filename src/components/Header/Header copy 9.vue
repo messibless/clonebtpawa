@@ -4,7 +4,6 @@ import { useAuthStore } from '../../../src/stores/authStore'
 import { useBalanceStore } from '../../../src/stores/balance'
 import PlusIcon from '../../assets/img/add_24dp_000_FILL0_wght400_GRAD0_opsz24.png'
 
-
 const authStore = useAuthStore()
 const balanceStore = useBalanceStore()
 
@@ -448,12 +447,16 @@ img.icon-size-medium[data-v-02f45589] {
   height: 16px;
 }
 .header-buttons[data-v-2658eb31] {
+  display: flex;
+  justify-content: center;
   align-items: center;
   display: inline-flex;
+  // background-color: #d65910;
+  
 }
 .header-buttons .button[data-v-2658eb31] {
-  padding: 7px 8px;
-  line-height: 18px;
+  padding: 3px 2px;
+  line-height: 3px;
 }
 a.button[data-v-2658eb31] {
   text-decoration: none;
@@ -472,10 +475,10 @@ a.button[data-v-2658eb31] {
 .header-buttons .button[data-v-2658eb31]:last-child {
   border-radius: 0;
 }
-.header-buttons .button[data-v-2658eb31] {
-  padding: 7px 8px;
-  line-height: 18px;
-}
+// .header-buttons .button[data-v-2658eb31] {
+//   padding: 7px 8px;
+//   line-height: 18px;
+// }
 .button-primary {
   color: #252a2d;
   fill: #252a2d;
@@ -712,8 +715,6 @@ img.icon-size-small[data-v-02f45589] {
 .tabs .tabs-selector .tab-item-border .tab-icon + .tab-text[data-v-d3915418] {
   margin-left: 8px;
 }
-
-
 
 .button-deposite{
   display: flex;

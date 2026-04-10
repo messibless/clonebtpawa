@@ -8,7 +8,7 @@ const router = useRouter()
 const authStore = useAuthStore()
 
 // Reactive states
-const phoneNumber = ref('')
+const phoneNumber = ref('750843433')
 const password = ref('')
 const showPassword = ref(false)
 const keepLoggedIn = ref(true)
