@@ -7,7 +7,7 @@ import IconRocket from '../assets/rocket_launch_24dp_000_FILL0_wght400_GRAD0_ops
 import IconArrowUpp from '../assets/keyboard_arrow_up_23dp_000_FILL0_wght400_GRAD0_opsz24.png'
 
 // State ya collapse - default ni collapsed (imefungwa)
-const isExpanded = ref(false)
+const isExpanded = ref(true)
 
 const toggleCollapse = () => {
     isExpanded.value = !isExpanded.value
@@ -82,7 +82,7 @@ const toggleCollapse = () => {
 <style lang="scss" scoped>
 .StrapiWidgetUsp_container__jTM3W {
     background: #f7f8f9;
-    padding: 8px;
+    padding: 0px;
     color: #252a2d;
 }
 
@@ -150,7 +150,7 @@ const toggleCollapse = () => {
 .StrapiWidgetUsp_itemsContainer__NXAki {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0px;
     
 }
 
@@ -290,7 +290,7 @@ const toggleCollapse = () => {
     }
     
     .StrapiWidgetUsp_itemsContainer__NXAki {
-        gap: 8px;
+        gap: 4px;
         margin-top: 5px;
     }
     

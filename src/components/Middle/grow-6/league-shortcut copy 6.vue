@@ -74,7 +74,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 </div>
             </a> -->
                <!-- UEFA Champions League -->
-               <!-- <a href="/events/group/12541" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+               <a href="/events/group/12541" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
@@ -83,10 +83,10 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <div class="box-count">4</div>
 
                 </div>
-            </a> -->
+            </a>
             
             <!-- UEFA Europa League -->
-            <!-- <a href="/events/group/12546" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+            <a href="/events/group/12546" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
@@ -95,10 +95,10 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <div class="box-count">4</div>
 
                 </div>
-            </a> -->
+            </a>
 
              <!-- UEFA Europa League -->
-             <!-- <a href="/events/group/12546" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+             <a href="/events/group/12546" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA">
@@ -107,7 +107,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     <div class="box-count">4</div>
 
                 </div>
-            </a> -->
+            </a>
             <!-- Premier League -->
             <a href="/events/group/11965" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
@@ -120,17 +120,17 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
 
                 </div>
             </a>
-            <!-- FA Cup -->
-            <!-- <a href="/events/group/11965" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
+            <a href="/events/group/11965" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
                 <div class="league-shortcut-box">
                     <div class="league-shortcut-box-top">
                         <span class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span>
+                        <!-- <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA"> -->
                     </div>
                     <div class="league-shortcut-box-name">FA Cup</div>
                     <div class="box-count">4</div>
 
                 </div>
-            </a> -->
+            </a>
             
             <!-- EFL Cup -->
             <!-- <a href="/events/group/12348" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Group">
