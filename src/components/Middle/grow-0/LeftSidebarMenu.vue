@@ -35,7 +35,7 @@
                 class="svg-icon icon-size-very-small icon" style="vertical-align: middle;"><!---->
                 <use data-v-02f45589="" xlink:href="#icon-clock"></use>
               </svg>
-              <div data-v-0822ca80="" class="count">1461</div>
+              <div data-v-0822ca80="" class="count">1409</div>
             </div>
             <div data-v-0822ca80="" class="label">Sports</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -45,7 +45,7 @@
                 <use data-v-02f45589="" xlink:href="#icon-live"></use>
               </svg>
               <!-- live -->
-              <div data-v-0822ca80="" class="count">16</div>
+              <div data-v-0822ca80="" class="count">47</div>
             </div>
             <div data-v-0822ca80="" class="label">Live</div>
           </a><a data-v-0822ca80="" data-v-cafe7da3="" class="menu-tile" rel="noopener"
@@ -190,7 +190,7 @@
                       class="fi fi-gb-eng fis rounded-flag icon-size-large icon-flag" title="GB-ENG"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Premier League</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">20</span> <!----></div>
+                      class="menu-text">19</span> <!----></div>
                 </div>
               </a> 
             </div>
@@ -215,7 +215,7 @@
                       class="fi fi-it fis rounded-flag icon-size-large icon-flag" title="IT"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Serie A</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">20</span> <!----></div>
+                      class="menu-text">19</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12110"><a data-v-7a6cc4a0=""
@@ -225,7 +225,7 @@
                       class="fi fi-de fis rounded-flag icon-size-large icon-flag" title="DE"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Bundesliga</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">18</span> <!----></div>
+                      class="menu-text">17</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12039"><a data-v-7a6cc4a0=""
@@ -235,7 +235,7 @@
                       class="fi fi-es fis rounded-flag icon-size-large icon-flag" title="ES"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">LaLiga</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">20</span> <!----></div>
+                      class="menu-text">19</span> <!----></div>
                 </div>
               </a> </div>
             <div data-v-7a6cc4a0="" class="menu-item dark sub-menu" data-test-id="tournament-12127"><a data-v-7a6cc4a0=""
@@ -245,7 +245,7 @@
                       class="fi fi-fr fis rounded-flag icon-size-large icon-flag" title="FR"></span> <span
                       data-v-7a6cc4a0="" class="menu-text name">Ligue 1</span> <!----></div>
                   <div data-v-7a6cc4a0="" class="row-cell align-middle control"><span data-v-7a6cc4a0=""
-                      class="menu-text">16</span> <!----></div>
+                      class="menu-text">14</span> <!----></div>
                 </div>
               </a> </div>
 

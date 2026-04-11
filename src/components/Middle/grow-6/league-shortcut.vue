@@ -16,7 +16,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                     </svg>
                 </div>
                 <div class="league-shortcut-box-name">Live</div>
-                <div class="box-count">8</div>
+                <div class="box-count">52</div>
 
             </div>
         </a>
@@ -116,7 +116,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                         <!-- <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA"> -->
                     </div>
                     <div class="league-shortcut-box-name">Premier League</div>
-                    <div class="box-count">20</div>
+                    <div class="box-count">19</div>
 
                 </div>
             </a>
@@ -150,7 +150,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                         <span class="fi fi-it fis rounded-flag icon-size-medium" title="IT"></span>
                     </div>
                     <div class="league-shortcut-box-name">Serie A</div>
-                    <div class="box-count">20</div>
+                    <div class="box-count">19</div>
 
                 </div>
             </a>
@@ -162,7 +162,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                         <span class="fi fi-de fis rounded-flag icon-size-medium" title="DE"></span>
                     </div>
                     <div class="league-shortcut-box-name">Bundesliga</div>
-                    <div class="box-count">18</div>
+                    <div class="box-count">17</div>
 
                 </div>
             </a>
