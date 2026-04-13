@@ -8,7 +8,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
     <div class="league-shortcut-container">
     <div class="league-shortcut">
         <!-- Live -->
-        <a href="/events/live" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Live">
+        <!-- <a href="/events/live" class="league-shortcut-box-wrapper" data-test-class="ShortcutType-Live">
             <div class="league-shortcut-box">
                 <div class="league-shortcut-box-top">
                     <svg class="svg-icon icon icon-size-medium icon-live">
@@ -19,7 +19,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                 <div class="box-count">52</div>
 
             </div>
-        </a>
+        </a> -->
         
         <!-- Tournaments -->
         <div class="tournaments-shortcuts">
@@ -116,7 +116,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                         <!-- <img class="image-icon rounded-flag icon-size-medium" :src="EuropeanLeague" alt="UEFA"> -->
                     </div>
                     <div class="league-shortcut-box-name">Premier League</div>
-                    <div class="box-count">19</div>
+                    <div class="box-count">21</div>
 
                 </div>
             </a>
@@ -150,7 +150,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                         <span class="fi fi-it fis rounded-flag icon-size-medium" title="IT"></span>
                     </div>
                     <div class="league-shortcut-box-name">Serie A</div>
-                    <div class="box-count">19</div>
+                    <div class="box-count">21</div>
 
                 </div>
             </a>
@@ -162,7 +162,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                         <span class="fi fi-de fis rounded-flag icon-size-medium" title="DE"></span>
                     </div>
                     <div class="league-shortcut-box-name">Bundesliga</div>
-                    <div class="box-count">17</div>
+                    <div class="box-count">18</div>
 
                 </div>
             </a>
@@ -174,7 +174,7 @@ import EuropeanLeague from '../../../assets/media/Europe_43bd11c816.svg';
                         <span class="fi fi-es fis rounded-flag icon-size-medium" title="ES"></span>
                     </div>
                     <div class="league-shortcut-box-name">LaLiga</div>
-                    <div class="box-count">20</div>
+                    <div class="box-count">21</div>
 
                 </div>
             </a>
